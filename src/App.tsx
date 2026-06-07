@@ -1,11 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+// import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "./assets/vite.svg";
+import heroImg from "./assets/hero.png";
+import "./App.css";
+import fetcher from "../libs/fetcher";
+import useSWR from "swr";
+
+const counter_namespace = "kevin-cabanilla";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const shouldFetch = import.meta.env.PROD;
+  const { data } = useSWR(
+    shouldFetch
+      ? `https://api.counterapi.dev/v2/${counter_namespace}/kbc-portfolio-visits/up`
+      : null,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      refreshInterval: 0,
+      dedupingInterval: 1000000,
+      revalidateIfStale: false,
+    },
+  );
+  const count = (data?.data?.up_count ?? 0) + 1;
 
   return (
     <>
@@ -21,11 +39,7 @@ function App() {
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
+        <button type="button" className="counter">
           Count is!!! {count}
         </button>
       </section>
@@ -116,7 +130,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
