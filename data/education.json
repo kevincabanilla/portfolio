@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "school_year": "2014 - 2018",
+    "title": "Bachelor of Science in Information Technology (BSIT)",
+    "institution": "Nueva Ecija University of Science and Technology",
+    "institutionType": "State University",
+    "department": "College of Information and Communications Technology",
+    "location": "Nueva Ecija, Philippines",
+    "gwa": "1.7",
+    "skills": [
+      "JAVA",
+      "C++",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Angular",
+      "MySQL",
+      "OOP",
+      "SDLC",
+      "DBMS",
+      "SOLID Principles",
+      "DRY Priciples",
+      "Data Structures",
+      "Operating Systems",
+      "Multimedia",
+      "Networking"
+    ]
+  },
+  {
+    "id": 2,
+    "school_year": "2010 - 2014",
+    "title": "High School",
+    "institution": "Talavera National High School",
+    "institutionType": "DEPED",
+    "location": "Nueva Ecija, Philippines",
+    "skills": ["Mathematics", "Science"]
+  },
+  {
+    "id": 3,
+    "school_year": "2004 - 2010",
+    "title": "Elementary",
+    "institution": "Talavera Central School",
+    "institutionType": "DEPED",
+    "location": "Nueva Ecija, Philippines",
+    "skills": []
+  }
+]
