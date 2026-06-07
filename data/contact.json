@@ -1,0 +1,50 @@
+{
+  "contact_options": [
+    {
+      "id": 1,
+      "icon": "MdOutlineEmail",
+      "title": "Email Me",
+      "value": "kevincabanilla.dev@gmail.com",
+      "link": "mailto:kevincabanilla.dev@gmail.com",
+      "message": "Send a Mail"
+    },
+    {
+      "id": 2,
+      "icon": "BsLinkedin",
+      "title": "LinkedIn",
+      "value": "kevin-cabanilla",
+      "link": "https://www.linkedin.com/in/kevin-cabanilla/",
+      "message": "Connect"
+    },
+    {
+      "id": 3,
+      "icon": "FiInstagram",
+      "title": "Instagram",
+      "value": "@kevincabanilla.dev",
+      "link": "https://www.instagram.com/kevincabanilla.dev/",
+      "message": "Message"
+    },
+    {
+      "id": 4,
+      "icon": "IoCallOutline",
+      "title": "Mobile",
+      "value": "+63 976 3477 225",
+      "link": "tel:+639763477225",
+      "message": "Call"
+    },
+    {
+      "id": 5,
+      "icon": "FiGithub",
+      "title": "GitHub",
+      "value": "kevincabanilla",
+      "link": "https://github.com/kevincabanilla",
+      "message": "Follow"
+    }
+  ],
+  "email_config": {
+    "service_id": "",
+    "template_id": "",
+    "public_key": "",
+    "validation_pattern": "/^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$/"
+  }
+}
