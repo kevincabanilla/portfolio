@@ -5,6 +5,7 @@ import heroImg from "../public/assets/hero.png";
 import "./App.css";
 import fetcher from "../libs/fetcher";
 import useSWR from "swr";
+import { ReactLenis } from "lenis/react";
 
 const counter_namespace = "kevin-cabanilla";
 
@@ -26,7 +27,13 @@ function App() {
   const count = (data?.data?.up_count ?? 0) + 1;
 
   return (
-    <>
+    <ReactLenis
+      root
+      options={{
+        duration: 1,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      }}
+    >
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -129,7 +136,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-    </>
+    </ReactLenis>
   );
 }
 
