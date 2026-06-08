@@ -7,31 +7,37 @@ import fetcher from "../libs/fetcher";
 import useSWR from "swr";
 import { ReactLenis } from "lenis/react";
 
-const counter_namespace = "kevin-cabanilla";
+const COUNTER_NAMESPACE = "kevin-cabanilla";
+const SWR_CONFIG = {
+  revalidateOnFocus: false,
+  revalidateOnReconnect: false,
+  refreshInterval: 0,
+  dedupingInterval: 1000000,
+  revalidateIfStale: false,
+} as const;
+
+const LENIS_EASING = (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t));
 
 function App() {
   const shouldFetch = import.meta.env.PROD;
   const { data } = useSWR(
     shouldFetch
-      ? `https://api.counterapi.dev/v2/${counter_namespace}/kbc-portfolio-visits/up`
+      ? `https://api.counterapi.dev/v2/${COUNTER_NAMESPACE}/kbc-portfolio-visits/up`
       : null,
     fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false,
-      refreshInterval: 0,
-      dedupingInterval: 1000000,
-      revalidateIfStale: false,
-    },
+    SWR_CONFIG,
   );
+
   const count = (data?.data?.up_count ?? 0) + 1;
+  console.log(count);
+
 
   return (
     <ReactLenis
       root
       options={{
         duration: 1,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        easing: LENIS_EASING,
       }}
     >
       <section id="center">

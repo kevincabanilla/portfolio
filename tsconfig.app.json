@@ -2,8 +2,8 @@
   "compilerOptions": {
     "paths": {
       // Always update the alias in vite.config.ts when updating this.
-      "@/*": ["./src/*"]
-      //  "@components/*": ["src/components/*"] // Above will handle this automatically
+      "@/*": ["./src/*"],
+      // "@hooks/*": ["./src/hooks/*"] // Above will handle this automatically
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "es2023",
