@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
+import reactLogo from "../public/assets/react.svg";
+import viteLogo from "../public/assets/vite.svg";
+import heroImg from "../public/assets/hero.png";
 import "./App.css";
 import fetcher from "../libs/fetcher";
 import useSWR from "swr";
