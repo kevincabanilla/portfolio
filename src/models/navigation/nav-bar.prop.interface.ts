@@ -1,12 +1,11 @@
-import type { NavSection } from "./nav-section.interface";
+import type { NavItem } from "./nav-item.prop.interface";
 
 export interface NavBarProps {
   scrolledDown: boolean;
   isMobile: boolean;
-  sections: NavSection[];
+  navItems: NavItem[];
   activeSection: string;
-  sectionProgress: number;
-  mobileMenuOpen: boolean;
+  sideNavOpen: boolean;
   onNavigate: (id: string) => void;
   onToggleMenu: () => void;
 }
