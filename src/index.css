@@ -9,6 +9,8 @@
   --color-text-secondary: #2f3f1b;
   --color-text-muted: #454b51;
 
+  --color-nav-toolbar: #0a0a1a;
+
   --color-cyan: #06b6d4;
   --color-purple: #a855f7;
   --color-green: #22c55e;
@@ -21,9 +23,13 @@
   --color-gold: #fbbf24;
   --color-silver: #94a3b8;
   --color-bronze: #d97706;
+  --color-dark-gray: #A5A5C0;
 
   --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+
+  --shadow-nav-elevated:
+    0 10px 40px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
 
 html {
