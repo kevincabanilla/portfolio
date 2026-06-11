@@ -15,8 +15,8 @@ const navButtonStyles = cva(
     variants: {
       active: {
         false:
-          "text-dark-gray/90 bg-transparent hover:text-text-primary hover:bg-white/5",
-        true: "text-cyan bg-cyan/10 backdrop-blur-[8px]",
+          "text-primary bg-transparent hover:text-secondary hover:bg-white/5",
+        true: "text-secondary bg-secondary/10 backdrop-blur-[8px]",
       },
     },
     defaultVariants: {
@@ -30,7 +30,7 @@ type NavButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     children: React.ReactNode;
   };
 
-export default function Button({
+export default function NavButton({
   active,
   children,
   className,
@@ -44,7 +44,7 @@ export default function Button({
           className={clsx(
             "w-1.25 h-1.25",
             "rounded-full",
-            "bg-cyan-500",
+            "bg-secondary",
             "shrink-0",
             "transition-shadow",
             "duration-150",

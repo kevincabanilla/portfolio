@@ -1,17 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #151624;
-  --color-secondary: #1a353e;
-  --color-accent: #747f67;
+  --color-bg-primary: #26282f;
+  --color-bg-secondary: #151624;
+  --color-bg-accent: #515661;
 
-  --color-text-primary: #ba7fd9;
-  --color-text-secondary: #2f3f1b;
-  --color-text-muted: #454b51;
+  --color-primary: #06b6d4;
+  --color-secondary: #b375d5;
+  --color-muted: #515661;
 
-  --color-nav-toolbar: #0a0a1a;
-
-  --color-cyan: #06b6d4;
   --color-purple: #a855f7;
   --color-green: #22c55e;
   --color-amber: #f59e0b;
@@ -23,13 +20,15 @@
   --color-gold: #fbbf24;
   --color-silver: #94a3b8;
   --color-bronze: #d97706;
-  --color-dark-gray: #A5A5C0;
+  --color-dark-gray: #a5a5c0;
+  --color-midnight-blue: #0c0c1e;
 
   --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", "JetBrains Mono", monospace;
 
   --shadow-nav-elevated:
-    0 10px 40px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+    0 10px 40px rgb(0 0 0 / 30%), inset 0 -1px 0 rgb(255 255 255 / 4%);
+  --shadow-drawer: -10px 0 40px rgb(0 0 0 / 30%);
 }
 
 html {
@@ -37,10 +36,16 @@ html {
 }
 
 :root {
-  background: var(--color-primary);
+  background: var(--color-bg-primary);
   color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@utility text-glow-primary {
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--color-primary) 60%, transparent),
+    0 0 50px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }

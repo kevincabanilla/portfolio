@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef, type JSX } from "react";
 import { Helper } from "@/utils";
 import { useMediaQuery, useScrolledDown } from "@/hooks";
 import NavBar from "./navigation/NavBar";
+import SideNav from "./navigation/SideNav";
 import { NavItemEnum, type NavItem } from "@/models";
 
 const NAV_ITEMS: NavItem[] = [
@@ -59,6 +60,15 @@ export default function Navigation(): JSX.Element {
         scrolledDown={scrolledDown}
         onNavigate={scrollToSection}
         onToggleMenu={() => setSideNavOpen(!sideNavOpen)}
+      />
+
+      {/* Overlay menu for mobile devices */}
+      <SideNav
+        navItems={NAV_ITEMS}
+        activeSection={activeSection}
+        open={sideNavOpen}
+        onNavigate={scrollToSection}
+        onClose={() => setSideNavOpen(false)}
       />
     </>
   );
