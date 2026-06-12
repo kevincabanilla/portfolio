@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #26282f;
-  --color-bg-secondary: #151624;
+  --color-bg-primary: #151624;
+  --color-bg-secondary: #26282f;
   --color-bg-accent: #515661;
 
   --color-primary: #06b6d4;
@@ -38,6 +38,8 @@ html {
 }
 
 :root {
+  --ch-cyan: 6 182 212;
+
   background: var(--color-bg-primary);
   color-scheme: dark;
   font-synthesis: none;
@@ -66,3 +68,32 @@ html {
     );
   background-size: 60px 60px;
 }
+
+@utility gradient-text-vivid {
+  background: linear-gradient(
+    135deg,
+    var(--color-cyan),
+    var(--color-purple),
+    var(--color-pink)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* @utility btn-primary {
+  @apply bg-[#06202d]
+         text-cyan
+         font-semibold
+         border
+         border-cyan/30
+         rounded-xl
+         px-8
+         py-3
+         cursor-pointer
+         duration-300
+         ease-in-out
+         backdrop-blur-md;
+
+  transition-property: background, border-color, box-shadow, color, transform;
+} */
