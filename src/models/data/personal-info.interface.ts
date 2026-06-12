@@ -5,6 +5,7 @@ export interface PersonalInfo {
   about: AboutInfo;
   languages: Language[];
   socialProfiles: SocialProfile[];
+  resumeUrl: string;
   site: SiteConfig;
 }
 
