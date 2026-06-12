@@ -9,6 +9,7 @@
   --color-secondary: #b375d5;
   --color-muted: #515661;
 
+  --color-cyan: #06b6d4;
   --color-purple: #a855f7;
   --color-green: #22c55e;
   --color-amber: #f59e0b;
@@ -23,8 +24,9 @@
   --color-dark-gray: #a5a5c0;
   --color-midnight-blue: #0c0c1e;
 
-  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:
+    "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
 
   --shadow-nav-elevated:
     0 10px 40px rgb(0 0 0 / 30%), inset 0 -1px 0 rgb(255 255 255 / 4%);
@@ -48,4 +50,19 @@ html {
   text-shadow:
     0 0 20px color-mix(in srgb, var(--color-primary) 60%, transparent),
     0 0 50px color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+
+/* ===== Grid Background ===== */
+@utility bg-grid {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-cyan) 5%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-cyan) 5%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 60px 60px;
 }
