@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { NavItemEnum, type NavItem, type SideNavProps } from "@/models";
 import clsx from "clsx";
-import SideNavButton from "@/components/common/buttons/SideNavButton";
+import { SideNavButton } from "@/components/common/buttons";
 
 export default function SideNav({
   open,

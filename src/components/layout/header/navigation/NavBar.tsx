@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { navVariants } from "@/animations/navVariants";
 import { NavItemEnum, type NavBarProps, type NavItem } from "@/models";
-import NavButton from "@/components/common/buttons/NavButton";
+import { NavButton } from "@/components/common/buttons";
 
 export default function NavBar({
   scrolledDown,

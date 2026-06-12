@@ -8,7 +8,7 @@ import HeroExternalLinks from "./HeroExternalLinks";
 import {
   AppButton,
   AppButtonLink,
-} from "@/components/common/buttons/AppButton";
+} from "@/components/common/buttons";
 
 export default function HeroContent(): JSX.Element {
   const [roleIndex, setRoleIndex] = useState(0);
