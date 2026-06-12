@@ -1,6 +1,6 @@
 {
   "fullName": "Kevin Cabanilla",
-  "title": "AI Model Trainer at DataAnnotation",
+  "title": "AI Model Trainer — Individual Contractor @ DataAnnotation",
   "roles": [
     "Full Stack Web Developer",
     "Software Engineer",
@@ -47,6 +47,7 @@
       "icon": "FiInstagram"
     }
   ],
+  "resumeUrl": "https://github.com/kevincabanilla",
   "site": {
     "techStacks": ["React 19", "Vite 8", "Tailwind CSS 4", "Three.js", "Motion"]
   }
