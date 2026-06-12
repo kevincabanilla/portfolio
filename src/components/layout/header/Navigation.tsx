@@ -46,7 +46,7 @@ export default function Navigation(): JSX.Element {
   }, []);
 
   const scrollToSection = useCallback((id: string) => {
-    Helper.scrollTo(id);
+    Helper.scrollToId(id);
     setSideNavOpen(false);
   }, []);
 
