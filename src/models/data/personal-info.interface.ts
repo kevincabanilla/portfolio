@@ -1,30 +1,30 @@
 export interface PersonalInfo {
-    fullName: string;
-    title: string;
-    roles: string[];
-    about: AboutInfo;
-    languages: Language[];
-    socialProfiles: SocialProfile[];
-    site: SiteConfig;
+  fullName: string;
+  title: string;
+  roles: string[];
+  about: AboutInfo;
+  languages: Language[];
+  socialProfiles: SocialProfile[];
+  site: SiteConfig;
 }
 
 export interface AboutInfo {
-    greeting: string;
-    highlights: string[];
+  greeting: string;
+  highlights: string[];
 }
 
 export interface Language {
-    name: string;
-    level: string;
+  name: string;
+  level: string;
 }
 
 export interface SocialProfile {
-    id: number;
-    name: string;
-    link: string;
-    icon: string;
+  id: number;
+  name: string;
+  link: string;
+  icon: string;
 }
 
 export interface SiteConfig {
-    techStacks: string[];
+  techStacks: string[];
 }

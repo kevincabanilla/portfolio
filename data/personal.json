@@ -1,59 +1,53 @@
 {
-    "fullName": "Kevin Cabanilla",
-    "title": "AI Model Trainer at DataAnnotation",
-    "roles": [
-        "Full Stack Web Developer",
-        "Software Engineer",
-        "Game Developer",
-        "AI Model Trainer"
-    ],
-    "about": {
-        "greeting": "Hi, my name is {fullName}.",
-        "highlights": [
-            "AI model trainer at DataAnnotation.tech - Analyze and evaluate agentic AI models with autonomous or interactive multi-turn reasoning, tool-use decisions, and task execution flows. Skilled in ensuring consistency and identifying failure modes in agent behavior.",
-            "Work closely with project managers at Nowcom and their partners Westlake Financial and Western Funding Inc. to deliver quality solutions based on their needs.",
-            "Spearheaded the end-to-end migration of a Seafarers Assessment Desktop Application to a scalable web-based platform, enabling support for thousands of online test sessions per month."
-        ]
+  "fullName": "Kevin Cabanilla",
+  "title": "AI Model Trainer at DataAnnotation",
+  "roles": [
+    "Full Stack Web Developer",
+    "Software Engineer",
+    "Game Developer",
+    "AI Model Trainer"
+  ],
+  "about": {
+    "greeting": "Hi, my name is {fullName}.",
+    "highlights": [
+      "AI model trainer at DataAnnotation.tech - Analyze and evaluate agentic AI models with autonomous or interactive multi-turn reasoning, tool-use decisions, and task execution flows. Skilled in ensuring consistency and identifying failure modes in agent behavior.",
+      "Work closely with project managers at Nowcom and their partners Westlake Financial and Western Funding Inc. to deliver quality solutions based on their needs.",
+      "Spearheaded the end-to-end migration of a Seafarers Assessment Desktop Application to a scalable web-based platform, enabling support for thousands of online test sessions per month."
+    ]
+  },
+  "statistics": {
+    "codingQuestions": "0+",
+    "leetcodeRating": "0",
+    "projects": "0+",
+    "codingContests": "0+",
+    "industryCertifications": "0",
+    "openSourceContributions": "0+"
+  },
+  "languages": [
+    { "name": "English", "level": "Professional Working" },
+    { "name": "Filipino", "level": "Native" }
+  ],
+  "socialProfiles": [
+    {
+      "id": 1,
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/kevin-cabanilla/",
+      "icon": "BsLinkedin"
     },
-    "statistics": {
-        "codingQuestions": "0+",
-        "leetcodeRating": "0",
-        "projects": "0+",
-        "codingContests": "0+",
-        "industryCertifications": "0",
-        "openSourceContributions": "0+"
+    {
+      "id": 2,
+      "name": "GitHub",
+      "link": "https://github.com/kevincabanilla",
+      "icon": "FaGithub"
     },
-    "languages": [
-        { "name": "English", "level": "Professional Working" },
-        { "name": "Filipino", "level": "Native" }
-    ],
-    "socialProfiles": [
-        {
-            "id": 1,
-            "name": "LinkedIn",
-            "link": "https://www.linkedin.com/in/kevin-cabanilla/",
-            "icon": "BsLinkedin"
-        },
-        {
-            "id": 2,
-            "name": "GitHub",
-            "link": "https://github.com/kevincabanilla",
-            "icon": "FaGithub"
-        },
-        {
-            "id": 3,
-            "name": "Instagram",
-            "link": "https://www.instagram.com/kevincabanilla.dev/",
-            "icon": "FiInstagram"
-        }
-    ],
-    "site": {
-        "techStacks": [
-            "React 19",
-            "Vite 8",
-            "Tailwind CSS 4",
-            "Three.js",
-            "Motion"
-        ]
+    {
+      "id": 3,
+      "name": "Instagram",
+      "link": "https://www.instagram.com/kevincabanilla.dev/",
+      "icon": "FiInstagram"
     }
+  ],
+  "site": {
+    "techStacks": ["React 19", "Vite 8", "Tailwind CSS 4", "Three.js", "Motion"]
+  }
 }
