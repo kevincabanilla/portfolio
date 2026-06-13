@@ -1,5 +1,5 @@
-import { useEffect, useState, type JSX } from "react";
-import { motion } from "motion/react";
+import { useEffect, useRef, useState, type JSX } from "react";
+import { motion, useInView } from "motion/react";
 import clsx from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -36,9 +36,17 @@ export default function TerminalBadge({
   className,
   ...props
 }: TerminalBadgeProps): JSX.Element {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "0px 0px -60px 0px",
+  });
+
   const [visibleChars, setVisibleChars] = useState(0);
 
   useEffect(() => {
+    if (!isInView) return;
+
     let timeoutId: ReturnType<typeof setTimeout>;
 
     const type = (index: number) => {
@@ -55,13 +63,17 @@ export default function TerminalBadge({
     type(0);
 
     return () => clearTimeout(timeoutId);
-  }, [text]);
+  }, [isInView, text]);
 
-  const isTyping = visibleChars < text.length;
+  const isTyping = isInView && visibleChars < text.length;
   const displayed = text.slice(0, visibleChars).concat(isTyping ? "|" : "");
 
   return (
-    <span className={clsx(terminalBadgeStyles({ size }), className)} {...props}>
+    <span
+      ref={ref}
+      className={clsx(terminalBadgeStyles({ size }), className)}
+      {...props}
+    >
       {/* Live indicator */}
       <motion.span
         className="w-2 h-2 rounded-full bg-green-500"
