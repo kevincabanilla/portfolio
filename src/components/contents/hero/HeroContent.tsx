@@ -2,7 +2,7 @@ import { type JSX, useState, useMemo, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Data, Helper } from "@/utils";
 import { NavItemEnum } from "@/models";
-import { staggerContainer, staggerItem } from "@/animations/staggerContainer";
+import { staggerContainer, staggerItem } from "@/animations";
 import TerminalBadge from "@/components/common/ui/TerminalBadge";
 import HeroExternalLinks from "./HeroExternalLinks";
 import { AppButton, AppButtonLink } from "@/components/common/buttons";

@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
-import { navVariants } from "@/animations/navVariants";
+import { navVariants } from "@/animations";
 import { NavItemEnum, type NavBarProps, type NavItem } from "@/models";
 import { NavButton } from "@/components/common/buttons";
 
