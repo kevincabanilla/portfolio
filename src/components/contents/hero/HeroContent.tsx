@@ -5,18 +5,14 @@ import { NavItemEnum } from "@/models";
 import { staggerContainer, staggerItem } from "@/animations/staggerContainer";
 import TerminalBadge from "@/components/common/ui/TerminalBadge";
 import HeroExternalLinks from "./HeroExternalLinks";
-import {
-  AppButton,
-  AppButtonLink,
-} from "@/components/common/buttons";
+import { AppButton, AppButtonLink } from "@/components/common/buttons";
+import HeroCurrentTechs from "./HeroCurrentTechs";
 
 export default function HeroContent(): JSX.Element {
   const [roleIndex, setRoleIndex] = useState(0);
 
-  const { fullName, title, roles, resumeUrl } = useMemo(
-    () => Data.getPersonalData(),
-    [],
-  );
+  const { fullName, title, roles, resumeUrl, currentTechs, socialProfiles } =
+    useMemo(() => Data.getPersonalData(), []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -80,8 +76,15 @@ export default function HeroContent(): JSX.Element {
         </AppButtonLink>
       </motion.div>
 
-      {/* Status widget + Social icons */}
-      <HeroExternalLinks />
+      {/* Status widget */}
+      <motion.div variants={staggerItem}>
+        <HeroCurrentTechs currentTechs={currentTechs} />
+      </motion.div>
+
+      {/* Social links */}
+      <motion.div className="flex items-center gap-3" variants={staggerItem}>
+        <HeroExternalLinks socialProfiles={socialProfiles} />
+      </motion.div>
     </motion.div>
   );
 }
