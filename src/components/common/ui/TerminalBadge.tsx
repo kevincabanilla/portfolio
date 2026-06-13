@@ -1,15 +1,38 @@
 import { useEffect, useState, type JSX } from "react";
 import { motion } from "motion/react";
 import clsx from "clsx";
+import { cva, type VariantProps } from "class-variance-authority";
 
-type TerminalBadgeProps = React.HTMLAttributes<HTMLSpanElement> & {
-  children: React.ReactNode;
-  text: string;
-};
+const terminalBadgeStyles = cva(
+  [
+    "inline-flex items-center gap-2",
+    "font-mono text-green-500",
+    "bg-green-500/5 backdrop-blur-md",
+    "border border-green-500/10 rounded-full",
+  ],
+  {
+    variants: {
+      size: {
+        sm: "px-3 py-1 text-xs",
+        default: "px-4 py-1 text-sm",
+      },
+    },
+    defaultVariants: {
+      size: "default",
+    },
+  },
+);
+
+type TerminalBadgeProps = React.HTMLAttributes<HTMLSpanElement> &
+  VariantProps<typeof terminalBadgeStyles> & {
+    children: React.ReactNode;
+    text: string;
+  };
 
 export default function TerminalBadge({
   text,
   children,
+  size,
   className,
   ...props
 }: TerminalBadgeProps): JSX.Element {
@@ -38,13 +61,7 @@ export default function TerminalBadge({
   const displayed = text.slice(0, visibleChars).concat(isTyping ? "|" : "");
 
   return (
-    <span
-      className={clsx(
-        "inline-flex items-center gap-2 font-mono text-sm text-green-500 bg-green-500/5 backdrop-blur-md border border-green-500/10 rounded-full px-4 py-1",
-        className,
-      )}
-      {...props}
-    >
+    <span className={clsx(terminalBadgeStyles({ size }), className)} {...props}>
       {/* Live indicator */}
       <motion.span
         className="w-2 h-2 rounded-full bg-green-500"
