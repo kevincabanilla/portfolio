@@ -11,9 +11,21 @@
     "greeting": "Hi, my name is {fullName}.",
     "status": "Currently training agentic AI models at DataAnnotation.tech",
     "highlights": [
-      "AI model trainer at DataAnnotation.tech - Analyze and evaluate agentic AI models with autonomous or interactive multi-turn reasoning, tool-use decisions, and task execution flows. Skilled in ensuring consistency and identifying failure modes in agent behavior.",
-      "Worked closely with project managers at Nowcom and their partners Westlake Financial and Western Funding Inc. to deliver quality solutions based on their needs.",
-      "Spearheaded the end-to-end migration of a Seafarers Assessment Desktop Application to a scalable web-based platform, enabling support for thousands of online test sessions per month."
+      {
+        "text": "AI model trainer at DataAnnotation.tech - Analyze and evaluate agentic AI models with autonomous or interactive multi-turn reasoning, tool-use decisions, and task execution flows. Skilled in ensuring consistency and identifying failure modes in agent behavior.",
+        "icon": "HiAnnotation",
+        "color": "cyan"
+      },
+      {
+        "text": "Worked closely with project managers at Nowcom and their partners Westlake Financial and Western Funding Inc. to deliver quality solutions based on their needs.",
+        "icon": "MdBusiness",
+        "color": "amber"
+      },
+      {
+        "text": "Spearheaded the end-to-end migration of a Seafarers Assessment Desktop Application to a scalable web-based platform, enabling support for thousands of online test sessions per month.",
+        "icon": "FaCode",
+        "color": "green"
+      }
     ]
   },
   "statistics": {

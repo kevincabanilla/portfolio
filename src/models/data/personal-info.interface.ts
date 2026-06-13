@@ -13,7 +13,13 @@ export interface PersonalInfo {
 export interface AboutInfo {
   greeting: string;
   status: string;
-  highlights: string[];
+  highlights: HighlightItem[];
+}
+
+export interface HighlightItem {
+  text: string;
+  icon: string;
+  color: string;
 }
 
 export interface Language {
