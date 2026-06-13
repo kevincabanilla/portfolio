@@ -32,21 +32,22 @@
       "id": 1,
       "name": "LinkedIn",
       "link": "https://www.linkedin.com/in/kevin-cabanilla/",
-      "icon": "BsLinkedin"
+      "icon": "LinkedIn"
     },
     {
       "id": 2,
       "name": "GitHub",
       "link": "https://github.com/kevincabanilla",
-      "icon": "FaGithub"
+      "icon": "GitHub"
     },
     {
       "id": 3,
       "name": "Instagram",
       "link": "https://www.instagram.com/kevincabanilla.dev/",
-      "icon": "FiInstagram"
+      "icon": "Instagram"
     }
   ],
+  "currentTechs": ["React", "Python"],
   "resumeUrl": "https://github.com/kevincabanilla",
   "site": {
     "techStacks": ["React 19", "Vite 8", "Tailwind CSS 4", "Three.js", "Motion"]
