@@ -40,7 +40,7 @@ export default function HeroContent(): JSX.Element {
         className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
         variants={staggerItem}
       >
-        <span className="text-[#eeeef5]">Hi, I&apos;m </span>
+        <span className="text-white">Hi, I&apos;m </span>
         <span className="gradient-text-vivid">{fullName}</span>
       </motion.h1>
 
