@@ -9,6 +9,7 @@
   ],
   "about": {
     "greeting": "Hi, my name is {fullName}.",
+    "status": "Currently training agentic AI models at DataAnnotation.tech",
     "highlights": [
       "AI model trainer at DataAnnotation.tech - Analyze and evaluate agentic AI models with autonomous or interactive multi-turn reasoning, tool-use decisions, and task execution flows. Skilled in ensuring consistency and identifying failure modes in agent behavior.",
       "Worked closely with project managers at Nowcom and their partners Westlake Financial and Western Funding Inc. to deliver quality solutions based on their needs.",

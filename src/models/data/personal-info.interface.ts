@@ -12,6 +12,7 @@ export interface PersonalInfo {
 
 export interface AboutInfo {
   greeting: string;
+  status: string;
   highlights: string[];
 }
 
