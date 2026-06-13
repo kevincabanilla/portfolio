@@ -1,5 +1,5 @@
 import "./App.css";
-import fetcher from "../libs/fetcher";
+import fetcher from "./utils/fetcher";
 import useSWR from "swr";
 import { ReactLenis } from "lenis/react";
 
