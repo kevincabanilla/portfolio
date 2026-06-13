@@ -13,6 +13,7 @@ const appButtonStyles = cva(
     "backdrop-blur-md",
     "transition-all duration-300 ease-out",
     "hover:-translate-y-px",
+    "hover:text-secondary",
   ],
   {
     variants: {
@@ -23,19 +24,18 @@ const appButtonStyles = cva(
           "ease-in-out",
           "backdrop-blur-md",
           "transition-[background,border-color,box-shadow,color,transform]",
-          "shadow-[0_4px_20px_rgb(var(--ch-cyan)/0.15),inset_0_1px_0_rgb(var(--ch-cyan)/0.1)]",
+          "shadow-[0_4px_20px_rgb(var(--rgb-primary)/0.15),inset_0_1px_0_rgb(var(--rgb-primary)/0.1)]",
           "hover:bg-[#063241]",
-          "hover:border-cyan/50",
-          "hover:shadow-[0_6px_30px_rgb(var(--ch-cyan)/0.25),0_0_0_1px_rgb(var(--ch-cyan)/0.15),inset_0_1px_0_rgb(var(--ch-cyan)/0.15)]",
-          "hover:text-white",
+          "hover:border-secondary/70",
+          "hover:shadow-[0_6px_30px_rgb(var(--rgb-secondary)/0.25),0_0_0_1px_rgb(var(--rgb-secondary)/0.15),inset_0_1px_0_rgb(var(--rgb-secondary)/0.15)]",
         ],
 
         outline: [
           "bg-transparent",
           "border border-cyan/60",
           "hover:bg-cyan/8",
-          "hover:border-cyan",
-          "hover:shadow-[0_0_25px_rgb(var(--ch-cyan)/0.1)]",
+          "hover:border-secondary",
+          "hover:shadow-[0_0_25px_rgb(var(--rgb-secondary)/0.1)]",
         ],
 
         ghost: ["bg-transparent", "hover:bg-cyan/8"],

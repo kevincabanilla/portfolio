@@ -6,7 +6,7 @@
   --color-bg-accent: #515661;
 
   --color-primary: #06b6d4;
-  --color-secondary: #b375d5;
+  --color-secondary: #BA7FD9;
   --color-muted: #515661;
 
   --color-cyan: #06b6d4;
@@ -21,7 +21,7 @@
   --color-gold: #fbbf24;
   --color-silver: #94a3b8;
   --color-bronze: #d97706;
-  --color-dark-gray: #a5a5c0;
+  --color-gray: #a5a5c0;
   --color-midnight-blue: #0c0c1e;
 
   --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
@@ -38,7 +38,8 @@ html {
 }
 
 :root {
-  --ch-cyan: 6 182 212;
+  --rgb-primary: 6 182 212;
+  --rgb-secondary: 186 127 217;
 
   background: var(--color-bg-primary);
   color-scheme: dark;
