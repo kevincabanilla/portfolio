@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { navVariants } from "@/animations";
 import { NavItemEnum, type NavBarProps, type NavItem } from "@/models";
 import { NavButton } from "@/components/common/buttons";
+import { Data, Helper } from "@/utils";
 
 export default function NavBar({
   scrolledDown,
@@ -15,6 +16,9 @@ export default function NavBar({
   onNavigate,
   onToggleMenu,
 }: NavBarProps): JSX.Element {
+  const { fullName } = Data.getPersonalData();
+  const initials = Helper.getInitials(fullName);
+
   return (
     <motion.nav
       className={clsx(
@@ -33,7 +37,7 @@ export default function NavBar({
           aria-label="Scroll to top"
           className="text-[20px] font-bold tracking-wider font-mono cursor-pointer bg-transparent border-0 text-primary text-glow-primary"
         >
-          {"<KC />"}
+          {`<${initials} />`}
         </button>
 
         {/* Nav links */}

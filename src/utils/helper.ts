@@ -1,3 +1,11 @@
+export const getInitials = (value: string): string => {
+  return value
+    .split(" ")
+    .map((s) => s.charAt(0))
+    .join("")
+    .toUpperCase();
+};
+
 export const scrollToId = (id: string) => {
   const el = document.querySelector(`#${id}`);
   if (el) {
