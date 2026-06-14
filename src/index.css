@@ -29,6 +29,8 @@
   --color-gray: #a5a5c0;
   --color-midnight-blue: #0c0c1e;
 
+  --color-avatar-inner: #12122a;
+  --color-avatar-outer: #0a0a14;
 
   --shadow-nav-elevated:
     0 10px 40px rgb(0 0 0 / 30%), inset 0 -1px 0 rgb(255 255 255 / 4%);
@@ -42,6 +44,8 @@ html {
 :root {
   --rgb-primary: 6 182 212;
   --rgb-secondary: 186 127 217;
+  --rgb-avatar-inner: 18 18 42;
+  --rgb-avatar-outer: 10 10 20;
 
   background: var(--color-bg-primary);
   color-scheme: dark;
