@@ -58,7 +58,7 @@ export default function FooterContent({
         <span className="text-primary/80 text-sm text-center">
           &copy; {new Date().getFullYear()} {fullName}
         </span>
-        <span className="font-mono text-primary/40 text-[10px] text-center">
+        <span className="hidden md:block font-mono text-primary/40 text-[10px] text-center">
           Press 0-6 to navigate sections &middot; j/k to scroll
         </span>
       </motion.div>
