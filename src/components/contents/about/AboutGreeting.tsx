@@ -8,28 +8,23 @@ export default function AboutGreeting({ text }: { text: string }) {
     margin: "0px 0px -80px 0px",
   });
 
-  const chars = [...text].map((char, index) => ({
-    char,
-    id: `${char}-${index}`,
-  }));
-
   return (
     <motion.span
       ref={ref}
       className="inline-block text-white font-bold mb-4 leading-tight text-xl md:text-[28px]"
       aria-label={text}
     >
-      {chars.map(({ char, id }, i) => {
+      {[...text].map((char, i) => {
         if (char === " ") {
           return (
-            <span key={id} className="inline-block">
+            <span key={`${char}-${i}`} className="inline-block">
               &nbsp;
             </span>
           );
         }
         return (
           <motion.span
-            key={id}
+            key={`${char}-${i}`}
             className="inline-block"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
