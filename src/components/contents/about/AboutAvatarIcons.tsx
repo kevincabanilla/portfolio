@@ -68,7 +68,8 @@ export default function AboutAvatarIcons({
   const avatarCenter = avatarSize / 2;
 
   return orbitItems.map(({ Icon, iconClass }, idx) => {
-    const angle = baseDistance * idx;
+    const direction = 90;
+    const angle = baseDistance * idx - direction;
     const delay = idx * 0.5;
     const rad = (angle * Math.PI) / 180;
     const x = avatarCenter + orbitRadius * Math.cos(rad) - 18;
