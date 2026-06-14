@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import clsx from "clsx";
 import { fadeInUp, lineGrow, sectionReveal } from "@/animations";
-import RevealTextOnScroll from "../ui/RevealTextOnScroll";
+import RevealTextOnScroll from "./RevealTextOnScroll";
 
 export default function PageSection({
   id,
