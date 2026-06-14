@@ -33,7 +33,7 @@ export default function Navigation(): JSX.Element {
       },
       {
         threshold: [0, 0.5, 1],
-        rootMargin: "-25% 0px -50% 0px",
+        rootMargin: "-30% 0px -60% 0px",
       },
     );
 
