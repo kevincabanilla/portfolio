@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:
+    "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+
   --color-bg-primary: #151624;
   --color-bg-secondary: #26282f;
   --color-bg-accent: #515661;
 
   --color-primary: #06b6d4;
-  --color-secondary: #BA7FD9;
+  --color-secondary: #ba7fd9;
   --color-muted: #515661;
 
   --color-white: #eeeef5;
@@ -25,9 +29,6 @@
   --color-gray: #a5a5c0;
   --color-midnight-blue: #0c0c1e;
 
-  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono:
-    "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
 
   --shadow-nav-elevated:
     0 10px 40px rgb(0 0 0 / 30%), inset 0 -1px 0 rgb(255 255 255 / 4%);
@@ -71,16 +72,13 @@ html {
   background-size: 60px 60px;
 }
 
+/* ===== Gradient Text ===== */
+@utility gradient-text {
+  @apply bg-linear-to-br from-cyan-500 to-purple-500 bg-clip-text text-transparent;
+}
+
 @utility gradient-text-vivid {
-  background: linear-gradient(
-    135deg,
-    var(--color-cyan),
-    var(--color-purple),
-    var(--color-pink)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  @apply bg-linear-to-br from-cyan-300 via-purple-500 to-pink-700 bg-clip-text text-transparent;
 }
 
 /* @utility btn-primary {
