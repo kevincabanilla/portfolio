@@ -8,18 +8,40 @@ import {
   Braces,
   Database,
   GitBranch,
+  Bot,
+  Container,
 } from "lucide-react";
 
 const orbitItems: {
   Icon: LucideIcon;
   iconClass: string;
 }[] = [
-  { Icon: Cloud, iconClass: "text-cyan bg-cyan/5 border-cyan/10" },
-  { Icon: Terminal, iconClass: "text-green bg-green/5 border-green/10" },
-  { Icon: Braces, iconClass: "text-purple bg-purple/5 border-purple/10" },
-  { Icon: Database, iconClass: "text-amber bg-amber/5 border-amber/10" },
-  { Icon: GitBranch, iconClass: "text-pink bg-pink/5 border-pink/10" },
-  { Icon: Code2, iconClass: "text-indigo bg-indigo/5 border-indigo/10" },
+  {
+    Icon: Braces,
+    iconClass: "text-purple-400 bg-purple-400/5 border-purple-400/10",
+  },
+  {
+    Icon: Code2,
+    iconClass: "text-emerald-500 bg-emerald-500/5 border-emerald-500/10",
+  },
+  {
+    Icon: Database,
+    iconClass: "text-amber-300 bg-amber-300/5 border-amber-300/10",
+  },
+  {
+    Icon: GitBranch,
+    iconClass: "text-pink-500 bg-pink-500/5 border-pink-500/10",
+  },
+  {
+    Icon: Container,
+    iconClass: "text-blue-500 bg-blue-500/5 border-blue-500/10",
+  },
+  {
+    Icon: Terminal,
+    iconClass: "text-lime-400 bg-lime-400/5 border-lime-400/10",
+  },
+  { Icon: Cloud, iconClass: "text-cyan-500 bg-cyan-500/5 border-cyan-500/10" },
+  { Icon: Bot, iconClass: "text-rose-600 bg-rose-600/5 border-rose-600/10" },
 ];
 
 const floatVariant = (delay: number) => ({
