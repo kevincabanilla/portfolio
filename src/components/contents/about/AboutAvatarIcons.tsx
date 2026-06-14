@@ -95,7 +95,7 @@ export default function AboutAvatarIcons({
         }}
         transition={{
           duration: 0.7,
-          delay: delay * 0.6,
+          delay: delay * 0.4,
         }}
       >
         <Icon size={iconSize} />
