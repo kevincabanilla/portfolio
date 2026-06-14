@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Data, Helper } from "@/utils";
 import { fadeInLeft, fadeInRight, staggerContainer } from "@/animations";
-import PageSection from "../common/section/PageSection";
+import PageSection from "../common/ui/PageSection";
 import TerminalBadge from "../common/ui/TerminalBadge";
 import AboutAvatar from "../contents/about/AboutAvatar";
 import AboutGreeting from "../contents/about/AboutGreeting";
