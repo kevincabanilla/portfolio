@@ -35,7 +35,5 @@ export interface SocialProfile {
 }
 
 export interface SiteConfig {
-  counterWorkspace: string;
-  counterApiHandle: string;
   techStacks: string[];
 }

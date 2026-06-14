@@ -63,8 +63,6 @@
   "currentTechs": ["React", "Python"],
   "resumeUrl": "https://github.com/kevincabanilla",
   "site": {
-    "counterWorkspace": "kevin-cabanilla",
-    "counterApiHandle": "kbc-portfolio-visits/up",
     "techStacks": ["React 19", "Vite 8", "Tailwind CSS 4", "Three.js", "Motion"]
   }
 }
