@@ -3,13 +3,11 @@ import { ICON_MAP } from "@/utils";
 import { motion } from "motion/react";
 import clsx from "clsx";
 
-interface ExternalLinksProp {
-  socialProfiles: SocialProfile[];
-}
-
 export default function HeroExternalLinks({
   socialProfiles,
-}: ExternalLinksProp) {
+}: {
+  socialProfiles: SocialProfile[];
+}) {
   const content = socialProfiles.map((profile) => {
     const IconComponent = ICON_MAP[profile.icon];
     if (!IconComponent) return null;

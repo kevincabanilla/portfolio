@@ -1,18 +1,18 @@
-import { type JSX, useState, useMemo, useEffect } from "react";
+import { type JSX, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Data, Helper } from "@/utils";
 import { NavItemEnum } from "@/models";
 import { staggerContainer, staggerItem } from "@/animations";
+import { AppButton, AppButtonLink } from "@/components/common/buttons";
 import TerminalBadge from "@/components/common/ui/TerminalBadge";
 import HeroExternalLinks from "./HeroExternalLinks";
-import { AppButton, AppButtonLink } from "@/components/common/buttons";
 import HeroCurrentTechs from "./HeroCurrentTechs";
 
 export default function HeroContent(): JSX.Element {
   const [roleIndex, setRoleIndex] = useState(0);
 
   const { fullName, title, roles, resumeUrl, currentTechs, socialProfiles } =
-    useMemo(() => Data.getPersonalData(), []);
+    Data.getPersonalData();
 
   useEffect(() => {
     const interval = setInterval(() => {
