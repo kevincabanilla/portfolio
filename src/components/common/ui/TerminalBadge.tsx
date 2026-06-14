@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type JSX } from "react";
 import { motion, useInView } from "motion/react";
 import clsx from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
+import { LiveIndicator } from "../indicators";
 
 const terminalBadgeStyles = cva(
   [
@@ -75,18 +76,7 @@ export default function TerminalBadge({
       {...props}
     >
       {/* Live indicator */}
-      <motion.span
-        className="w-2 h-2 rounded-full bg-green-500"
-        animate={{
-          opacity: [0.4, 1, 0.4],
-          scale: [1, 1.15, 1],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <LiveIndicator active />
 
       {children}
 

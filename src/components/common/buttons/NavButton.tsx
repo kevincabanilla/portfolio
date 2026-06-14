@@ -1,6 +1,7 @@
 import React, { type JSX } from "react";
 import clsx from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
+import { LiveIndicator } from "../indicators";
 
 const navButtonStyles = cva(
   [
@@ -39,18 +40,7 @@ export default function NavButton({
   return (
     <button {...props} className={clsx(navButtonStyles({ active }), className)}>
       {/* Active dot */}
-      {active && (
-        <span
-          className={clsx(
-            "w-1.25 h-1.25",
-            "rounded-full",
-            "bg-secondary",
-            "shrink-0",
-            "transition-shadow",
-            "duration-150",
-          )}
-        />
-      )}
+      {active && <LiveIndicator size="small" color="secondary" />}
       {children}
     </button>
   );
