@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-const SCROLL_THRESHOLD_PX = 10;
-
-export default function useScrolledDown(
-  threshold: number = SCROLL_THRESHOLD_PX,
-): boolean {
+export default function useScrolledDown(threshold = 10): boolean {
   const [scrolledDown, setScrolledDown] = useState<boolean>(false);
 
   useEffect(() => {
@@ -12,7 +8,7 @@ export default function useScrolledDown(
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const shouldBeVisible = window.scrollY > SCROLL_THRESHOLD_PX;
+          const shouldBeVisible = window.scrollY > threshold;
           setScrolledDown((prev) =>
             prev !== shouldBeVisible ? shouldBeVisible : prev,
           );
