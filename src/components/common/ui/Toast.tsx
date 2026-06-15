@@ -85,6 +85,7 @@ export default function Toast({
   onClose,
 }: ToastProps) {
   const Icon = iconMap[type || "info"];
+  const offSet = getOffset(horizontal, vertical);
 
   return createPortal(
     <AnimatePresence>
@@ -92,9 +93,22 @@ export default function Toast({
         <motion.div
           role="status"
           aria-live={type === "error" ? "assertive" : "polite"}
-          initial={{ opacity: 0, y: 40, x: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, x: 20, scale: 0.95 }}
+          initial={{
+            ...offSet,
+            opacity: 0,
+            scale: 0.95,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            x: 0,
+            scale: 1,
+          }}
+          exit={{
+            ...offSet,
+            opacity: 0,
+            scale: 0.95,
+          }}
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
           className={clsx(
             toastStyles({
@@ -129,3 +143,11 @@ export default function Toast({
     document.body,
   );
 }
+
+const getOffset = (
+  x: VariantProps<typeof toastStyles>["horizontal"],
+  y: VariantProps<typeof toastStyles>["vertical"],
+) => ({
+  x: x === "start" ? -20 : x === "end" ? 20 : 0,
+  y: y === "start" ? -20 : y === "end" ? 20 : 0,
+});
