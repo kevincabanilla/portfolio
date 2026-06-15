@@ -66,7 +66,7 @@ export default function SystemStatus() {
       <div className="w-px h-3 bg-white/15" />
 
       <div className="flex items-center justify-center gap-1">
-        <Eye size={12} color="var(--color-cyan)" />
+        {visitors > 0 && <Eye size={12} color="var(--color-cyan)" />}
         <span className="font-mono text-[11px] text-cyan font-semibold">
           {visitors > 0 ? visitors.toLocaleString() : "LIVE"}
         </span>
