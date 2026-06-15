@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { Data } from "@/utils";
 import FooterContent from "./FooterContent";
 import { staggerContainer } from "@/animations";
+import { Toast } from "@/components/common/ui";
 
 const KONAMI_CODE: string[] = [
   "ArrowUp",
@@ -64,7 +65,17 @@ export default function Footer() {
         />
 
         {/* Easter egg */}
-        {showEasterEgg && (
+        <Toast
+          visible={showEasterEgg}
+          type="success"
+          vertical="end"
+          onClose={() => setShowEasterEgg(false)}
+        >
+          <span className="font-mono text-xs text-primary text-center">
+            Congratulations - You found the secret! Thank you for exploring.
+          </span>
+        </Toast>
+        {/* {showEasterEgg && (
           <motion.div
             className="py-2 px-4 font-mono text-xs text-primary text-center border border-primary/30 rounded-xl bg-linear-to-br from-primary/15 to-secondary/20"
             initial={{ opacity: 0, scale: 0.5, y: 20 }}
@@ -72,7 +83,7 @@ export default function Footer() {
           >
             Congratulations - You found the secret! Thank you for exploring.
           </motion.div>
-        )}
+        )} */}
       </motion.div>
     </footer>
   );
