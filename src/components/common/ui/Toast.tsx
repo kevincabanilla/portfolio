@@ -39,12 +39,12 @@ const toastStyles = cva(
           "shadow-[0_10px_40px_rgba(0,0,0,0.4),0_0_20px_color-mix(in_oklab,var(--color-rose-500)_50%,transparent)]",
         ],
       },
-      x: {
+      horizontal: {
         start: "left-8",
         center: "left-1/2 -translate-x-1/2",
         end: "right-8",
       },
-      y: {
+      vertical: {
         start: "top-8",
         center: "top-1/2 -translate-y-1/2",
         end: "bottom-8",
@@ -52,8 +52,8 @@ const toastStyles = cva(
     },
     defaultVariants: {
       type: "info",
-      x: "center",
-      y: "center",
+      horizontal: "center",
+      vertical: "center",
     },
   },
 );
@@ -78,6 +78,8 @@ type ToastProps = ComponentProps<typeof motion.div> &
 export default function Toast({
   className,
   type,
+  horizontal,
+  vertical,
   visible,
   children,
   onClose,
