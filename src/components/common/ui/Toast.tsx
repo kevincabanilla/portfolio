@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 const toastStyles = cva(
   [
-    "fixed bottom-8 right-8 z-300",
+    "fixed z-300",
     "flex items-center gap-3",
     "py-3 px-5 bg-navy/70 backdrop-blur-lg",
     "border rounded-xl min-w-60 max-w-90",
@@ -39,9 +39,21 @@ const toastStyles = cva(
           "shadow-[0_10px_40px_rgba(0,0,0,0.4),0_0_20px_color-mix(in_oklab,var(--color-rose-500)_50%,transparent)]",
         ],
       },
+      x: {
+        start: "left-8",
+        center: "left-1/2 -translate-x-1/2",
+        end: "right-8",
+      },
+      y: {
+        start: "top-8",
+        center: "top-1/2 -translate-y-1/2",
+        end: "bottom-8",
+      },
     },
     defaultVariants: {
       type: "info",
+      x: "center",
+      y: "center",
     },
   },
 );
@@ -85,9 +97,7 @@ export default function Toast({
           className={clsx(toastStyles({ type }), className)}
         >
           {<Icon size={20} className="shrink-0" />}
-          <span className="text-sm font-medium flex-1">
-            {children}
-          </span>
+          <span className="text-sm font-medium flex-1">{children}</span>
 
           {onClose && (
             <button
