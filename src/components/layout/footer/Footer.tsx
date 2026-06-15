@@ -25,8 +25,11 @@ export default function Footer() {
   const konamiIdx = useRef(0);
 
   useEffect(() => {
+    let resetTimer: number;
     const handleKey = (e: KeyboardEvent) => {
       if (showEasterEgg) return;
+
+      clearTimeout(resetTimer);
 
       const key = e.key.toLowerCase();
 
@@ -40,6 +43,10 @@ export default function Footer() {
       if (konamiIdx.current === KONAMI_CODE.length) {
         setShowEasterEgg(true);
         konamiIdx.current = 0;
+      } else {
+        resetTimer = setTimeout(() => {
+          konamiIdx.current = 0;
+        }, 1000);
       }
     };
 
