@@ -96,7 +96,14 @@ export default function Toast({
           animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, x: 20, scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
-          className={clsx(toastStyles({ type }), className)}
+          className={clsx(
+            toastStyles({
+              type,
+              horizontal,
+              vertical,
+            }),
+            className,
+          )}
         >
           {<Icon size={20} className="shrink-0" />}
           <span className="text-sm font-medium flex-1">{children}</span>
