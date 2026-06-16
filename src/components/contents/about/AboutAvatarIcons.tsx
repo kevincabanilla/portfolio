@@ -8,8 +8,6 @@ import {
   Braces,
   Database,
   GitBranch,
-  Bot,
-  Container,
 } from "lucide-react";
 
 const orbitItems: {
