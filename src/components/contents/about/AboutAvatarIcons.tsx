@@ -32,16 +32,16 @@ const orbitItems: {
     Icon: GitBranch,
     iconClass: "text-pink-500 bg-pink-500/5 border-pink-500/10",
   },
-  {
-    Icon: Container,
-    iconClass: "text-blue-500 bg-blue-500/5 border-blue-500/10",
-  },
+  // {
+  //   Icon: Container,
+  //   iconClass: "text-blue-500 bg-blue-500/5 border-blue-500/10",
+  // },
   {
     Icon: Terminal,
     iconClass: "text-lime-400 bg-lime-400/5 border-lime-400/10",
   },
   { Icon: Cloud, iconClass: "text-cyan-500 bg-cyan-500/5 border-cyan-500/10" },
-  { Icon: Bot, iconClass: "text-rose-600 bg-rose-600/5 border-rose-600/10" },
+  // { Icon: Bot, iconClass: "text-rose-600 bg-rose-600/5 border-rose-600/10" },
 ];
 
 const floatVariant = (delay: number) => ({
