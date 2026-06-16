@@ -35,7 +35,11 @@ export default function NavBar({
         <button
           onClick={() => onNavigate(NavItemEnum.Hero)}
           aria-label="Scroll to top"
-          className="text-[20px] font-bold tracking-wider font-mono cursor-pointer bg-transparent border-0 text-primary text-glow-primary"
+          className={clsx(
+            "text-[20px] font-bold font-mono cursor-pointer",
+            "bg-transparent border-0 text-primary tracking-wider",
+            activeSection == NavItemEnum.Hero ? "text-glow-primary" : "",
+          )}
         >
           {`<${initials} />`}
         </button>
