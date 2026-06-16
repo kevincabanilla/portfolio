@@ -8,7 +8,7 @@ export default function HeroScrollDown(): JSX.Element {
   return (
     <motion.button
       onClick={() => Helper.scrollToId(NavItemEnum.About)}
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted hover:text-cyan transition-colors cursor-pointer"
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted hover:text-secondary transition-colors cursor-pointer"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 2 }}
