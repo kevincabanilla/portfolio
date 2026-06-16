@@ -86,7 +86,7 @@ const DesktopNav = ({
   onNavigate,
 }: DesktopNavProps): JSX.Element => {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 h-full">
       {navItems.map((section) => {
         const isActive = activeSection === section.id;
 
