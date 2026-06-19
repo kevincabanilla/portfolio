@@ -10,3 +10,14 @@ export interface ContactOption {
   link: string;
   message: string;
 }
+
+export interface EmailFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface EmailFormStatus {
+  type: string;
+  message: string;
+}
