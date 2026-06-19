@@ -9,6 +9,9 @@ interface ImportMetaEnv {
   readonly VITE_APP_DESCRIPTION: string;
   readonly VITE_COUNTER_API_WORKSPACE: string;
   readonly VITE_COUNTER_API_HANDLE: string;
+  readonly VITE_EMAILJS_SERVICE_ID: string;
+  readonly VITE_EMAILJS_TEMPLATE_ID: string;
+  readonly VITE_EMAILJS_PUBLIC_KEY: string;
 }
 
 interface ImportMeta {

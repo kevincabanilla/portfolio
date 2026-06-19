@@ -9,3 +9,8 @@ import contactData from "../../data/contact.json";
 
 export const getPersonalData = (): PersonalInfo => personalData;
 export const getContactData = (): ContactInfo => contactData;
+export const getEmailJSConfig = () => ({
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+});
