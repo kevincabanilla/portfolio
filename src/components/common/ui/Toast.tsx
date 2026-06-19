@@ -1,4 +1,4 @@
-import { type ComponentProps } from "react";
+import { useEffect, type ComponentProps } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -71,6 +71,7 @@ const iconMap: Record<
 type ToastProps = ComponentProps<typeof motion.div> &
   VariantProps<typeof toastStyles> & {
     visible: boolean;
+    timeout?: number;
     children?: React.ReactNode;
     onClose?: () => void;
   };
@@ -81,11 +82,18 @@ export default function Toast({
   horizontal,
   vertical,
   visible,
+  timeout,
   children,
   onClose,
 }: ToastProps) {
   const Icon = iconMap[type || "info"];
   const offSet = getOffset(horizontal, vertical);
+
+  useEffect(() => {
+    if (!timeout || !onClose) return;
+    const timer = setTimeout(onClose, timeout);
+    return () => clearTimeout(timer);
+  }, [visible, timeout, onClose]);
 
   return createPortal(
     <AnimatePresence>
