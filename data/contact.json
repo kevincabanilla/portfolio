@@ -1,5 +1,5 @@
 {
-  "contact_options": [
+  "contactOptions": [
     {
       "id": 1,
       "icon": "MdOutlineEmail",
@@ -40,11 +40,5 @@
       "link": "https://github.com/kevincabanilla",
       "message": "Follow"
     }
-  ],
-  "email_config": {
-    "service_id": "",
-    "template_id": "",
-    "public_key": "",
-    "validation_pattern": "/^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$/"
-  }
+  ]
 }
