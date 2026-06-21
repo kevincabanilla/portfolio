@@ -93,7 +93,7 @@ export default function Toast({
     if (!timeout || !onClose) return;
     const timer = setTimeout(onClose, timeout);
     return () => clearTimeout(timer);
-  }, [visible, timeout, onClose]);
+  }, [visible, timeout, children, onClose]);
 
   return createPortal(
     <AnimatePresence>
