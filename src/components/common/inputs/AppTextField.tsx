@@ -17,6 +17,7 @@ export default function AppTextField({
   label,
   className,
   labelClassName,
+  children,
   ...props
 }: AppTextFieldProps) {
   return (
@@ -27,7 +28,8 @@ export default function AppTextField({
       >
         {label}
       </label>
-      <input className={clsx(appInputFieldStyles(), className)} {...props} />
+      <input type="text" className={clsx(appInputFieldStyles(), className)} {...props} />
+      {children}
     </>
   );
 }

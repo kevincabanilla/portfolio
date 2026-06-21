@@ -17,6 +17,7 @@ export default function AppTextArea({
   label,
   className,
   labelClassName,
+  children,
   ...props
 }: AppTextAreaProps) {
   return (
@@ -28,6 +29,7 @@ export default function AppTextArea({
         {label}
       </label>
       <textarea className={clsx(appInputFieldStyles(), className)} {...props} />
+      {children}
     </>
   );
 }
