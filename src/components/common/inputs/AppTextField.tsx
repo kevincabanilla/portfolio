@@ -10,8 +10,7 @@ type AppTextFieldProps = React.InputHTMLAttributes<HTMLInputElement> &
   AppInputLabelVariant &
   AppInputFieldVariant & {
     label: string;
-    className: string;
-    labelClassName: string;
+    labelClassName?: string;
   };
 
 export default function AppTextField({

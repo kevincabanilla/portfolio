@@ -10,8 +10,7 @@ type AppTextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> &
   AppInputLabelVariant &
   AppInputFieldVariant & {
     label: string;
-    className: string;
-    labelClassName: string;
+    labelClassName?: string;
   };
 
 export default function AppTextArea({
