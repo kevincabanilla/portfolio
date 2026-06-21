@@ -58,8 +58,10 @@ const toastStyles = cva(
   },
 );
 
+export type ToastType = VariantProps<typeof toastStyles>["type"];
+
 const iconMap: Record<
-  NonNullable<VariantProps<typeof toastStyles>["type"]>,
+  NonNullable<ToastType>,
   LucideIcon
 > = {
   info: Info,

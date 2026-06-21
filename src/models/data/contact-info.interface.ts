@@ -1,3 +1,5 @@
+import type { ToastType } from "@/components/common/ui/Toast";
+
 export interface ContactInfo {
   contactOptions: ContactOption[];
 }
@@ -18,6 +20,6 @@ export interface EmailFormData {
 }
 
 export interface EmailFormStatus {
-  type: string;
+  type: ToastType;
   message: string;
 }
