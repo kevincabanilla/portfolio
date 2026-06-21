@@ -13,12 +13,6 @@ export interface ContactOption {
   message: string;
 }
 
-export interface EmailFormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
 export interface EmailFormStatus {
   type: ToastType;
   message: string;
