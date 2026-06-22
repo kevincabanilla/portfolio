@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import type { ToastType } from "@/components/common/ui/Toast";
 
 export interface ContactInfo {
@@ -15,5 +16,5 @@ export interface ContactOption {
 
 export interface EmailFormStatus {
   type: ToastType;
-  message: string;
+  message: string | JSX.Element;
 }
