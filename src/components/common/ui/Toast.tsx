@@ -60,10 +60,7 @@ const toastStyles = cva(
 
 export type ToastType = VariantProps<typeof toastStyles>["type"];
 
-const iconMap: Record<
-  NonNullable<ToastType>,
-  LucideIcon
-> = {
+const iconMap: Record<NonNullable<ToastType>, LucideIcon> = {
   info: Info,
   success: CheckCircle,
   warning: TriangleAlert,
@@ -95,7 +92,7 @@ export default function Toast({
     if (!timeout || !onClose) return;
     const timer = setTimeout(onClose, timeout);
     return () => clearTimeout(timer);
-  }, [visible, timeout, children, onClose]);
+  }, [visible, timeout, children, type, onClose]);
 
   return createPortal(
     <AnimatePresence>
