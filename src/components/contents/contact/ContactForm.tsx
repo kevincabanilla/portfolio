@@ -1,5 +1,10 @@
 import { motion } from "motion/react";
-import { useForm } from "react-hook-form";
+import {
+  useForm,
+  type SubmitHandler,
+  type SubmitErrorHandler,
+  type FieldErrors,
+} from "react-hook-form";
 import { z as zod } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
@@ -15,18 +20,21 @@ const emailFormSchema = zod.object({
   website: zod.string().max(0, "Spam detected"),
 });
 
-type EmailFormData = zod.infer<typeof emailFormSchema>;
+export type EmailFormData = zod.infer<typeof emailFormSchema>;
 
 export default function ContactForm({
   isLoading,
   onSubmit,
+  onError,
 }: {
   isLoading: boolean;
-  onSubmit: (data: EmailFormData) => void;
+  onSubmit: (data: EmailFormData, onComplete: () => void) => void;
+  onError: (errors: FieldErrors<EmailFormData>) => void;
 }) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<EmailFormData>({
     resolver: zodResolver(emailFormSchema),
@@ -38,45 +46,61 @@ export default function ContactForm({
     },
   });
 
+  const onValidSubmit: SubmitHandler<EmailFormData> = (data) => {
+    onSubmit(data, reset);
+  };
+
+  const onInvalidSubmit: SubmitErrorHandler<EmailFormData> = (data) => {
+    onError(data);
+  };
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <AppTextField
-        required
-        id="name"
-        label="Name"
-        placeholder="John Doe"
-        {...register("name")}
-      >
-        {errors.name && <p>{errors.name.message}</p>}
-      </AppTextField>
+    <form onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}>
+      <div className="mb-4">
+        <AppTextField
+          id="name"
+          label="Name"
+          placeholder="John Doe"
+          {...register("name")}
+        >
+          {errors.name && (
+            <p className="text-xs text-rose-600">{errors.name.message}</p>
+          )}
+        </AppTextField>
+      </div>
 
-      <AppTextField
-        required
-        id="email"
-        label="Email"
-        placeholder="john.doe@example.com"
-        type="email"
-        {...register("email")}
-      >
-        {errors.email && <p>{errors.email.message}</p>}
-      </AppTextField>
+      <div className="mb-4">
+        <AppTextField
+          id="email"
+          label="Email"
+          placeholder="john.doe@example.com"
+          type="email"
+          {...register("email")}
+        >
+          {errors.email && (
+            <p className="text-xs text-rose-600">{errors.email.message}</p>
+          )}
+        </AppTextField>
+      </div>
 
-      <AppTextArea
-        required
-        rows={5}
-        id="message"
-        label="Message"
-        placeholder="Tell me about your project or idea..."
-        className="resize-none"
-        {...register("message")}
-      >
-        {errors.message && <p>{errors.message.message}</p>}
-      </AppTextArea>
+      <div className="mb-4">
+        <AppTextArea
+          rows={5}
+          id="message"
+          label="Message"
+          placeholder="Tell me about your project or idea..."
+          className="resize-none"
+          {...register("message")}
+        >
+          {errors.message && (
+            <p className="text-xs text-rose-600">{errors.message.message}</p>
+          )}
+        </AppTextArea>
+      </div>
 
       {/* Honeypot field */}
       <div aria-hidden="true" className="absolute hidden -left-2499.75">
         <AppTextField
-          required
           tabIndex={-1}
           id="website"
           label="Website"
