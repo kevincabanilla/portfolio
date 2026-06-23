@@ -8,7 +8,6 @@ const appButtonStyles = cva(
     "text-cyan",
     "font-semibold",
     "rounded-xl",
-    "px-8 py-3",
     "cursor-pointer",
     "backdrop-blur-md",
     "transition-all duration-300 ease-out",
@@ -42,6 +41,7 @@ const appButtonStyles = cva(
       },
 
       size: {
+        xs: "px-2 py-1 text-xs",
         sm: "px-4 py-2 text-sm",
         md: "px-8 py-3",
         lg: "px-10 py-4 text-lg",
