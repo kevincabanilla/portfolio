@@ -8,7 +8,6 @@ const appButtonStyles = cva(
     "text-cyan",
     "font-semibold",
     "rounded-xl",
-    "cursor-pointer",
     "backdrop-blur-md",
     "transition-all duration-300 ease-out",
     "hover:-translate-y-px",
@@ -46,11 +45,17 @@ const appButtonStyles = cva(
         md: "px-8 py-3",
         lg: "px-10 py-4 text-lg",
       },
+
+      disabled: {
+        true: "cursor-not-allowed",
+        false: "cursor-pointer",
+      },
     },
 
     defaultVariants: {
       variant: "primary",
       size: "sm",
+      disabled: false,
     },
   },
 );
@@ -68,16 +73,18 @@ export function AppButton({
   children,
   whileHover,
   whileTap,
+  disabled,
   ...props
 }: AppButtonProps) {
-  const styles = clsx(appButtonStyles({ variant, size }), className);
+  const styles = clsx(appButtonStyles({ variant, size, disabled }), className);
 
   return (
     <motion.button
-      {...props}
+      className={styles}
+      disabled={disabled}
       whileHover={whileHover ?? { scale: 1.04 }}
       whileTap={whileTap ?? { scale: 0.98 }}
-      className={styles}
+      {...props}
     >
       {children}
     </motion.button>
@@ -99,10 +106,10 @@ export function AppButtonLink({
 
   return (
     <motion.a
-      {...props}
+      className={styles}
       whileHover={whileHover ?? { scale: 1.04 }}
       whileTap={whileTap ?? { scale: 0.98 }}
-      className={styles}
+      {...props}
     >
       {children}
     </motion.a>
