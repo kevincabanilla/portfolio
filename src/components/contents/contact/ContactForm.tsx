@@ -136,10 +136,10 @@ export default function ContactForm({
             }}
           />
         ) : (
-          <span>
+          <>
             <Send size={16} />
-            Send Message
-          </span>
+            <span>Send Message</span>
+          </>
         )}
       </AppButton>
     </form>
