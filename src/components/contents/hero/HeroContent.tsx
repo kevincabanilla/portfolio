@@ -68,10 +68,20 @@ export default function HeroContent(): JSX.Element {
         className="flex flex-wrap items-center justify-center gap-4 mt-4"
         variants={staggerItem}
       >
-        <AppButton size="md" onClick={() => Helper.scrollToId(NavItemEnum.Projects)}>
+        <AppButton
+          rounded
+          size="md"
+          onClick={() => Helper.scrollToId(NavItemEnum.Projects)}
+        >
           View Projects
         </AppButton>
-        <AppButtonLink size="md" variant="outline" href={resumeUrl} download>
+        <AppButtonLink
+          rounded
+          size="md"
+          variant="outline"
+          href={resumeUrl}
+          download
+        >
           Download Resume
         </AppButtonLink>
       </motion.div>

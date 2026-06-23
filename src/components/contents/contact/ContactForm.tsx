@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import {
   useForm,
   type SubmitHandler,
@@ -113,34 +112,17 @@ export default function ContactForm({
       </div>
 
       <AppButton
+        rounded
         type="submit"
+        variant="tonal"
+        loadingMessage="Sending..."
         disabled={isLoading}
+        isLoading={isLoading}
         aria-label={isLoading ? "Sending..." : "Send message"}
-        className={clsx(
-          "w-full flex items-center justify-center gap-2",
-          isLoading
-            ? "opacity-60 cursor-not-allowed"
-            : "opacity-100 cursor-pointer",
-        )}
+        className={clsx("flex flex-row items-center justify-center gap-2")}
       >
-        {isLoading ? (
-          <motion.div
-            role="status"
-            aria-label="Sending message"
-            className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-            animate={{ rotate: 360 }}
-            transition={{
-              repeat: Infinity,
-              ease: "linear",
-              duration: 0.7,
-            }}
-          />
-        ) : (
-          <>
-            <Send size={16} />
-            <span>Send Message</span>
-          </>
-        )}
+        <Send size={16} />
+        <span>Send Message</span>
       </AppButton>
     </form>
   );

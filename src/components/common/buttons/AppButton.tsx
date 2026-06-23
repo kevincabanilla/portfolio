@@ -1,4 +1,4 @@
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps } from "react";
 import { motion } from "motion/react";
 import clsx from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
@@ -7,36 +7,23 @@ const appButtonStyles = cva(
   [
     "text-cyan",
     "font-semibold",
-    "rounded-xl",
     "backdrop-blur-md",
     "transition-all duration-300 ease-out",
-    "hover:-translate-y-px",
-    "hover:text-secondary",
   ],
   {
     variants: {
       variant: {
-        primary: [
+        default: [
           "bg-[#06202d]",
           "border border-cyan/30",
           "ease-in-out",
-          "backdrop-blur-md",
           "transition-[background,border-color,box-shadow,color,transform]",
           "shadow-[0_4px_20px_rgb(var(--rgb-primary)/0.15),inset_0_1px_0_rgb(var(--rgb-primary)/0.1)]",
-          "hover:bg-[#063241]",
-          "hover:border-secondary/70",
-          "hover:shadow-[0_6px_30px_rgb(var(--rgb-secondary)/0.25),0_0_0_1px_rgb(var(--rgb-secondary)/0.15),inset_0_1px_0_rgb(var(--rgb-secondary)/0.15)]",
         ],
-
-        outline: [
-          "bg-transparent",
-          "border border-cyan/60",
-          "hover:bg-cyan/8",
-          "hover:border-secondary",
-          "hover:shadow-[0_0_25px_rgb(var(--rgb-secondary)/0.1)]",
-        ],
-
-        ghost: ["bg-transparent", "hover:bg-cyan/8"],
+        outline: "bg-transparent border border-cyan/60",
+        tonal: "bg-cyan/5",
+        ghost: "bg-transparent",
+        plain: "",
       },
 
       size: {
@@ -46,47 +33,106 @@ const appButtonStyles = cva(
         lg: "px-10 py-4 text-lg",
       },
 
+      rounded: {
+        true: "rounded-xl",
+        false: "",
+      },
+
       disabled: {
-        true: "cursor-not-allowed",
-        false: "cursor-pointer",
+        true: "opacity-60 cursor-not-allowed",
+        false: "opacity-100 cursor-pointer",
       },
     },
 
     defaultVariants: {
-      variant: "primary",
+      variant: "default",
       size: "sm",
-      disabled: false,
     },
+
+    compoundVariants: [
+      {
+        disabled: false,
+        className: ["hover:-translate-y-px", "hover:text-secondary"],
+      },
+      {
+        variant: "default",
+        disabled: false,
+        className: [
+          "hover:bg-[#063241]",
+          "hover:border-secondary/70",
+          "hover:shadow-[0_6px_30px_rgb(var(--rgb-secondary)/0.25),0_0_0_1px_rgb(var(--rgb-secondary)/0.15),inset_0_1px_0_rgb(var(--rgb-secondary)/0.15)]",
+        ],
+      },
+      {
+        variant: "outline",
+        disabled: false,
+        className: [
+          "hover:border-secondary",
+          "hover:shadow-[0_0_25px_rgb(var(--rgb-secondary)/0.1)]",
+        ],
+      },
+      {
+        variant: ["outline", "tonal", "ghost"],
+        disabled: false,
+        className: ["hover:bg-cyan/8"],
+      },
+    ],
   },
 );
 
 type BaseProps = VariantProps<typeof appButtonStyles> & {
-  children: ReactNode;
+  isLoading?: boolean;
+  loadingMessage?: string;
 };
 
 export type AppButtonProps = BaseProps & ComponentProps<typeof motion.button>;
 
 export function AppButton({
+  isLoading,
+  loadingMessage,
   className,
   variant,
   size,
+  rounded,
   children,
   whileHover,
   whileTap,
   disabled,
   ...props
 }: AppButtonProps) {
-  const styles = clsx(appButtonStyles({ variant, size, disabled }), className);
+  const styles = clsx(
+    appButtonStyles({ variant, size, rounded, disabled }),
+    className,
+  );
+
+  console.log("button disabled", disabled);
 
   return (
     <motion.button
       className={styles}
       disabled={disabled}
-      whileHover={whileHover ?? { scale: 1.04 }}
-      whileTap={whileTap ?? { scale: 0.98 }}
+      whileHover={disabled ? undefined : (whileHover ?? { scale: 1.04 })}
+      whileTap={disabled ? undefined : (whileTap ?? { scale: 0.98 })}
       {...props}
     >
-      {children}
+      {isLoading ? (
+        <>
+          <motion.div
+            role="status"
+            aria-label={loadingMessage}
+            className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 0.7,
+            }}
+          />
+          {loadingMessage && <span>{loadingMessage}</span>}
+        </>
+      ) : (
+        <>{children}</>
+      )}
     </motion.button>
   );
 }
@@ -97,12 +143,13 @@ export function AppButtonLink({
   className,
   variant,
   size,
+  rounded,
   children,
   whileHover,
   whileTap,
   ...props
 }: AppLinkProps) {
-  const styles = clsx(appButtonStyles({ variant, size }), className);
+  const styles = clsx(appButtonStyles({ variant, size, rounded }), className);
 
   return (
     <motion.a
