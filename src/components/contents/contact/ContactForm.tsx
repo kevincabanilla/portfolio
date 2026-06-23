@@ -54,7 +54,10 @@ export default function ContactForm({
   };
 
   return (
-    <form onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}>
+    <form
+      className="flex flex-col gap-4 py-5 px-4.5 md:py-8 md:px-7"
+      onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}
+    >
       <div className="mb-4">
         <AppTextField
           id="name"
