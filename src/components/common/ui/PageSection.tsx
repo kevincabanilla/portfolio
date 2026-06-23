@@ -1,41 +1,64 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import { motion } from "motion/react";
 import clsx from "clsx";
 import { fadeInUp, lineGrow, sectionReveal } from "@/animations";
 import RevealTextOnScroll from "./RevealTextOnScroll";
+import { cva, type VariantProps } from "class-variance-authority";
+
+const pageSectionStyles = cva(["px-4 py-16 md:px-6 md:py-24 scroll-mt-16"], {
+  variants: {
+    narrow: {
+      true: "max-w-240 mx-auto",
+      false: "max-w-full",
+    },
+  },
+  defaultVariants: {
+    narrow: false,
+  },
+});
+
+type PageSectionProps = ComponentProps<typeof motion.section> &
+  VariantProps<typeof pageSectionStyles> & {
+    id: string;
+    headerTitle: string;
+    headerSubtitle: string;
+    children: ReactNode;
+  };
 
 export default function PageSection({
+  narrow,
   id,
-  title,
-  subtitle,
+  headerTitle,
+  headerSubtitle,
+  className,
   children,
-}: {
-  id: string;
-  title: string;
-  subtitle: string;
-  children: ReactNode;
-}) {
+  ...props
+}: PageSectionProps) {
   return (
     <motion.section
       id={id}
-      className="px-4 py-16 md:px-6 md:py-24 scroll-mt-16"
+      className={clsx(pageSectionStyles({ narrow }), className)}
       initial="hidden"
       whileInView="visible"
       viewport={{ margin: "0px 0px -100px 0px" }}
       variants={sectionReveal}
+      {...props}
     >
-      <PageSectionHeader title={title} subtitle={subtitle} />
+      <PageSectionHeader
+        headerTitle={headerTitle}
+        headerSubtitle={headerSubtitle}
+      />
       {children}
     </motion.section>
   );
 }
 
 function PageSectionHeader({
-  title,
-  subtitle,
+  headerTitle,
+  headerSubtitle,
 }: {
-  title: string;
-  subtitle?: string;
+  headerTitle: string;
+  headerSubtitle?: string;
 }) {
   return (
     <motion.div
@@ -45,7 +68,7 @@ function PageSectionHeader({
       whileInView="visible"
       viewport={{ margin: "0px 0px -100px 0px" }}
     >
-      {subtitle && (
+      {headerSubtitle && (
         <span
           className={clsx(
             "inline-flex items-center gap-2",
@@ -56,11 +79,11 @@ function PageSectionHeader({
           )}
         >
           <span className="text-cyan-400">{">"}</span>
-          <RevealTextOnScroll text={subtitle} />
+          <RevealTextOnScroll text={headerSubtitle} />
         </span>
       )}
       <h2 className="gradient-text text-4xl font-bold tracking-tight my-3">
-        {title}
+        {headerTitle}
       </h2>
       <motion.div
         className="h-0.5 w-20 rounded-full mt-1 bg-linear-to-r from-cyan-500 to-purple-500"

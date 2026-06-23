@@ -12,7 +12,11 @@ export default function About() {
   const initials = Helper.getInitials(fullName);
 
   return (
-    <PageSection id="about" title="About Myself" subtitle="Get to know me">
+    <PageSection
+      id="about"
+      headerTitle="About Myself"
+      headerSubtitle="Get to know me"
+    >
       <div className="max-w-6xl my-0 mx-auto">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-14"

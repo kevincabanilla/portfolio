@@ -27,8 +27,8 @@ export default function Contact() {
   return (
     <PageSection
       id="contact"
-      title="Get In Touch"
-      subtitle="Let's work together"
+      headerTitle="Get In Touch"
+      headerSubtitle="Let's work together"
     >
       <motion.div
         className="max-w-4xl my-0 mx-auto grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-[2fr_3fr]"
