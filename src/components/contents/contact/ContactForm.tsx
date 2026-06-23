@@ -9,9 +9,8 @@ import { z as zod } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
 import clsx from "clsx";
-import AppTextField from "@/components/common/inputs/AppTextField";
-import AppTextArea from "@/components/common/inputs/AppTextArea";
 import { AppButton } from "@/components/common/buttons";
+import { AppTextArea, AppTextField } from "@/components/common/inputs";
 
 const emailFormSchema = zod.object({
   name: zod.string().min(1, "Name is required"),
