@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from "motion/react";
 import type { FieldErrors } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Data } from "@/utils";
-import { rotateInUp, staggerContainer } from "@/animations";
+import { rotateInUp, staggerContainer, staggerItem } from "@/animations";
 import type { EmailFormStatus } from "@/models";
 import { PageSection, Toast } from "../common/ui";
 import ContactForm, {
   type EmailFormData,
 } from "../contents/contact/ContactForm";
 import ContactSendConfirmation from "../contents/contact/ContactSendConfirmation";
+import { AppCard } from "../common/containers";
 
 export default function Contact() {
   const {
@@ -27,9 +28,22 @@ export default function Contact() {
   return (
     <PageSection
       id="contact"
-      headerTitle="Get In Touch"
-      headerSubtitle="Let's work together"
+      headerTitle="Let's Build Something Great"
+      headerSubtitle="Get In Touch"
     >
+      <motion.div
+        className="max-w-xl mb-16 mx-auto"
+        variants={staggerContainer}
+      >
+        <motion.p
+          className="text-center text-primary/60"
+          variants={staggerItem}
+        >
+          Have a project in mind or just want to say hello? I'd love to hear
+          from you.
+        </motion.p>
+      </motion.div>
+
       <motion.div
         className="max-w-4xl my-0 mx-auto grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-[2fr_3fr]"
         variants={staggerContainer}
@@ -52,17 +66,20 @@ export default function Contact() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
               >
-                <ContactForm
-                  isLoading={isLoading}
-                  onSubmit={handleFormSubmit}
-                  onError={handleFormError}
-                />
+                <AppCard>
+                  <ContactForm
+                    isLoading={isLoading}
+                    onSubmit={handleFormSubmit}
+                    onError={handleFormError}
+                  />
+                </AppCard>
               </motion.div>
             )}
           </AnimatePresence>
 
           <Toast
             vertical="start"
+            timeout={5000}
             type={formStatus.type}
             visible={isToastVisible}
             onClose={dismissToast}

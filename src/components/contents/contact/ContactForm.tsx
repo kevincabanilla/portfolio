@@ -89,7 +89,7 @@ export default function ContactForm({
           rows={5}
           id="message"
           label="Message"
-          placeholder="Tell me about your project or idea..."
+          placeholder="Tell me about your project or just say hi..."
           className="resize-none"
           {...register("message")}
         >
@@ -114,7 +114,6 @@ export default function ContactForm({
       <AppButton
         rounded
         type="submit"
-        variant="tonal"
         loadingMessage="Sending..."
         disabled={isLoading}
         isLoading={isLoading}
