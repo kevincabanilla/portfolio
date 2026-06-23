@@ -29,9 +29,12 @@
   --color-gray: #a5a5c0;
   --color-midnight-blue: #0c0c1e;
   --color-navy: #0f0f23;
+  --color-navy-light: #141430;
 
   --color-avatar-inner: #12122a;
   --color-avatar-outer: #0a0a14;
+
+  /* --spacing-section: 960px; */
 
   --shadow-nav-elevated:
     0 10px 40px rgb(0 0 0 / 30%), inset 0 -1px 0 rgb(255 255 255 / 4%);
