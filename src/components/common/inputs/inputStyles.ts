@@ -18,7 +18,7 @@ export const appInputLabelStyles = cva(
 export const appInputFieldStyles = cva(
   [
     "w-full",
-    "bg-[rgb(10 10 26 / 50%)]",
+    "bg-navy/50",
     "backdrop-blur-md",
     "border border-white/6",
     "rounded-xl",
@@ -27,7 +27,7 @@ export const appInputFieldStyles = cva(
     "outline-none",
     "transition-[background,border-color,box-shadow] duration-300 ease-in-out",
     "placeholder:text-muted",
-    "focus:bg-[rgb(10 10 26 / 70%)]",
+    "focus:bg-navy/70",
     "focus:border-[rgb(var(--rgb-primary)/0.35)]",
     "focus:shadow-[0_0_0_3px_rgb(var(--rgb-primary)/0.08),0_0_25px_rgb(var(--rgb-primary)/0.06)]",
   ],
