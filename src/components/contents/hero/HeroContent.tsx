@@ -4,7 +4,7 @@ import { Data, Helper } from "@/utils";
 import { NavItemEnum } from "@/models";
 import { staggerContainer, staggerItem } from "@/animations";
 import { AppButton, AppButtonLink } from "@/components/common/buttons";
-import TerminalBadge from "@/components/common/ui/TerminalBadge";
+import { TerminalBadge } from "@/components/common/ui";
 import HeroExternalLinks from "./HeroExternalLinks";
 import HeroCurrentTechs from "./HeroCurrentTechs";
 
