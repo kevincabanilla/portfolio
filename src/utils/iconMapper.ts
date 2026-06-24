@@ -9,9 +9,13 @@ import {
 import { SiX } from "react-icons/si";
 import type { ComponentType } from "react";
 import { HiAnnotation } from "react-icons/hi";
-import { MdBusiness } from "react-icons/md";
+import { MdBusiness, MdOutlineEmail } from "react-icons/md";
+import { IoCallOutline } from "react-icons/io5";
 
-export type IconMap = Record<string, ComponentType<{ size?: number | string }>>;
+export type IconMap = Record<
+  string,
+  ComponentType<{ size?: number | string; className?: string }>
+>;
 
 export const ICON_MAP: IconMap = {
   LinkedIn: FaLinkedin,
@@ -19,6 +23,8 @@ export const ICON_MAP: IconMap = {
   Instagram: FaInstagram,
   Twitter: SiX,
   React: FaReact,
+  EmailAddress: MdOutlineEmail,
+  MobilePhone: IoCallOutline,
   Python: FaPython,
   HiAnnotation: HiAnnotation,
   MdBusiness: MdBusiness,

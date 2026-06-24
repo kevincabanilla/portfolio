@@ -6,7 +6,7 @@ export interface ContactInfo {
 }
 
 export interface ContactOption {
-  id: number;
+  id: string;
   icon: string;
   title: string;
   value: string;

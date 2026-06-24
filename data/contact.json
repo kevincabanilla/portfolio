@@ -1,40 +1,40 @@
 {
   "contactOptions": [
     {
-      "id": 1,
-      "icon": "MdOutlineEmail",
+      "id": "email",
+      "icon": "EmailAddress",
       "title": "Email Me",
       "value": "kevincabanilla.dev@gmail.com",
       "link": "mailto:kevincabanilla.dev@gmail.com",
       "message": "Send a Mail"
     },
     {
-      "id": 2,
-      "icon": "BsLinkedin",
+      "id": "linkedin",
+      "icon": "LinkedIn",
       "title": "LinkedIn",
       "value": "kevin-cabanilla",
       "link": "https://www.linkedin.com/in/kevin-cabanilla/",
       "message": "Connect"
     },
     {
-      "id": 3,
-      "icon": "FiInstagram",
+      "id": "instagram",
+      "icon": "Instagram",
       "title": "Instagram",
       "value": "@kevincabanilla.dev",
       "link": "https://www.instagram.com/kevincabanilla.dev/",
       "message": "Message"
     },
     {
-      "id": 4,
-      "icon": "IoCallOutline",
+      "id": "mobile",
+      "icon": "MobilePhone",
       "title": "Mobile",
       "value": "+63 976 3477 225",
       "link": "tel:+639763477225",
       "message": "Call"
     },
     {
-      "id": 5,
-      "icon": "FiGithub",
+      "id": "github",
+      "icon": "GitHub",
       "title": "GitHub",
       "value": "kevincabanilla",
       "link": "https://github.com/kevincabanilla",
