@@ -5,16 +5,11 @@ import NavBar from "./navigation/NavBar";
 import SideNav from "./navigation/SideNav";
 import { NavItemEnum, type NavItem } from "@/models";
 
-const NAV_ITEMS: NavItem[] = [
-  { id: NavItemEnum.About, label: "About" },
-  { id: NavItemEnum.Experience, label: "Experience" },
-  { id: NavItemEnum.Skills, label: "Skills" },
-  { id: NavItemEnum.Projects, label: "Projects" },
-  { id: NavItemEnum.Education, label: "Education" },
-  { id: NavItemEnum.Contact, label: "Contact" },
-];
-
-export default function Navigation(): JSX.Element {
+export default function Navigation({
+  navItems,
+}: {
+  navItems: NavItem[];
+}): JSX.Element {
   const isMobile = useMediaQuery("(max-width: 1023px)");
   const [activeSection, setActiveSection] = useState(`${NavItemEnum.Hero}`);
   const [sideNavOpen, setSideNavOpen] = useState(false);
@@ -37,13 +32,13 @@ export default function Navigation(): JSX.Element {
       },
     );
 
-    for (const navItemId of [NavItemEnum.Hero, ...NAV_ITEMS.map((s) => s.id)]) {
+    for (const navItemId of [NavItemEnum.Hero, ...navItems.map((s) => s.id)]) {
       const el = document.getElementById(navItemId);
       if (el) observer.observe(el);
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = useCallback((id: string) => {
     Helper.scrollToId(id);
@@ -53,7 +48,7 @@ export default function Navigation(): JSX.Element {
   return (
     <>
       <NavBar
-        navItems={NAV_ITEMS}
+        navItems={navItems}
         isMobile={isMobile}
         activeSection={activeSection}
         sideNavOpen={sideNavOpen}
@@ -64,7 +59,7 @@ export default function Navigation(): JSX.Element {
 
       {/* Overlay menu for mobile devices */}
       <SideNav
-        navItems={NAV_ITEMS}
+        navItems={navItems}
         activeSection={activeSection}
         open={sideNavOpen}
         onNavigate={scrollToSection}
