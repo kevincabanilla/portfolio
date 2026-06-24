@@ -11,11 +11,23 @@ import clsx from "clsx";
 import { AppButton } from "@/components/common/buttons";
 import { AppTextArea, AppTextField } from "@/components/common/inputs";
 
+const MAX_NAME_LENGTH = 50;
+const MAX_EMAIL_LENGTH = 50;
+const MAX_MESSAGE_LENGTH = 1000;
+
 const emailFormSchema = zod.object({
-  name: zod.string().min(1, "Name is required"),
-  email: zod.email("Invalid email address"),
-  message: zod.string().min(1, "Message is required"),
-  website: zod.string().max(0, "Spam detected"),
+  name: zod
+    .string()
+    .min(1, "Name is required")
+    .max(MAX_NAME_LENGTH, "Cannot exceed max character limit for Name."),
+  email: zod
+    .email("Invalid email address")
+    .max(MAX_EMAIL_LENGTH, "Cannot exceed max character limit for Email."),
+  message: zod
+    .string()
+    .min(1, "Message is required")
+    .max(MAX_MESSAGE_LENGTH, "Cannot exceed max character limit for Message."),
+  emailSubject: zod.string().max(0, "Spam detected"),
 });
 
 export type EmailFormData = zod.infer<typeof emailFormSchema>;
@@ -40,7 +52,7 @@ export default function ContactForm({
       name: "",
       email: "",
       message: "",
-      website: "",
+      emailSubject: "",
     },
   });
 
@@ -57,57 +69,51 @@ export default function ContactForm({
       className="flex flex-col gap-4 py-5 px-4.5 md:py-8 md:px-7"
       onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}
     >
-      <div className="mb-4">
+      <div>
         <AppTextField
           id="name"
           label="Name"
           placeholder="John Doe"
+          maxLength={MAX_NAME_LENGTH}
+          errorMessage={errors.name?.message}
           {...register("name")}
-        >
-          {errors.name && (
-            <p className="text-xs text-rose-600">{errors.name.message}</p>
-          )}
-        </AppTextField>
+        />
       </div>
 
-      <div className="mb-4">
+      <div>
         <AppTextField
           id="email"
           label="Email"
-          placeholder="john.doe@example.com"
           type="email"
+          placeholder="john.doe@example.com"
+          maxLength={MAX_EMAIL_LENGTH}
+          errorMessage={errors.email?.message}
           {...register("email")}
-        >
-          {errors.email && (
-            <p className="text-xs text-rose-600">{errors.email.message}</p>
-          )}
-        </AppTextField>
+        />
       </div>
 
-      <div className="mb-4">
+      <div>
         <AppTextArea
           rows={5}
           id="message"
           label="Message"
           placeholder="Tell me about your project or just say hi..."
           className="resize-none"
+          maxLength={MAX_MESSAGE_LENGTH}
+          errorMessage={errors.message?.message}
           {...register("message")}
-        >
-          {errors.message && (
-            <p className="text-xs text-rose-600">{errors.message.message}</p>
-          )}
-        </AppTextArea>
+        />
       </div>
 
       {/* Honeypot field */}
       <div aria-hidden="true" className="absolute hidden -left-2499.75">
         <AppTextField
           tabIndex={-1}
-          id="website"
-          label="Website"
+          id="emailSubject"
+          label="Subject"
           autoComplete="off"
-          placeholder="john.doe@example.com"
-          {...register("website")}
+          placeholder="Email Subject"
+          {...register("emailSubject")}
         />
       </div>
 
