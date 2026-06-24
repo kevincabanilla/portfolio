@@ -5,3 +5,4 @@ export * from "./navVariants";
 export * from "./staggerContainer";
 export * from "./sectionReveal";
 export * from "./rotateInUp";
+export * from "./waveCascade";
