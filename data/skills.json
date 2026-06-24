@@ -1,0 +1,90 @@
+{
+  "development": {
+    "languages": [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "C#",
+      "Java",
+      "SQL",
+      "GDScript"
+    ],
+    "frontend": [
+      "React",
+      "Angular",
+      "Vue.js",
+      "Next.js",
+      "Vite",
+      "Tailwind CSS",
+      "Three.js",
+      "Motion",
+      "Material UI",
+      "Bootstrap"
+    ],
+    "backend": [
+      ".NET",
+      "ASP.NET Core",
+      "EF Core",
+      "FastAPI",
+      "RESTful APIs",
+      "MSSQL",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite"
+    ],
+    "cloud": [
+      "Azure",
+      "AWS",
+      "Firebase",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD Pipelines"
+    ],
+    "tools": [
+      "VS Code",
+      "Git",
+      "NPM",
+      "React Dev Tools",
+      "Postman",
+      "Insomnia",
+      "Thunder Client",
+      "Figma"
+    ],
+    "ai_agents": [
+      "GitHub Copilot",
+      "Claude Code",
+      "Open Code",
+      "Gemini",
+      "Codex"
+    ],
+    "game_development": ["Godot", "Aseprite"]
+  },
+  "others": {
+    "core_fundamentals": [
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "SOLID Principles",
+      "Design Patterns",
+      "Computer Networks",
+      "Operating Systems",
+      "Software Engineering",
+      "Database Management Systems"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Critical Thinking",
+      "Fast Learner",
+      "Adaptability",
+      "Communication",
+      "Collaboration and Teamwork"
+    ],
+    "areas_of_interest": [
+      "Full-Stack Development",
+      "AI/ML Engineering",
+      "DevOps & Cloud",
+      "Open Source Contributions",
+      "AI Agents & MCP",
+      "Game Development"
+    ]
+  }
+}
