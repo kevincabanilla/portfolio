@@ -73,6 +73,7 @@ export default function ContactForm({
         <AppTextField
           id="name"
           label="Name"
+          autoComplete="name"
           placeholder="John Doe"
           maxLength={MAX_NAME_LENGTH}
           errorMessage={errors.name?.message}
@@ -85,6 +86,7 @@ export default function ContactForm({
           id="email"
           label="Email"
           type="email"
+          autoComplete="email"
           placeholder="john.doe@example.com"
           maxLength={MAX_EMAIL_LENGTH}
           errorMessage={errors.email?.message}
