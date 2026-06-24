@@ -6,13 +6,16 @@ import { Data } from "@/utils";
 import { rotateInUp, staggerContainer, staggerItem } from "@/animations";
 import type { EmailFormStatus } from "@/models";
 import { PageSection, Toast } from "../common/ui";
+import { AppCard } from "../common/containers";
+import ContactCard from "../contents/contact/ContactCard";
+import ContactMessageSentAlert from "../contents/contact/ContactMessageSentAlert";
 import ContactForm, {
   type EmailFormData,
 } from "../contents/contact/ContactForm";
-import ContactSendConfirmation from "../contents/contact/ContactSendConfirmation";
-import { AppCard } from "../common/containers";
 
 export default function Contact() {
+  const contactData = Data.getContactData();
+
   const {
     isLoading,
     formStatus,
@@ -36,7 +39,7 @@ export default function Contact() {
         variants={staggerContainer}
       >
         <motion.p
-          className="text-center text-primary/60"
+          className="text-center text-primary/60 text-sm md:text-base"
           variants={staggerItem}
         >
           Have a project in mind or just want to say hello? I'd love to hear
@@ -48,16 +51,28 @@ export default function Contact() {
         className="max-w-4xl my-0 mx-auto grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-[2fr_3fr]"
         variants={staggerContainer}
       >
+        {/* Contact Options - Left Column */}
+        <motion.div className="flex flex-col gap-3" variants={staggerContainer}>
+          {contactData.contactOptions.map((option) => (
+            <ContactCard key={option.id} option={option} />
+          ))}
+        </motion.div>
+
         {/* Contact Form - Right Column */}
         <motion.div variants={rotateInUp}>
           <AnimatePresence mode="wait">
             {showConfirmation ? (
               <motion.div
+                className="h-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
               >
+                <ContactMessageSentAlert
+                  senderName={senderName}
+                  onReset={resetConfirmation}
+                />
               </motion.div>
             ) : (
               <motion.div
@@ -119,6 +134,7 @@ const useContactForm = () => {
           {
             from_name: data.name,
             from_email: data.email,
+            email_subject: `A new message from ${data.name}`,
             message: data.message,
           },
           {
