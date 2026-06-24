@@ -1,90 +1,121 @@
 {
   "development": {
-    "languages": [
-      "TypeScript",
-      "JavaScript",
-      "Python",
-      "C#",
-      "Java",
-      "SQL",
-      "GDScript"
-    ],
-    "frontend": [
-      "React",
-      "Angular",
-      "Vue.js",
-      "Next.js",
-      "Vite",
-      "Tailwind CSS",
-      "Three.js",
-      "Motion",
-      "Material UI",
-      "Bootstrap"
-    ],
-    "backend": [
-      ".NET",
-      "ASP.NET Core",
-      "EF Core",
-      "FastAPI",
-      "RESTful APIs",
-      "MSSQL",
-      "PostgreSQL",
-      "MySQL",
-      "SQLite"
-    ],
-    "cloud": [
-      "Azure",
-      "AWS",
-      "Firebase",
-      "Docker",
-      "GitHub Actions",
-      "CI/CD Pipelines"
-    ],
-    "tools": [
-      "VS Code",
-      "Git",
-      "NPM",
-      "React Dev Tools",
-      "Postman",
-      "Insomnia",
-      "Thunder Client",
-      "Figma"
-    ],
-    "ai_agents": [
-      "GitHub Copilot",
-      "Claude Code",
-      "Open Code",
-      "Gemini",
-      "Codex"
-    ],
-    "game_development": ["Godot", "Aseprite"]
+    "languages": {
+      "label": "Languages",
+      "items": [
+        { "text": "TypeScript", "icon": "SiTypescript" },
+        { "text": "JavaScript", "icon": "SiJavascript" },
+        { "text": "Python", "icon": "SiPython" },
+        { "text": "C#", "icon": "FaHashtag" },
+        { "text": "Java", "icon": "FaJava" },
+        { "text": "SQL", "icon": "TbDatabase" },
+        { "text": "GDScript", "icon": "SiGodotengine" }
+      ]
+    },
+    "frontend": {
+      "label": "Frontend",
+      "items": [
+        { "text": "React", "icon": "FaReact" },
+        { "text": "Angular", "icon": "FaAngular" },
+        { "text": "Vue.js", "icon": "FaVuejs" },
+        { "text": "Next.js", "icon": "SiNextdotjs" },
+        { "text": "Vite", "icon": "SiVite" },
+        { "text": "Tailwind CSS", "icon": "SiTailwindcss" },
+        { "text": "Three.js", "icon": "SiThreedotjs" },
+        { "text": "Motion", "icon": "TbBrandFramerMotion" },
+        { "text": "Material UI", "icon": "SiMui" },
+        { "text": "Bootstrap", "icon": "FaBootstrap" }
+      ]
+    },
+    "backend": {
+      "label": "Backend & Database",
+      "items": [
+        { "text": "ASP.NET Core", "icon": "SiDotnet" },
+        { "text": "EF Core", "icon": "TbDatabaseCog" },
+        { "text": "FastAPI", "icon": "SiFastapi" },
+        { "text": "RESTful APIs", "icon": "TbApi" },
+        { "text": "MSSQL", "icon": "BsFiletypeSql" },
+        { "text": "PostgreSQL", "icon": "SiPostgresql" },
+        { "text": "MySQL", "icon": "SiMysql" },
+        { "text": "SQLite", "icon": "SiSqlite" }
+      ]
+    },
+    "cloud": {
+      "label": "Cloud & DevOps",
+      "items": [
+        { "text": "Azure", "icon": "VscAzure" },
+        { "text": "AWS", "icon": "FaAws" },
+        { "text": "Firebase", "icon": "SiFirebase" },
+        { "text": "Docker", "icon": "FaDocker" },
+        { "text": "GitHub Actions", "icon": "SiGithubactions" },
+        { "text": "CI/CD Pipelines", "icon": "TbGitMerge" }
+      ]
+    },
+    "tools": {
+      "label": "Development Tools",
+      "items": [
+        { "text": "VS Code", "icon": "VscVscode" },
+        { "text": "Git", "icon": "FaGitAlt" },
+        { "text": "NPM", "icon": "SiNpm" },
+        { "text": "React Dev Tools", "icon": "FaReact" },
+        { "text": "Postman", "icon": "SiPostman" },
+        { "text": "Insomnia", "icon": "SiInsomnia" },
+        { "text": "Thunder Client", "icon": "MdOutlineOfflineBolt" },
+        { "text": "Figma", "icon": "FaFigma" }
+      ]
+    },
+    "ai_agents": {
+      "label": "AI Agents",
+      "items": [
+        { "text": "GitHub Copilot", "icon": "SiGithubcopilot" },
+        { "text": "Claude Code", "icon": "BsClaude" },
+        { "text": "Open Code", "icon": "TbCodeCircle" },
+        { "text": "Gemini", "icon": "SiGooglegemini" },
+        { "text": "Codex", "icon": "AiFillOpenAI" }
+      ]
+    },
+    "game_development": {
+      "label": "Game Development",
+      "items": [
+        { "text": "Godot", "icon": "SiGodotengine" },
+        { "text": "Aseprite", "icon": "SiAseprite" }
+      ]
+    }
   },
   "others": {
-    "core_fundamentals": [
-      "Data Structures & Algorithms",
-      "Object-Oriented Programming",
-      "SOLID Principles",
-      "Design Patterns",
-      "Computer Networks",
-      "Operating Systems",
-      "Software Engineering",
-      "Database Management Systems"
-    ],
-    "soft_skills": [
-      "Problem Solving",
-      "Critical Thinking",
-      "Fast Learner",
-      "Adaptability",
-      "Communication",
-      "Collaboration and Teamwork"
-    ],
-    "areas_of_interest": [
-      "Full-Stack Development",
-      "AI/ML Engineering",
-      "DevOps & Cloud",
-      "Open Source Contributions",
-      "AI Agents & MCP",
-      "Game Development"
-    ]
+    "core_fundamentals": {
+      "label": "Core Fundamentals",
+      "items": [
+        { "text": "Data Structures & Algorithms", "icon": "TbBinaryTree" },
+        { "text": "Object-Oriented Programming", "icon": "TbBoxModel2" },
+        { "text": "SOLID Principles", "icon": "TbLayersIntersect" },
+        { "text": "Design Patterns", "icon": "TbLayoutGrid" },
+        { "text": "Computer Networks", "icon": "TbNetwork" },
+        { "text": "Operating Systems", "icon": "TbCpu" },
+        { "text": "Software Engineering", "icon": "TbCodeDots" },
+        { "text": "Database Management Systems", "icon": "TbDatabase" }
+      ]
+    },
+    "soft_skills": {
+      "label": "Soft Skills",
+      "items": [
+        { "text": "Problem Solving", "icon": "TbPuzzle" },
+        { "text": "Critical Thinking", "icon": "LuBrainCircuit" },
+        { "text": "Fast Learner", "icon": "TbRocket" },
+        { "text": "Adaptability", "icon": "TbArrowsShuffle" },
+        { "text": "Communication", "icon": "TbMessageCircle" },
+        { "text": "Collaboration and Teamwork", "icon": "TbUsers" }
+      ]
+    },
+    "areas_of_interest": {
+      "label": "Areas of Interest",
+      "items": [
+        { "text": "Full-Stack Development", "icon": "TbStack2" },
+        { "text": "Game Development", "icon": "TbDeviceGamepad2" },
+        { "text": "Open Source", "icon": "SiGithub" },
+        { "text": "AI/ML Engineering", "icon": "LuBrainCircuit" },
+        { "text": "AI Agents & MCP", "icon": "FaRobot" }
+      ]
+    }
   }
 }

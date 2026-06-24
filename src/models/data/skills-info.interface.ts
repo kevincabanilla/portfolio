@@ -4,17 +4,27 @@ export interface SkillsInfo {
 }
 
 export interface DevelopmentSkills {
-  languages: string[];
-  frontend: string[];
-  backend: string[];
-  cloud: string[];
-  tools: string[];
-  ai_agents: string[];
-  game_development: string[];
+  languages: SkillArea;
+  frontend: SkillArea;
+  backend: SkillArea;
+  cloud: SkillArea;
+  tools: SkillArea;
+  ai_agents: SkillArea;
+  game_development: SkillArea;
 }
 
 export interface OtherSkills {
-  core_fundamentals: string[];
-  soft_skills: string[];
-  areas_of_interest: string[];
+  core_fundamentals: SkillArea;
+  soft_skills: SkillArea;
+  areas_of_interest: SkillArea;
+}
+
+export interface SkillArea {
+  label: string;
+  items: SkillItem[];
+}
+
+export interface SkillItem {
+  text: string;
+  icon: string;
 }
