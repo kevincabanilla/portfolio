@@ -21,7 +21,7 @@ const appCardStyles = cva(
       },
       rounded: {
         true: "rounded-2xl",
-        false: "rounded-none",
+        false: "",
       },
     },
     defaultVariants: {
