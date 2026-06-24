@@ -4,7 +4,7 @@ export type AppInputLabelVariant = VariantProps<typeof appInputLabelStyles>;
 export type AppInputFieldVariant = VariantProps<typeof appInputFieldStyles>;
 
 export const appInputLabelStyles = cva(
-  ["block text-xs text-gray font-semibold uppercase tracking-wider mb-2"],
+  ["block text-xs text-gray font-semibold uppercase tracking-wider mb-1.5"],
   {
     variants: {
       //
