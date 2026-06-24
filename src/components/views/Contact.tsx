@@ -66,7 +66,7 @@ export default function Contact() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
               >
-                <AppCard>
+                <AppCard rounded>
                   <ContactForm
                     isLoading={isLoading}
                     onSubmit={handleFormSubmit}
