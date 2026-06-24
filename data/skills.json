@@ -1,6 +1,6 @@
 {
-  "development": {
-    "languages": {
+  "development": [
+    {
       "label": "Languages",
       "items": [
         { "text": "TypeScript", "icon": "SiTypescript" },
@@ -12,7 +12,7 @@
         { "text": "GDScript", "icon": "SiGodotengine" }
       ]
     },
-    "frontend": {
+    {
       "label": "Frontend",
       "items": [
         { "text": "React", "icon": "FaReact" },
@@ -27,7 +27,7 @@
         { "text": "Bootstrap", "icon": "FaBootstrap" }
       ]
     },
-    "backend": {
+    {
       "label": "Backend & Database",
       "items": [
         { "text": "ASP.NET Core", "icon": "SiDotnet" },
@@ -40,18 +40,7 @@
         { "text": "SQLite", "icon": "SiSqlite" }
       ]
     },
-    "cloud": {
-      "label": "Cloud & DevOps",
-      "items": [
-        { "text": "Azure", "icon": "VscAzure" },
-        { "text": "AWS", "icon": "FaAws" },
-        { "text": "Firebase", "icon": "SiFirebase" },
-        { "text": "Docker", "icon": "FaDocker" },
-        { "text": "GitHub Actions", "icon": "SiGithubactions" },
-        { "text": "CI/CD Pipelines", "icon": "TbGitMerge" }
-      ]
-    },
-    "tools": {
+    {
       "label": "Development Tools",
       "items": [
         { "text": "VS Code", "icon": "VscVscode" },
@@ -60,11 +49,10 @@
         { "text": "React Dev Tools", "icon": "FaReact" },
         { "text": "Postman", "icon": "SiPostman" },
         { "text": "Insomnia", "icon": "SiInsomnia" },
-        { "text": "Thunder Client", "icon": "MdOutlineOfflineBolt" },
         { "text": "Figma", "icon": "FaFigma" }
       ]
     },
-    "ai_agents": {
+    {
       "label": "AI Agents",
       "items": [
         { "text": "GitHub Copilot", "icon": "SiGithubcopilot" },
@@ -74,29 +62,39 @@
         { "text": "Codex", "icon": "AiFillOpenAI" }
       ]
     },
-    "game_development": {
+    {
+      "label": "Cloud & DevOps",
+      "items": [
+        { "text": "Azure", "icon": "VscAzure" },
+        { "text": "Firebase", "icon": "SiFirebase" },
+        { "text": "Docker", "icon": "FaDocker" },
+        { "text": "GitHub Actions", "icon": "SiGithubactions" }
+      ]
+    },
+    {
       "label": "Game Development",
       "items": [
         { "text": "Godot", "icon": "SiGodotengine" },
         { "text": "Aseprite", "icon": "SiAseprite" }
       ]
     }
-  },
-  "others": {
-    "core_fundamentals": {
-      "label": "Core Fundamentals",
+  ],
+  "others": [
+    {
+      "label": "SE Fundamentals",
       "items": [
         { "text": "Data Structures & Algorithms", "icon": "TbBinaryTree" },
         { "text": "Object-Oriented Programming", "icon": "TbBoxModel2" },
-        { "text": "SOLID Principles", "icon": "TbLayersIntersect" },
+        { "text": "Architecture & Design Principles", "icon": "TbLayersIntersect" },
         { "text": "Design Patterns", "icon": "TbLayoutGrid" },
-        { "text": "Computer Networks", "icon": "TbNetwork" },
-        { "text": "Operating Systems", "icon": "TbCpu" },
         { "text": "Software Engineering", "icon": "TbCodeDots" },
-        { "text": "Database Management Systems", "icon": "TbDatabase" }
+        { "text": "Database Management Systems", "icon": "TbDatabase" },
+        { "text": "Agile Development", "icon": "LuWorkflow" },
+        { "text": "Operating Systems", "icon": "TbCpu" },
+        { "text": "Computer Networks", "icon": "TbNetwork" }
       ]
     },
-    "soft_skills": {
+    {
       "label": "Soft Skills",
       "items": [
         { "text": "Problem Solving", "icon": "TbPuzzle" },
@@ -107,7 +105,7 @@
         { "text": "Collaboration and Teamwork", "icon": "TbUsers" }
       ]
     },
-    "areas_of_interest": {
+    {
       "label": "Areas of Interest",
       "items": [
         { "text": "Full-Stack Development", "icon": "TbStack2" },
@@ -117,5 +115,5 @@
         { "text": "AI Agents & MCP", "icon": "FaRobot" }
       ]
     }
-  }
+  ]
 }

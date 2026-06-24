@@ -22,8 +22,8 @@ export default function Skills() {
         >
           <SkillsHeader>Tech Stack</SkillsHeader>
 
-          {Object.entries(skills.development).map(([key, value]) => (
-            <motion.div key={key} variants={staggerItem}>
+          {skills.development.map((value) => (
+            <motion.div key={value.label} variants={staggerItem}>
               <SkillsArea {...value} />
             </motion.div>
           ))}
@@ -35,8 +35,8 @@ export default function Skills() {
         >
           <SkillsHeader>Other Skills</SkillsHeader>
 
-          {Object.entries(skills.others).map(([key, value]) => (
-            <motion.div key={key} variants={staggerItem}>
+          {skills.others.map((value) => (
+            <motion.div key={value.label} variants={staggerItem}>
               <SkillsArea {...value} />
             </motion.div>
           ))}

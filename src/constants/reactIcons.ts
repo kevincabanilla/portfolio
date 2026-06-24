@@ -1,10 +1,11 @@
+import type { IconType } from "react-icons";
 import {
   FaReact,
   FaAngular,
   FaVuejs,
   FaBootstrap,
   FaJava,
-  FaAws,
+  // FaAws,
   FaDocker,
   FaGitAlt,
   // FaNpm,
@@ -41,7 +42,7 @@ import {
   TbDatabase,
   TbDatabaseCog,
   TbApi,
-  TbGitMerge,
+  // TbGitMerge,
   TbBinaryTree,
   TbBoxModel2,
   TbLayersIntersect,
@@ -60,11 +61,9 @@ import {
 } from "react-icons/tb";
 import { BsFiletypeSql, BsClaude } from "react-icons/bs";
 import { VscAzure, VscVscode } from "react-icons/vsc";
-import { MdOutlineOfflineBolt } from "react-icons/md";
 import { AiFillOpenAI } from "react-icons/ai";
 import { TbCodeCircle, TbBrandFramerMotion } from "react-icons/tb";
-import { LuBrainCircuit } from "react-icons/lu";
-import type { IconType } from "react-icons";
+import { LuBrainCircuit, LuWorkflow } from "react-icons/lu";
 
 export type IconName = keyof typeof reactIconMap;
 
@@ -101,11 +100,11 @@ export const reactIconMap: Record<string, IconType> = {
 
   // Cloud
   VscAzure,
-  FaAws,
+  // FaAws, AWS
   SiFirebase,
   FaDocker,
   SiGithubactions,
-  TbGitMerge,
+  // TbGitMerge, CI/CD Pipelines
 
   // Tools
   VscVscode,
@@ -113,7 +112,6 @@ export const reactIconMap: Record<string, IconType> = {
   SiNpm,
   SiPostman,
   SiInsomnia,
-  MdOutlineOfflineBolt,
   FaFigma,
 
   // AI
@@ -133,6 +131,7 @@ export const reactIconMap: Record<string, IconType> = {
   TbLayersIntersect,
   TbLayoutGrid,
   TbNetwork,
+  LuWorkflow,
   TbCpu,
   TbCodeDots,
 
