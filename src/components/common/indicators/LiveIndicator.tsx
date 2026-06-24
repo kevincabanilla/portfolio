@@ -10,7 +10,7 @@ const liveIndicatorStyles = cva(["rounded-full"], {
       secondary: "bg-secondary",
     },
     size: {
-      default: "w-2 h-2",
+      default: "w-1.5 h-1.5 md:w-2 md:h-2",
       small: "w-1.5 h-1.5",
     },
   },
