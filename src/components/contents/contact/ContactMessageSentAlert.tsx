@@ -35,7 +35,7 @@ export default function ContactMessageSentAlert({
   }, [onReset]);
 
   return (
-    <AppCard className="py-12 px-8 flex flex-col items-center justify-center min-h-70 h-full text-center">
+    <AppCard rounded className="py-12 px-8 flex flex-col items-center justify-center min-h-70 h-full text-center">
       <AnimatePresence mode="wait">
         {stage === "typing" ? (
           <motion.div
