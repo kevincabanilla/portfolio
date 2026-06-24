@@ -76,27 +76,29 @@ export default function TerminalBadge({
       {...props}
     >
       {/* Live indicator */}
-      <LiveIndicator active />
+      <LiveIndicator className="shrink-0" active />
 
       {children}
 
-      {/* Typed text */}
-      <span>{displayed}</span>
+      <span className="text-start">
+        {/* Typed text */}
+        {displayed}
 
-      {/* Cursor */}
-      {!isTyping && (
-        <motion.span
-          animate={{ opacity: [1, 1, 0, 0] }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            times: [0, 0.5, 0.5, 1],
-            ease: "linear",
-          }}
-        >
-          |
-        </motion.span>
-      )}
+        {/* Cursor */}
+        {!isTyping && (
+          <motion.span
+            animate={{ opacity: [1, 1, 0, 0] }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              times: [0, 0.5, 0.5, 1],
+              ease: "linear",
+            }}
+          >
+            |
+          </motion.span>
+        )}
+      </span>
     </span>
   );
 }
