@@ -31,7 +31,7 @@ export default function Footer() {
 
       clearTimeout(resetTimer);
 
-      const key = e.key.toLowerCase();
+      const key = e?.key?.toLowerCase();
 
       if (key !== KONAMI_CODE[konamiIdx.current].toLowerCase()) {
         konamiIdx.current = 0;
