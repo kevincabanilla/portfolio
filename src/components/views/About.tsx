@@ -1,11 +1,17 @@
 import { motion } from "motion/react";
 import { Data, Helper } from "@/utils";
-import { fadeInLeft, fadeInRight, staggerContainer } from "@/animations";
+import {
+  fadeInLeft,
+  fadeInRight,
+  fadeInUp,
+  staggerContainer,
+} from "@/animations";
 import PageSection from "../common/ui/PageSection";
 import TerminalBadge from "../common/ui/TerminalBadge";
 import AboutAvatar from "../contents/about/AboutAvatar";
 import AboutGreeting from "../contents/about/AboutGreeting";
 import AboutHighlights from "../contents/about/AboutHighlights";
+import AboutFavoriteQuote from "../contents/about/AboutFavoriteQuote";
 
 export default function About() {
   const { fullName, about } = Data.getPersonalData();
@@ -47,6 +53,13 @@ export default function About() {
             <div className="flex flex-col gap-3">
               <AboutHighlights items={about.highlights} />
             </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            className="md:col-span-2 flex items-center justify-center w-full pt-12"
+          >
+            <AboutFavoriteQuote />
           </motion.div>
         </motion.div>
       </div>
