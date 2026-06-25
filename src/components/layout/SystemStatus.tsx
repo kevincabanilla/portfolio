@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
 import useSWR from "swr";
 import clsx from "clsx";
-import { Server, Eye } from "lucide-react";
+import { Server, ServerOff, Eye } from "lucide-react";
 import { fetcher } from "@/utils";
 import { LiveIndicator } from "../common/indicators";
+import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 
 const SWR_CONFIG = {
   revalidateOnFocus: false,
@@ -14,6 +15,7 @@ const SWR_CONFIG = {
 } as const;
 
 export default function SystemStatus() {
+  const isOnline = useOnlineStatus();
   const {
     VITE_COUNTER_API_WORKSPACE: counterWorkspace,
     VITE_COUNTER_API_HANDLE: counterApiHandle,
@@ -29,15 +31,15 @@ export default function SystemStatus() {
   );
 
   const visitors = data?.data?.up_count ?? 0;
+  const ServerIcon = isOnline ? Server : ServerOff;
 
   return (
     <motion.div
       className={clsx(
-        "hidden md:flex items-center gap-3",
-        "fixed bottom-6 left-6 z-50 cursor-default",
-        "py-2 px-4 bg-navy/70 backdrop-blur-md",
-        "border border-cyan/8 rounded-full shadow-xl",
-        "hover:border-cyan/30",
+        "flex items-center gap-3 cursor-default",
+        "md:fixed md:bottom-6 md:left-6 md:z-50 md:rounded-full",
+        "py-2 px-4 bg-navy/70 backdrop-blur-md shadow-xl",
+        "border border-cyan/8 hover:border-cyan/30",
       )}
       initial={{
         opacity: 0,
@@ -52,25 +54,34 @@ export default function SystemStatus() {
         y: -2,
       }}
     >
-      <Server size={14} className="text-green" />
+      <ServerIcon size={14} className={isOnline ? "text-green" : "text-red"} />
 
       <div className="flex items-center justify-center gap-1">
-        <LiveIndicator active />
+        <LiveIndicator active={isOnline} color={isOnline ? "green" : "red"} />
 
-        <span className="font-mono text-[11px] text-gray font-medium ml-1">
-          ALL SYSTEMS NOMINAL
+        <span
+          className={clsx(
+            "font-mono text-[11px] font-medium ml-1",
+            isOnline ? "text-gray" : "text-red",
+          )}
+        >
+          {isOnline ? "ALL SYSTEMS NOMINAL" : "OFFLINE"}
         </span>
       </div>
 
-      {/* Divider */}
-      <div className="w-px h-3 bg-white/15" />
+      {isOnline && (
+        <>
+          {/* Divider */}
+          <div className="w-px h-3 bg-white/15" />
 
-      <div className="flex items-center justify-center gap-1">
-        {visitors > 0 && <Eye size={12} color="var(--color-cyan)" />}
-        <span className="font-mono text-[11px] text-cyan font-semibold">
-          {visitors > 0 ? visitors.toLocaleString() : "LIVE"}
-        </span>
-      </div>
+          <div className="flex items-center justify-center gap-1">
+            {visitors > 0 && <Eye size={12} color="var(--color-cyan)" />}
+            <span className="font-mono text-[11px] text-cyan font-semibold">
+              {visitors > 0 ? visitors.toLocaleString() : "ONLINE"}
+            </span>
+          </div>
+        </>
+      )}
     </motion.div>
   );
 }

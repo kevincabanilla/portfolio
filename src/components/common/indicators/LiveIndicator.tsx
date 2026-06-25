@@ -7,6 +7,7 @@ const liveIndicatorStyles = cva(["rounded-full"], {
   variants: {
     color: {
       green: "bg-green-500",
+      red: "bg-rose-500",
       secondary: "bg-secondary",
     },
     size: {
