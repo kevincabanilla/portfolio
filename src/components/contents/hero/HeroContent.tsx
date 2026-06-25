@@ -71,9 +71,9 @@ export default function HeroContent(): JSX.Element {
         <AppButton
           rounded
           size="md"
-          onClick={() => Helper.scrollToId(NavItemEnum.Projects)}
+          onClick={() => Helper.scrollToId(NavItemEnum.Contact)}
         >
-          View Projects
+          Hire Me
         </AppButton>
         <AppButtonLink
           rounded
