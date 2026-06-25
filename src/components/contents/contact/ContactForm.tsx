@@ -66,7 +66,7 @@ export default function ContactForm({
 
   return (
     <form
-      className="flex flex-col gap-4 py-5 px-4.5 md:py-8 md:px-7"
+      className="h-full flex flex-col gap-4 py-5 px-4.5 md:py-8 md:px-7"
       onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}
     >
       <div>
@@ -94,13 +94,13 @@ export default function ContactForm({
         />
       </div>
 
-      <div>
+      <div className="grow flex flex-col">
         <AppTextArea
           rows={5}
           id="message"
           label="Message"
           placeholder="Tell me about your project or just say hi..."
-          className="resize-none"
+          className="resize-none grow"
           maxLength={MAX_MESSAGE_LENGTH}
           errorMessage={errors.message?.message}
           {...register("message")}
