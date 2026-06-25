@@ -22,7 +22,7 @@ export default function NavBar({
   return (
     <motion.nav
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 h-16 border-b border-white/5 transition-[background-color, box-shadow, backdrop-filter] duration-300 ease-out",
+        "fixed top-0 inset-x-0 z-50 h-16 border-b border-white/5 transition-[background-color, box-shadow, backdrop-filter] duration-300 ease-out",
         scrolledDown
           ? "bg-bg-secondary/60 backdrop-blur-xl shadow-nav-elevated"
           : "bg-bg-secondary/20 backdrop-blur-md shadow-none",

@@ -8,6 +8,7 @@ import Footer from "./components/layout/footer/Footer";
 import BackToTop from "./components/layout/BackToTop";
 import SystemStatus from "./components/layout/SystemStatus";
 import { Hero } from "./components/views";
+import { ScrollProgressBar } from "./components/common/ui";
 
 const About = lazy(() => import("@/components/views/About"));
 const Skills = lazy(() => import("@/components/views/Skills"));
@@ -52,6 +53,8 @@ function App() {
         easing: LENIS_EASING,
       }}
     >
+      <ScrollProgressBar />
+
       <div className="relative min-h-screen">
         <Navigation navItems={SECTIONS} />
         <main>
