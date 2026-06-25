@@ -18,13 +18,15 @@
         { "text": "React", "icon": "FaReact" },
         { "text": "Angular", "icon": "FaAngular" },
         { "text": "Vue.js", "icon": "FaVuejs" },
-        { "text": "Next.js", "icon": "SiNextdotjs" },
+        { "text": "Next.js", "icon": "RiNextjsLine" },
         { "text": "Vite", "icon": "SiVite" },
         { "text": "Tailwind CSS", "icon": "SiTailwindcss" },
         { "text": "Three.js", "icon": "SiThreedotjs" },
         { "text": "Motion", "icon": "TbBrandFramerMotion" },
         { "text": "Material UI", "icon": "SiMui" },
-        { "text": "Bootstrap", "icon": "FaBootstrap" }
+        { "text": "Bootstrap", "icon": "FaBootstrap" },
+        { "text": "HTML", "icon": "FaHtml5" },
+        { "text": "CSS", "icon": "FaCss3Alt" }
       ]
     },
     {

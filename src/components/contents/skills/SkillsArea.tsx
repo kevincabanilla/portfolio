@@ -17,7 +17,7 @@ export default function SkillsArea({ label, items }: SkillArea) {
         viewport={viewport}
       >
         <div className="h-6 w-1 rounded-full bg-linear-to-b from-cyan via-purple to-pink/30" />
-        <h3 className="text-primary">{label}</h3>
+        <h3 className="text-white">{label}</h3>
       </motion.div>
 
       <motion.div
@@ -31,7 +31,7 @@ export default function SkillsArea({ label, items }: SkillArea) {
           const Icon = reactIconMap[skill.icon];
           return (
             <motion.div key={skill.text} variants={waveCascadeItem}>
-              <AppCard className="flex items-center justify-center py-2.5 px-4 rounded-md">
+              <AppCard className="flex items-center justify-center py-2.5 px-4 rounded-md text-primary hover:text-secondary">
                 {Icon && <Icon size={24} className="mr-2.5" />}
                 <span>{skill.text}</span>
               </AppCard>

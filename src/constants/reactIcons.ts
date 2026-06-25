@@ -12,12 +12,14 @@ import {
   FaFigma,
   FaHashtag,
   FaRobot,
+  FaHtml5,
+  FaCss3Alt,
 } from "react-icons/fa6";
 import {
   SiTypescript,
   SiJavascript,
   SiPython,
-  SiNextdotjs,
+  // SiNextdotjs,
   SiVite,
   SiTailwindcss,
   SiThreedotjs,
@@ -64,6 +66,7 @@ import { VscAzure, VscVscode } from "react-icons/vsc";
 import { AiFillOpenAI } from "react-icons/ai";
 import { TbCodeCircle, TbBrandFramerMotion } from "react-icons/tb";
 import { LuBrainCircuit, LuWorkflow } from "react-icons/lu";
+import { RiNextjsLine } from "react-icons/ri";
 
 export type IconName = keyof typeof reactIconMap;
 
@@ -77,10 +80,12 @@ export const reactIconMap: Record<string, IconType> = {
   TbDatabase,
 
   // Frontend
+  FaHtml5,
+  FaCss3Alt,
   FaReact,
   FaAngular,
   FaVuejs,
-  SiNextdotjs,
+  RiNextjsLine,
   SiVite,
   SiTailwindcss,
   SiThreedotjs,
