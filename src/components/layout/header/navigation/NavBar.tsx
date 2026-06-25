@@ -41,7 +41,11 @@ export default function NavBar({
             activeSection == NavItemEnum.Hero ? "text-glow-primary" : "",
           )}
         >
-          {`<${initials} />`}
+          <div className="text-secondary">
+            <span>{"<"}</span>
+            <span className="text-primary">{initials}</span>
+            <span>{"/>"}</span>
+          </div>
         </button>
 
         {/* Nav links */}
