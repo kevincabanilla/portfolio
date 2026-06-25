@@ -1,4 +1,10 @@
-import { lazy, useEffect, useState } from "react";
+import {
+  lazy,
+  useEffect,
+  useState,
+  type JSX,
+  type LazyExoticComponent,
+} from "react";
 import "./App.css";
 import { ReactLenis } from "lenis/react";
 import { NavItemEnum } from "./models";
@@ -8,7 +14,12 @@ import Footer from "./components/layout/footer/Footer";
 import BackToTop from "./components/layout/BackToTop";
 import SystemStatus from "./components/layout/SystemStatus";
 import { Hero } from "./components/views";
-import { ContentWrapper, ScrollProgressBar } from "./components/common/ui";
+import {
+  ContentWrapper,
+  ScrollProgressBar,
+  SectionTransition,
+  type TransitionVariant,
+} from "./components/common/ui";
 
 const About = lazy(() => import("@/components/views/About"));
 const Skills = lazy(() => import("@/components/views/Skills"));
@@ -16,24 +27,31 @@ const Contact = lazy(() => import("@/components/views/Contact"));
 
 const LENIS_EASING = (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t));
 
-const SECTIONS = [
+type SectionItem = {
+  id: string;
+  label: string;
+  Component: LazyExoticComponent<() => JSX.Element>;
+  transition: TransitionVariant;
+};
+
+const SECTIONS: SectionItem[] = [
   {
     id: NavItemEnum.About,
     label: "About",
     Component: About,
-    transition: "gradient-sweep",
+    transition: "GradientSweep",
   },
   {
     id: NavItemEnum.Skills,
     label: "Skills",
     Component: Skills,
-    transition: "geometric-scatter",
+    transition: "GeometricScatter",
   },
   {
     id: NavItemEnum.Contact,
     label: "Contact",
     Component: Contact,
-    transition: "glow-pulse",
+    transition: "GlowPulse",
   },
 ];
 
@@ -72,9 +90,11 @@ function App() {
           {/* <Suspense fallback={<SectionLoader />}> */}
           <ContentWrapper onLoaded={() => setContentsLoaded(true)}>
             {SECTIONS.map((section) => (
-              // <SectionTransition variant={x.transition} />
-              <div key={section.id} className="section-darker">
-                <section.Component />
+              <div key={section.id}>
+                <SectionTransition variant={section.transition} />
+                <div className="section-darker">
+                  <section.Component />
+                </div>
               </div>
             ))}
           </ContentWrapper>

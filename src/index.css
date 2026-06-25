@@ -89,6 +89,18 @@ html {
   @apply bg-linear-to-br from-cyan-300 via-purple-500 to-pink-700 bg-clip-text text-transparent;
 }
 
+@utility section-divider {
+  @apply h-px;
+  background: linear-gradient(
+    90deg,
+    transparent 5%,
+    color-mix(in srgb, var(--color-white) 4%, transparent) 20%,
+    color-mix(in srgb, var(--color-cyan) 20%, transparent) 50%,
+    color-mix(in srgb, var(--color-white) 4%, transparent) 80%,
+    transparent 95%
+  );
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
