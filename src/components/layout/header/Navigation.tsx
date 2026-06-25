@@ -24,6 +24,13 @@ export default function Navigation({
           const id = entry.target.id;
           activeSectionRef.current = id;
           setActiveSection(id);
+          const sectionHash = `#${id}`;
+          if (window.location.hash != sectionHash)
+            window.history.replaceState(
+              null,
+              "",
+              id == NavItemEnum.Hero ? window.location.pathname : sectionHash,
+            );
         }
       },
       {

@@ -1,7 +1,8 @@
-import { lazy /* Suspense */ } from "react";
+import { lazy, useEffect /* Suspense */ } from "react";
 import "./App.css";
 import { ReactLenis } from "lenis/react";
 import { NavItemEnum } from "./models";
+import { Helper } from "./utils";
 import Navigation from "./components/layout/header/Navigation";
 import Footer from "./components/layout/footer/Footer";
 import BackToTop from "./components/layout/BackToTop";
@@ -36,6 +37,13 @@ const SECTIONS = [
 ];
 
 function App() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && SECTIONS.some((x) => x.id == hash.slice(1))) {
+      Helper.scrollToId(hash);
+    }
+  }, []);
+
   return (
     <ReactLenis
       root
