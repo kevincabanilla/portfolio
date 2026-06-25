@@ -82,7 +82,7 @@ function PageSectionHeader({
           <RevealTextOnScroll text={headerSubtitle} />
         </span>
       )}
-      <h2 className="gradient-text text-4xl font-bold tracking-tight my-3">
+      <h2 className="gradient-text text-2xl md:text-4xl font-bold tracking-tight my-3">
         {headerTitle}
       </h2>
       <motion.div
