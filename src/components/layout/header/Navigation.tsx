@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, type JSX } from "react";
+import { useState, useEffect, useCallback, type JSX } from "react";
 import { Helper } from "@/utils";
 import { useMediaQuery, useScrolledDown } from "@/hooks";
 import NavBar from "./navigation/NavBar";
@@ -7,13 +7,14 @@ import { NavItemEnum, type NavItem } from "@/models";
 
 export default function Navigation({
   navItems,
+  contentsLoaded,
 }: {
   navItems: NavItem[];
+  contentsLoaded: boolean;
 }): JSX.Element {
   const isMobile = useMediaQuery("(max-width: 1023px)");
   const [activeSection, setActiveSection] = useState(`${NavItemEnum.Hero}`);
   const [sideNavOpen, setSideNavOpen] = useState(false);
-  const activeSectionRef = useRef(`${NavItemEnum.Hero}`);
   const scrolledDown = useScrolledDown(50);
 
   // IntersectionObserver-based scroll-spy (replaces per-scroll DOM queries)
@@ -22,15 +23,15 @@ export default function Navigation({
       (entries) => {
         for (const entry of entries.filter((e) => e.isIntersecting)) {
           const id = entry.target.id;
-          activeSectionRef.current = id;
           setActiveSection(id);
           const sectionHash = `#${id}`;
-          if (window.location.hash != sectionHash)
+          if (contentsLoaded && window.location.hash != sectionHash) {
             window.history.replaceState(
               null,
               "",
               id == NavItemEnum.Hero ? window.location.pathname : sectionHash,
             );
+          }
         }
       },
       {
@@ -45,7 +46,7 @@ export default function Navigation({
     }
 
     return () => observer.disconnect();
-  }, [navItems]);
+  }, [navItems, contentsLoaded]);
 
   const scrollToSection = useCallback((id: string) => {
     Helper.scrollToId(id);
