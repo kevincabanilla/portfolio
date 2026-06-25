@@ -12,6 +12,7 @@ import ContactMessageSentAlert from "../contents/contact/ContactMessageSentAlert
 import ContactForm, {
   type EmailFormData,
 } from "../contents/contact/ContactForm";
+import { LiveIndicator } from "../common/indicators";
 
 export default function Contact() {
   const contactData = Data.getContactData();
@@ -56,6 +57,21 @@ export default function Contact() {
           {contactData.contactOptions.map((option) => (
             <ContactCard key={option.id} option={option} />
           ))}
+
+          {contactData.projectAvailability && (
+            <motion.div
+              className="flex items-center gap-3 py-2 px-4 border border-primary/30 rounded-xl bg-linear-to-br from-lime-500/5 to-green-700/5"
+              variants={staggerItem}
+            >
+              <LiveIndicator active size="small" />
+
+              <p className="font-mono text-xs text-white">
+                Currently&nbsp;
+                <span className="text-green">available for new projects</span>.
+                For urgent matters, Mobile is the fastest way to reach me.
+              </p>
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Contact Form - Right Column */}
@@ -76,12 +92,13 @@ export default function Contact() {
               </motion.div>
             ) : (
               <motion.div
+                className="h-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
               >
-                <AppCard rounded>
+                <AppCard rounded className="h-full">
                   <ContactForm
                     isLoading={isLoading}
                     onSubmit={handleFormSubmit}

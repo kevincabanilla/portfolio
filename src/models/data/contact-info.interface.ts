@@ -2,6 +2,7 @@ import type { JSX } from "react";
 import type { ToastType } from "@/components/common/ui/Toast";
 
 export interface ContactInfo {
+  projectAvailability: boolean;
   contactOptions: ContactOption[];
 }
 
