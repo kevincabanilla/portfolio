@@ -86,14 +86,13 @@ export default function ContactCard({ option, className }: ContactCardProps) {
   const ContactIcon = ICON_MAP[option.icon];
 
   return (
-    <AppCard className="rounded-r-2xl">
+    <AppCard className="rounded-r-2xl" variants={staggerItem}>
       <motion.a
         target="_blank"
         rel="noopener noreferrer"
         href={option.link}
         aria-label={`${option.title}: ${option.value}`}
         className={clsx(contactCardStyles({ variant }), className)}
-        variants={staggerItem}
       >
         {/* Icon */}
         <div className={contactIconStyles({ variant })}>
