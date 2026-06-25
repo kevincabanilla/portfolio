@@ -68,9 +68,9 @@ import { TbCodeCircle, TbBrandFramerMotion } from "react-icons/tb";
 import { LuBrainCircuit, LuWorkflow } from "react-icons/lu";
 import { RiNextjsLine } from "react-icons/ri";
 
-export type IconName = keyof typeof reactIconMap;
+export type IconName = keyof typeof ICON_MAP;
 
-export const reactIconMap: Record<string, IconType> = {
+export const ICON_MAP: Record<string, IconType> = {
   // Languages
   SiTypescript,
   SiJavascript,
