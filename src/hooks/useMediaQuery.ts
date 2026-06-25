@@ -1,5 +1,18 @@
 import { useSyncExternalStore } from "react";
-import { MEDIA_QUERIES } from "@/constants/theme";
+
+// ===== Responsive Breakpoints =====
+// Align with Tailwind defaults -- single source of truth for media queries.
+export const BREAKPOINTS = {
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+} as const;
+
+export const MEDIA_QUERIES = {
+  mobile: `(max-width: ${BREAKPOINTS.md - 1}px)`,
+  tablet: `(max-width: ${BREAKPOINTS.lg - 1}px)`,
+} as const;
 
 const getMql = (query: string) =>
   typeof window !== "undefined" && typeof window.matchMedia !== "undefined"
