@@ -7,9 +7,12 @@ export const getInitials = (value: string): string => {
 };
 
 export const scrollToId = (id: string) => {
-  const el = document.querySelector(`#${id}`);
+  const el = document.querySelector(id.startsWith("#") ? id : `#${id}`);
   if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 };
 
