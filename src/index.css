@@ -88,20 +88,3 @@ html {
 @utility gradient-text-vivid {
   @apply bg-linear-to-br from-cyan-300 via-purple-500 to-pink-700 bg-clip-text text-transparent;
 }
-
-/* @utility btn-primary {
-  @apply bg-[#06202d]
-         text-cyan
-         font-semibold
-         border
-         border-cyan/30
-         rounded-xl
-         px-8
-         py-3
-         cursor-pointer
-         duration-300
-         ease-in-out
-         backdrop-blur-md;
-
-  transition-property: background, border-color, box-shadow, color, transform;
-} */
