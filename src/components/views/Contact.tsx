@@ -65,7 +65,7 @@ export default function Contact() {
             >
               <LiveIndicator active size="small" />
 
-              <p className="font-mono text-xs text-white">
+              <p className="font-mono text-xs text-primary">
                 Currently&nbsp;
                 <span className="text-green">available for new projects</span>.
                 For urgent matters, Mobile is the fastest way to reach me.

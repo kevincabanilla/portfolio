@@ -36,7 +36,7 @@ export default function SectionTransition({
 
   return (
     <div
-      className="relative h-20 flex items-center overflow-hidden pointer-events-none"
+      className="relative h-2 flex items-center overflow-hidden pointer-events-none"
       ref={ref}
       aria-hidden="true"
     >

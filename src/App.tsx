@@ -51,7 +51,7 @@ const SECTIONS: SectionItem[] = [
     id: NavItemEnum.Contact,
     label: "Contact",
     Component: Contact,
-    transition: "GlowPulse",
+    transition: "Beam",
   },
 ];
 
@@ -89,10 +89,12 @@ function App() {
 
           {/* <Suspense fallback={<SectionLoader />}> */}
           <ContentWrapper onLoaded={() => setContentsLoaded(true)}>
-            {SECTIONS.map((section) => (
+            {SECTIONS.map((section, idx) => (
               <div key={section.id}>
                 <SectionTransition variant={section.transition} />
-                <div className="section-darker">
+                <div
+                  className={idx % 2 == 0 ? "bg-navy/15 backdrop-blur-sm" : ""}
+                >
                   <section.Component />
                 </div>
               </div>
