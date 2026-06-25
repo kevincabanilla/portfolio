@@ -82,15 +82,6 @@ export default function Footer() {
             Congratulations - You found the secret! Thank you for exploring.
           </span>
         </Toast>
-        {/* {showEasterEgg && (
-          <motion.div
-            className="py-2 px-4 font-mono text-xs text-primary text-center border border-primary/30 rounded-xl bg-linear-to-br from-primary/15 to-secondary/20"
-            initial={{ opacity: 0, scale: 0.5, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-          >
-            Congratulations - You found the secret! Thank you for exploring.
-          </motion.div>
-        )} */}
       </motion.div>
     </footer>
   );
