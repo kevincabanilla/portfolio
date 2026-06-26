@@ -29,9 +29,9 @@ export default function NavBar({
       animate="show"
     >
       <div className="flex items-center justify-between h-full px-6 max-w-7xl mx-auto">
-        <button
-          onClick={() => onNavigate(NavItemEnum.Hero)}
+        <a
           aria-label="Scroll to top"
+          href={`#${NavItemEnum.Hero}`}
           className={clsx(
             "text-lg cursor-pointer",
             "bg-transparent border-0",
@@ -39,9 +39,15 @@ export default function NavBar({
               ? "text-glow-primary"
               : "hover:text-glow-primary",
           )}
+          onClick={(e) => {
+            if (!e.ctrlKey) {
+              e.preventDefault();
+              onNavigate(NavItemEnum.Hero);
+            }
+          }}
         >
           <LogoInitials />
-        </button>
+        </a>
 
         {/* Nav links */}
         {!isMobile && (
@@ -90,14 +96,24 @@ const DesktopNav = ({
         const isActive = activeSection === section.id;
 
         return (
-          <NavButton
+          <a
+            className="h-full"
             key={section.id}
-            active={isActive}
-            onClick={() => onNavigate(section.id)}
-            aria-label={`Navigate to ${section.label}`}
+            href={`#${section.id}`}
+            onClick={(e) => {
+              if (!e.ctrlKey) {
+                e.preventDefault();
+                onNavigate(section.id);
+              }
+            }}
           >
-            {section.label}
-          </NavButton>
+            <NavButton
+              active={isActive}
+              aria-label={`Navigate to ${section.label}`}
+            >
+              {section.label}
+            </NavButton>
+          </a>
         );
       })}
     </div>

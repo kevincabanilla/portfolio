@@ -54,15 +54,24 @@ export default function SideNav({
             <div className="flex flex-col py-6 px-3 gap-0.5">
               {navItems.map((section, index) => {
                 return (
-                  <SideNavButton
+                  <a
                     key={section.id}
-                    index={index}
-                    active={activeSection === section.id}
-                    aria-label={`Navigate to ${section.label}`}
-                    onClick={() => onNavigate(section.id)}
+                    href={`#${section.id}`}
+                    onClick={(e) => {
+                      if (!e.ctrlKey) {
+                        e.preventDefault();
+                        onNavigate(section.id);
+                      }
+                    }}
                   >
-                    {section.label}
-                  </SideNavButton>
+                    <SideNavButton
+                      index={index}
+                      active={activeSection === section.id}
+                      aria-label={`Navigate to ${section.label}`}
+                    >
+                      {section.label}
+                    </SideNavButton>
+                  </a>
                 );
               })}
             </div>

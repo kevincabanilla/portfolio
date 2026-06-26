@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const sideNavButtonStyles = cva(
   [
-    "text-left px-4 py-3 rounded-[10px]",
+    "text-left px-4 py-3 rounded-[10px] w-full",
     "text-sm font-medium cursor-pointer border-0",
     "transition-all duration-600",
   ],
