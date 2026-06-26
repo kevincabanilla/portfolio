@@ -12,10 +12,12 @@ import AboutAvatar from "../contents/about/AboutAvatar";
 import AboutGreeting from "../contents/about/AboutGreeting";
 import AboutHighlights from "../contents/about/AboutHighlights";
 import AboutFavoriteQuote from "../contents/about/AboutFavoriteQuote";
+import { useMemo } from "react";
+
+const { fullName, about } = Data.getPersonalData();
 
 export default function About() {
-  const { fullName, about } = Data.getPersonalData();
-  const initials = Helper.getInitials(fullName);
+  const initials = useMemo(() => Helper.getInitials(fullName), []);
 
   return (
     <PageSection
