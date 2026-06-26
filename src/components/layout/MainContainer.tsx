@@ -1,35 +1,21 @@
-import {
-  lazy,
-  Suspense,
-  useCallback,
-  useEffect,
-  useState,
-  type JSX,
-  type LazyExoticComponent,
-} from "react";
+import { useEffect, type JSX } from "react";
 import { ReactLenis } from "lenis/react";
 import { NavItemEnum } from "@/models";
 import { Helper } from "@/utils";
 import { Navigation, BackToTop, Footer, SystemStatus } from ".";
 import {
-  ContentWrapper,
   ScrollProgressBar,
-  SectionLoader,
   SectionTransition,
   type TransitionVariant,
 } from "@/components/common/ui";
-import { Hero } from "@/components/views";
-
-const About = lazy(() => import("@/components/views/About"));
-const Skills = lazy(() => import("@/components/views/Skills"));
-const Contact = lazy(() => import("@/components/views/Contact"));
+import { About, Contact, Hero, Skills } from "@/components/views";
 
 const LENIS_EASING = (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t));
 
 type SectionItem = {
   id: string;
   label: string;
-  Component: LazyExoticComponent<() => JSX.Element>;
+  Component: () => JSX.Element;
   transition: TransitionVariant;
 };
 
@@ -54,13 +40,9 @@ const SECTIONS: SectionItem[] = [
   },
 ];
 
-export default function MainContainer({ onLoaded }: { onLoaded?: () => void }) {
-  const [contentsLoaded, setContentsLoaded] = useState(false);
-
+export default function MainContainer() {
   // Auto scroll to section when url is loaded with hash
   useEffect(() => {
-    if (!contentsLoaded) return;
-
     const hash = window.location.hash;
     if (!hash) return;
 
@@ -70,13 +52,7 @@ export default function MainContainer({ onLoaded }: { onLoaded?: () => void }) {
     if (exists) {
       Helper.scrollToId(hash);
     }
-  }, [contentsLoaded]);
-
-  // Called when all lazy loaded children has finished rendering.
-  const sectionsLoaded = useCallback(() => {
-    setContentsLoaded(true);
-    onLoaded?.();
-  }, [onLoaded]);
+  }, []);
 
   return (
     <ReactLenis
@@ -89,26 +65,20 @@ export default function MainContainer({ onLoaded }: { onLoaded?: () => void }) {
       <ScrollProgressBar />
 
       <div className="relative min-h-screen">
-        <Navigation navItems={SECTIONS} contentsLoaded={contentsLoaded} />
+        <Navigation navItems={SECTIONS} />
         <main>
           <Hero />
 
-          <Suspense fallback={<SectionLoader />}>
-            <ContentWrapper onLoaded={sectionsLoaded}>
-              {SECTIONS.map((section, idx) => (
-                <div key={section.id}>
-                  <SectionTransition variant={section.transition} />
-                  <div
-                    className={
-                      idx % 2 == 0 ? "bg-navy/15 backdrop-blur-sm" : ""
-                    }
-                  >
-                    <section.Component />
-                  </div>
-                </div>
-              ))}
-            </ContentWrapper>
-          </Suspense>
+          {SECTIONS.map((section, idx) => (
+            <div key={section.id}>
+              <SectionTransition variant={section.transition} />
+              <div
+                className={idx % 2 == 0 ? "bg-navy/15 backdrop-blur-sm" : ""}
+              >
+                <section.Component />
+              </div>
+            </div>
+          ))}
         </main>
         <Footer />
         <BackToTop />

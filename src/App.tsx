@@ -1,7 +1,9 @@
 import "./App.css";
-import { useState } from "react";
-import { MainContainer } from "./components/layout";
+import { lazy, Suspense, useState } from "react";
 import PreloaderScreen from "./components/preloader/PreloaderScreen";
+import { ContentWrapper } from "./components/common/ui";
+
+const MainContainer = lazy(() => import("@/components/layout/MainContainer"));
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -9,7 +11,11 @@ function App() {
   return (
     <>
       <PreloaderScreen isLoaded={isLoaded} />
-      <MainContainer onLoaded={() => setIsLoaded(true)} />
+      <Suspense>
+        <ContentWrapper onLoaded={() => setIsLoaded(true)}>
+          <MainContainer />
+        </ContentWrapper>
+      </Suspense>
     </>
   );
 }

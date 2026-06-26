@@ -45,7 +45,7 @@ export default function PreloaderScreen({ isLoaded }: { isLoaded: boolean }) {
         <>
           {/* Top half */}
           <motion.div
-            className="fixed top-0 inset-x-0 h-1/2 z-200 bg-bg-accent/95 backdrop-blur-2xl"
+            className="fixed top-0 inset-x-0 h-1/2 z-200 bg-bg-accent/70 backdrop-blur-2xl"
             initial={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{
@@ -60,7 +60,7 @@ export default function PreloaderScreen({ isLoaded }: { isLoaded: boolean }) {
 
           {/* Bottom half */}
           <motion.div
-            className="fixed bottom-0 inset-x-0 h-1/2 z-200 bg-bg-accent/95 backdrop-blur-2xl"
+            className="fixed bottom-0 inset-x-0 h-1/2 z-200 bg-bg-accent/70 backdrop-blur-2xl"
             initial={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{

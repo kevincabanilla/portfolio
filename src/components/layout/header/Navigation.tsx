@@ -7,10 +7,8 @@ import { NavItemEnum, type NavItem } from "@/models";
 
 export default function Navigation({
   navItems,
-  contentsLoaded,
 }: {
   navItems: NavItem[];
-  contentsLoaded: boolean;
 }): JSX.Element {
   const isMobile = useMediaQuery("(max-width: 1023px)");
   const [activeSection, setActiveSection] = useState(`${NavItemEnum.Hero}`);
@@ -25,7 +23,7 @@ export default function Navigation({
           const id = entry.target.id;
           setActiveSection(id);
           const sectionHash = `#${id}`;
-          if (contentsLoaded && window.location.hash != sectionHash) {
+          if (window.location.hash != sectionHash) {
             window.history.replaceState(
               null,
               "",
@@ -46,7 +44,7 @@ export default function Navigation({
     }
 
     return () => observer.disconnect();
-  }, [navItems, contentsLoaded]);
+  }, [navItems]);
 
   const scrollToSection = useCallback((id: string) => {
     Helper.scrollToId(id);
