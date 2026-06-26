@@ -1,4 +1,5 @@
 export { default as ContentWrapper } from "./ContentWrapper";
+export { default as LogoInitials } from "./LogoInitials";
 export { default as PageSection } from "./PageSection";
 export { default as RevealTextOnScroll } from "./RevealTextOnScroll";
 export { default as RippleLayer } from "./RippleLayer";
