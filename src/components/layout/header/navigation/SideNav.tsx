@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { NavItemEnum, type NavItem, type SideNavProps } from "@/models";
 import clsx from "clsx";
-import { SideNavButton } from "@/components/common/buttons";
+import { NavLink, SideNavButton } from "@/components/common/buttons";
 
 export default function SideNav({
   open,
@@ -54,15 +54,10 @@ export default function SideNav({
             <div className="flex flex-col py-6 px-3 gap-0.5">
               {navItems.map((section, index) => {
                 return (
-                  <a
+                  <NavLink
                     key={section.id}
-                    href={`#${section.id}`}
-                    onClick={(e) => {
-                      if (!e.ctrlKey) {
-                        e.preventDefault();
-                        onNavigate(section.id);
-                      }
-                    }}
+                    hashId={section.id}
+                    onNavigate={onNavigate}
                   >
                     <SideNavButton
                       index={index}
@@ -71,7 +66,7 @@ export default function SideNav({
                     >
                       {section.label}
                     </SideNavButton>
-                  </a>
+                  </NavLink>
                 );
               })}
             </div>

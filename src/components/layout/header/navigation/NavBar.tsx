@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { navVariants } from "@/animations";
 import { NavItemEnum, type NavBarProps, type NavItem } from "@/models";
-import { NavButton } from "@/components/common/buttons";
+import { NavButton, NavLink } from "@/components/common/buttons";
 import { LogoInitials } from "@/components/common/ui";
 
 export default function NavBar({
@@ -29,9 +29,8 @@ export default function NavBar({
       animate="show"
     >
       <div className="flex items-center justify-between h-full px-6 max-w-7xl mx-auto">
-        <a
+        <NavLink
           aria-label="Scroll to top"
-          href={`#${NavItemEnum.Hero}`}
           className={clsx(
             "text-lg cursor-pointer",
             "bg-transparent border-0",
@@ -39,15 +38,11 @@ export default function NavBar({
               ? "text-glow-primary"
               : "hover:text-glow-primary",
           )}
-          onClick={(e) => {
-            if (!e.ctrlKey) {
-              e.preventDefault();
-              onNavigate(NavItemEnum.Hero);
-            }
-          }}
+          hashId={NavItemEnum.Hero}
+          onNavigate={onNavigate}
         >
           <LogoInitials />
-        </a>
+        </NavLink>
 
         {/* Nav links */}
         {!isMobile && (
@@ -96,16 +91,11 @@ const DesktopNav = ({
         const isActive = activeSection === section.id;
 
         return (
-          <a
-            className="h-full"
+          <NavLink
             key={section.id}
-            href={`#${section.id}`}
-            onClick={(e) => {
-              if (!e.ctrlKey) {
-                e.preventDefault();
-                onNavigate(section.id);
-              }
-            }}
+            className="h-full"
+            hashId={section.id}
+            onNavigate={onNavigate}
           >
             <NavButton
               active={isActive}
@@ -113,7 +103,7 @@ const DesktopNav = ({
             >
               {section.label}
             </NavButton>
-          </a>
+          </NavLink>
         );
       })}
     </div>
