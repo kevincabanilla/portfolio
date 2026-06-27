@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, type JSX } from "react";
-import { Helper } from "@/utils";
-import { useMediaQuery, useScrolledDown } from "@/hooks";
+import { useMediaQuery, useScrolledDown, useScrollTo } from "@/hooks";
 import NavBar from "./navigation/NavBar";
 import SideNav from "./navigation/SideNav";
 import { NavItemEnum, type NavItem } from "@/models";
@@ -14,6 +13,7 @@ export default function Navigation({
   const [activeSection, setActiveSection] = useState(`${NavItemEnum.Hero}`);
   const [sideNavOpen, setSideNavOpen] = useState(false);
   const scrolledDown = useScrolledDown(50);
+  const scrollTo = useScrollTo();
 
   // IntersectionObserver-based scroll-spy (replaces per-scroll DOM queries)
   useEffect(() => {
@@ -46,10 +46,13 @@ export default function Navigation({
     return () => observer.disconnect();
   }, [navItems]);
 
-  const scrollToSection = useCallback((id: string) => {
-    Helper.scrollToId(id);
-    setSideNavOpen(false);
-  }, []);
+  const scrollToSection = useCallback(
+    (id: string) => {
+      scrollTo(id);
+      setSideNavOpen(false);
+    },
+    [scrollTo],
+  );
 
   return (
     <>
