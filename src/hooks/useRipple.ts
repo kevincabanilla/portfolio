@@ -7,7 +7,7 @@ export type Ripple = {
   size: number;
 };
 
-export function useRipple() {
+export const useRipple = () => {
   const [ripples, setRipples] = useState<Ripple[]>([]);
 
   const addRipple = (e: React.MouseEvent<HTMLElement>) => {
@@ -29,4 +29,4 @@ export function useRipple() {
   };
 
   return { ripples, addRipple };
-}
+};

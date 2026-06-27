@@ -16,8 +16,6 @@ const getSnapshot = (): boolean => {
   return globalThis.matchMedia(query).matches;
 };
 
-const useReducedMotion = (): boolean => {
+export const useReducedMotion = (): boolean => {
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 };
-
-export default useReducedMotion;

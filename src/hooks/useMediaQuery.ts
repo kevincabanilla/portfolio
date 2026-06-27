@@ -31,15 +31,15 @@ const subscribe = (query: string) => (callback: () => void) => {
 
 const getSnapshot = (query: string) => () => {
   const mql = getMql(query);
-  return mql ? mql.matches : false;
+  return mql?.matches ?? false;
 };
 
-export default function useMediaQuery(
+export const useMediaQuery = (
   query: string = MEDIA_QUERIES.mobile,
-): boolean {
+): boolean => {
   return useSyncExternalStore(
     subscribe(query),
     getSnapshot(query),
     () => false, // SSR fallback
   );
-}
+};

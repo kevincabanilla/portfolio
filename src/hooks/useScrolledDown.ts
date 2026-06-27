@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useScrolledDown(threshold = 10): boolean {
+export const useScrolledDown = (threshold = 10): boolean => {
   const [scrolledDown, setScrolledDown] = useState<boolean>(false);
 
   useEffect(() => {
@@ -25,4 +25,4 @@ export default function useScrolledDown(threshold = 10): boolean {
   }, [threshold]);
 
   return scrolledDown;
-}
+};

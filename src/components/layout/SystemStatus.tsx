@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Server, ServerOff, Eye } from "lucide-react";
 import { fetcher } from "@/utils";
 import { LiveIndicator } from "../common/indicators";
-import { useOnlineStatus } from "@/hooks/useOnlineStatus";
+import { useOnlineStatus } from "@/hooks";
 
 const SWR_CONFIG = {
   revalidateOnFocus: false,
