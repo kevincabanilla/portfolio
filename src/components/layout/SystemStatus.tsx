@@ -65,7 +65,7 @@ export default function SystemStatus() {
             isOnline ? "text-gray" : "text-red",
           )}
         >
-          {isOnline ? "ALL SYSTEMS NOMINAL" : "OFFLINE"}
+          {isOnline ? "CONNECTED" : "OFFLINE"}
         </span>
       </div>
 

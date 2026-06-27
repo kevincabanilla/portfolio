@@ -20,7 +20,7 @@ export default function BackToTop() {
             "right-5 md:right-8",
             "w-10 md:w-11",
             "h-10 md:h-11",
-            "border border-white/8 rounded-xl",
+            "border border-white/8 rounded-full",
             "bg-navy/50 backdrop-blur-[20px]",
             "shadow-lg transition-shadow duration-300",
             "hover:border-primary/40",
