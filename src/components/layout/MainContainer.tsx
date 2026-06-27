@@ -1,7 +1,7 @@
 import { useEffect, type JSX } from "react";
 import { ReactLenis } from "lenis/react";
 import { NavItemEnum } from "@/models";
-import { Helper } from "@/utils";
+import { Helper, LENIS_EASE_OUT_EXPO } from "@/utils";
 import { Navigation, BackToTop, Footer, SystemStatus } from ".";
 import {
   ScrollProgressBar,
@@ -10,7 +10,6 @@ import {
 } from "@/components/common/ui";
 import { About, Contact, Hero, Skills } from "@/components/views";
 
-const LENIS_EASING = (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t));
 
 type SectionItem = {
   id: string;
@@ -59,7 +58,7 @@ export default function MainContainer() {
       root
       options={{
         duration: 1,
-        easing: LENIS_EASING,
+        easing: LENIS_EASE_OUT_EXPO,
       }}
     >
       <ScrollProgressBar />
