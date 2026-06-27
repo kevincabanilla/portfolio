@@ -1,12 +1,12 @@
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronUp } from "lucide-react";
 import clsx from "clsx";
-import { Helper } from "@/utils";
 import { NavItemEnum } from "@/models";
-import { useScrolledDown } from "@/hooks";
+import { useScrolledDown, useScrollTo } from "@/hooks";
 
 export default function BackToTop() {
   const isVisible = useScrolledDown(720);
+  const scrollTo = useScrollTo();
 
   return (
     <AnimatePresence>
@@ -33,7 +33,7 @@ export default function BackToTop() {
             y: -2,
           }}
           transition={{ duration: 0.25 }}
-          onClick={() => Helper.scrollToId(NavItemEnum.Hero)}
+          onClick={() => scrollTo(NavItemEnum.Hero)}
         >
           <ChevronUp size={20} />
         </motion.button>

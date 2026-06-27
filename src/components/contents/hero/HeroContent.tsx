@@ -1,14 +1,16 @@
 import { type JSX, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Data, Helper } from "@/utils";
+import { Data } from "@/utils";
 import { NavItemEnum } from "@/models";
 import { staggerContainer, staggerItem } from "@/animations";
 import { AppButton, AppButtonLink } from "@/components/common/buttons";
 import { TerminalBadge } from "@/components/common/ui";
 import HeroExternalLinks from "./HeroExternalLinks";
 import HeroCurrentTechs from "./HeroCurrentTechs";
+import { useScrollTo } from "@/hooks";
 
 export default function HeroContent(): JSX.Element {
+  const scrollTo = useScrollTo();
   const [roleIndex, setRoleIndex] = useState(0);
 
   const { fullName, title, roles, resumeUrl, currentTechs, socialProfiles } =
@@ -71,7 +73,7 @@ export default function HeroContent(): JSX.Element {
         <AppButton
           rounded
           size="md"
-          onClick={() => Helper.scrollToId(NavItemEnum.Contact)}
+          onClick={() => scrollTo(NavItemEnum.Contact)}
         >
           Hire Me
         </AppButton>
