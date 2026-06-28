@@ -16,6 +16,7 @@ export default function NavBar({
   onNavigate,
   onToggleMenu,
 }: NavBarProps): JSX.Element {
+  const isVisible = !isMobile || !scrolledDown;
   return (
     <motion.nav
       className={clsx(
@@ -26,7 +27,7 @@ export default function NavBar({
       )}
       variants={navVariants}
       initial="hidden"
-      animate="show"
+      animate={isVisible ? "show" : "hidden"}
     >
       <div className="flex items-center justify-between h-full px-6 max-w-7xl mx-auto">
         <NavLink

@@ -7,11 +7,13 @@ import { RippleContainer } from "@/components/common/containers";
 import { LucideIcons } from "@/constants";
 
 export default function MobileNav({
+  isVisible,
   navItems: navItemsProp,
   activeSection,
   scrolledDown,
   onNavigate,
 }: {
+  isVisible: boolean;
   navItems: NavItem[];
   activeSection: string;
   scrolledDown: boolean;
@@ -32,7 +34,7 @@ export default function MobileNav({
       )}
       variants={mobileNavVariants}
       initial="hidden"
-      animate="show"
+      animate={isVisible ? "show" : "hidden"}
     >
       <div className="flex items-center justify-items-stretch w-full h-full">
         {navItems.map((section) => {

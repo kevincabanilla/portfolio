@@ -76,14 +76,13 @@ export default function Navigation({
         onClose={() => setSideNavOpen(false)}
       />
 
-      {isMobile && (
-        <MobileNav
-          navItems={navItems}
-          activeSection={activeSection}
-          scrolledDown={scrolledDown}
-          onNavigate={scrollToSection}
-        />
-      )}
+      <MobileNav
+        isVisible={isMobile && scrolledDown}
+        navItems={navItems}
+        activeSection={activeSection}
+        scrolledDown={scrolledDown}
+        onNavigate={scrollToSection}
+      />
     </>
   );
 }
