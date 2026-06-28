@@ -26,7 +26,7 @@ export const ICON_MAP: IconMap = {
   EmailAddress: MdOutlineEmail,
   MobilePhone: IoCallOutline,
   Python: FaPython,
-  HiAnnotation: HiAnnotation,
-  MdBusiness: MdBusiness,
-  FaCode: FaCode,
+  HiAnnotation,
+  MdBusiness,
+  FaCode,
 };

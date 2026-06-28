@@ -92,7 +92,7 @@ const DesktopNav = ({
 
         return (
           <NavLink
-            key={section.id}
+            key={`nav-bar-${section.id}`}
             className="h-full"
             hashId={section.id}
             onNavigate={onNavigate}

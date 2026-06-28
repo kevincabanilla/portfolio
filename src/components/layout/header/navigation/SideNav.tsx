@@ -55,7 +55,7 @@ export default function SideNav({
               {navItems.map((section, index) => {
                 return (
                   <NavLink
-                    key={section.id}
+                    key={`side-nav-${section.id}`}
                     hashId={section.id}
                     onNavigate={onNavigate}
                   >
