@@ -13,10 +13,12 @@ import AboutGreeting from "../contents/about/AboutGreeting";
 import AboutHighlights from "../contents/about/AboutHighlights";
 import AboutFavoriteQuote from "../contents/about/AboutFavoriteQuote";
 import { useMemo } from "react";
+import { useMediaQuery } from "@/hooks";
 
 const { fullName, about } = Data.getPersonalData();
 
 export default function About() {
+  const isMobile = useMediaQuery();
   const initials = useMemo(() => Helper.getInitials(fullName), []);
 
   return (
@@ -31,14 +33,17 @@ export default function About() {
           variants={staggerContainer}
         >
           {/* Left - Avatar */}
-          <motion.div variants={fadeInLeft} className="flex justify-center">
+          <motion.div
+            variants={isMobile ? fadeInUp : fadeInLeft}
+            className="flex justify-center"
+          >
             <div className="scale-80 md:scale-100">
               <AboutAvatar>{initials}</AboutAvatar>
             </div>
           </motion.div>
 
           {/* Right - Bio */}
-          <motion.div variants={fadeInRight}>
+          <motion.div variants={isMobile ? fadeInUp : fadeInRight}>
             {/* Status badge */}
             <div className="block mb-5">
               <TerminalBadge size="sm" text={about.status}>
