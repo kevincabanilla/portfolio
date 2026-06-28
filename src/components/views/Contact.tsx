@@ -53,7 +53,7 @@ export default function Contact() {
         variants={staggerContainer}
       >
         {/* Contact Options - Left Column */}
-        <motion.div className="flex flex-col gap-3" variants={staggerContainer}>
+        <motion.div className="order-2 md:order-1 flex flex-col gap-3" variants={staggerContainer}>
           {contactData.contactOptions.map((option) => (
             <ContactCard key={option.id} option={option} />
           ))}
@@ -75,7 +75,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Contact Form - Right Column */}
-        <motion.div variants={rotateInUp}>
+        <motion.div className="order-1 md:order-2 " variants={rotateInUp}>
           <AnimatePresence mode="wait">
             {showConfirmation ? (
               <motion.div
@@ -108,18 +108,18 @@ export default function Contact() {
               </motion.div>
             )}
           </AnimatePresence>
-
-          <Toast
-            vertical="start"
-            timeout={5000}
-            type={formStatus.type}
-            visible={isToastVisible}
-            onClose={dismissToast}
-          >
-            {formStatus.message}
-          </Toast>
         </motion.div>
       </motion.div>
+
+      <Toast
+        vertical="start"
+        timeout={5000}
+        type={formStatus.type}
+        visible={isToastVisible}
+        onClose={dismissToast}
+      >
+        {formStatus.message}
+      </Toast>
     </PageSection>
   );
 }
