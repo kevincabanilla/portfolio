@@ -1,7 +1,7 @@
 import { useEffect, type JSX } from "react";
 import { ReactLenis } from "lenis/react";
 import { NavItemEnum } from "@/models";
-import { Helper, LENIS_EASE_OUT_EXPO } from "@/utils";
+import { Helper, EASE_OUT_EXPO } from "@/utils";
 import { Navigation, BackToTop, Footer, SystemStatus } from ".";
 import {
   ScrollProgressBar,
@@ -61,7 +61,7 @@ export default function MainContainer() {
       root
       options={{
         duration: 1,
-        easing: LENIS_EASE_OUT_EXPO,
+        easing: EASE_OUT_EXPO,
       }}
     >
       <ScrollProgressBar />
