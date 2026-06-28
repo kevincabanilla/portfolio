@@ -10,11 +10,21 @@ export default function Navigation({
 }: {
   navItems: NavItem[];
 }): JSX.Element {
-  const isMobile = useMediaQuery("(max-width: 1023px)");
+  const [isLoaded, setIsLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState(`${NavItemEnum.Hero}`);
   const [sideNavOpen, setSideNavOpen] = useState(false);
+  const isMobile = useMediaQuery();
   const scrolledDown = useScrolledDown(50);
   const scrollTo = useScrollTo();
+
+  // Delay the rendering on UI
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setIsLoaded(true);
+    }, 1000);
+
+    return () => clearTimeout(timeOut);
+  }, []);
 
   // IntersectionObserver-based scroll-spy (replaces per-scroll DOM queries)
   useEffect(() => {
@@ -57,15 +67,17 @@ export default function Navigation({
 
   return (
     <>
-      <NavBar
-        navItems={navItems}
-        isMobile={isMobile}
-        activeSection={activeSection}
-        sideNavOpen={sideNavOpen}
-        scrolledDown={scrolledDown}
-        onNavigate={scrollToSection}
-        onToggleMenu={() => setSideNavOpen(!sideNavOpen)}
-      />
+      {isLoaded && (
+        <NavBar
+          navItems={navItems}
+          isMobile={isMobile}
+          activeSection={activeSection}
+          sideNavOpen={sideNavOpen}
+          scrolledDown={scrolledDown}
+          onNavigate={scrollToSection}
+          onToggleMenu={() => setSideNavOpen(!sideNavOpen)}
+        />
+      )}
 
       {/* Overlay menu for mobile devices */}
       <SideNav
@@ -76,13 +88,15 @@ export default function Navigation({
         onClose={() => setSideNavOpen(false)}
       />
 
-      <MobileNav
-        isVisible={isMobile && scrolledDown}
-        navItems={navItems}
-        activeSection={activeSection}
-        scrolledDown={scrolledDown}
-        onNavigate={scrollToSection}
-      />
+      {isLoaded && (
+        <MobileNav
+          isVisible={isMobile && scrolledDown}
+          navItems={navItems}
+          activeSection={activeSection}
+          scrolledDown={scrolledDown}
+          onNavigate={scrollToSection}
+        />
+      )}
     </>
   );
 }
