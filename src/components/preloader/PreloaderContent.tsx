@@ -14,14 +14,38 @@ export default function PreloaderContent({
       transition={{ duration: 0.4 }}
     >
       {/* Ambient glow */}
-      <div className="absolute w-100 h-100 rounded-full bg-[radial-gradient(circle,rgb(var(--rgb-primary)/.1),transparent_70%)] blur-[50px]" />
+      <motion.div
+        className="absolute w-100 h-100 rounded-full bg-[radial-gradient(circle,rgb(var(--rgb-primary)/.15),transparent_70%)] blur-[50px]"
+        animate={{
+          opacity: [0.5, 1],
+          scale: [1, 1.1],
+          filter: ["blur(40px)", "blur(60px)"],
+        }}
+        transition={{
+          duration: 1.85,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+        }}
+      />
 
       {/* Logo */}
       <motion.div
         className="relative text-5xl font-bold text-glow-primary"
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{
+          opacity: 1,
+          scale: [0.9, 1],
+        }}
+        transition={{
+          opacity: { duration: 0.5 },
+          scale: {
+            duration: 1.85,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          },
+        }}
       >
         <LogoInitials />
       </motion.div>
