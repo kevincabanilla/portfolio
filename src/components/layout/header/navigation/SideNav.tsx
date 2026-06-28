@@ -20,7 +20,7 @@ export default function SideNav({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-40"
+          className="fixed inset-0 z-60"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export default function SideNav({
           {/* Slide-in panel */}
           <motion.div
             className={clsx(
-              "absolute top-16 right-0 bottom-0",
+              "absolute inset-y-0 right-0",
               "w-72",
               "bg-midnight-blue/70",
               "border-l border-white/6",
