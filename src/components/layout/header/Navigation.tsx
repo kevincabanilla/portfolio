@@ -3,6 +3,7 @@ import { useMediaQuery, useScrolledDown, useScrollTo } from "@/hooks";
 import NavBar from "./navigation/NavBar";
 import SideNav from "./navigation/SideNav";
 import { NavItemEnum, type NavItem } from "@/models";
+import MobileNav from "./navigation/MobileNav";
 
 export default function Navigation({
   navItems,
@@ -74,6 +75,15 @@ export default function Navigation({
         onNavigate={scrollToSection}
         onClose={() => setSideNavOpen(false)}
       />
+
+      {isMobile && (
+        <MobileNav
+          navItems={navItems}
+          activeSection={activeSection}
+          scrolledDown={scrolledDown}
+          onNavigate={scrollToSection}
+        />
+      )}
     </>
   );
 }

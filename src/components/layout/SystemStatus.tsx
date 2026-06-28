@@ -36,7 +36,7 @@ export default function SystemStatus() {
   return (
     <motion.div
       className={clsx(
-        "flex items-center gap-3 cursor-default",
+        "flex items-center gap-3 cursor-default mb-14 md:mb-0",
         "md:fixed md:bottom-6 md:left-6 md:z-50 md:rounded-full",
         "py-2 px-4 bg-navy/70 backdrop-blur-md shadow-xl",
         "border border-cyan/8 hover:border-cyan/30",

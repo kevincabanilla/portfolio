@@ -16,7 +16,7 @@ export default function BackToTop() {
           className={clsx(
             "flex items-center justify-center fixed z-50",
             "text-primary cursor-pointer",
-            "bottom-5 md:bottom-8",
+            "bottom-17 md:bottom-8",
             "right-5 md:right-8",
             "w-10 md:w-11",
             "h-10 md:h-11",

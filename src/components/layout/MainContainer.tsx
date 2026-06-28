@@ -10,10 +10,10 @@ import {
 } from "@/components/common/ui";
 import { About, Contact, Hero, Skills } from "@/components/views";
 
-
 type SectionItem = {
   id: string;
   label: string;
+  icon: string;
   Component: () => JSX.Element;
   transition: TransitionVariant;
 };
@@ -22,18 +22,21 @@ const SECTIONS: SectionItem[] = [
   {
     id: NavItemEnum.About,
     label: "About",
+    icon: "CircleUserRound",
     Component: About,
     transition: "GradientSweep",
   },
   {
     id: NavItemEnum.Skills,
     label: "Skills",
+    icon: "Code2",
     Component: Skills,
     transition: "GeometricScatter",
   },
   {
     id: NavItemEnum.Contact,
     label: "Contact",
+    icon: "Mail",
     Component: Contact,
     transition: "Beam",
   },
