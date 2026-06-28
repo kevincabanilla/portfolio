@@ -13,7 +13,13 @@ export interface PersonalInfo {
 export interface AboutInfo {
   greeting: string;
   status: string;
+  favoriteQuote: FavoriteQuote;
   highlights: HighlightItem[];
+}
+
+export interface FavoriteQuote {
+  phrase: string;
+  personName: string;
 }
 
 export interface HighlightItem {

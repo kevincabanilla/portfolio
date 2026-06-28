@@ -1,6 +1,6 @@
 {
   "fullName": "Kevin Cabanilla",
-  "title": "AI Model Trainer — Individual Contractor @ DataAnnotation",
+  "title": "AI Evaluator @ DataAnnotation",
   "roles": [
     "Full Stack Web Developer",
     "Software Engineer",
@@ -10,9 +10,13 @@
   "about": {
     "greeting": "Hi, my name is {fullName}.",
     "status": "Currently training agentic AI models at DataAnnotation.tech",
+    "favoriteQuote": {
+      "phrase": "It works on my machine.",
+      "personName": "John Doe"
+    },
     "highlights": [
       {
-        "text": "AI model trainer at DataAnnotation.tech - Analyze and evaluate agentic AI models with autonomous or interactive multi-turn reasoning, tool-use decisions, and task execution flows. Skilled in ensuring consistency and identifying failure modes in agent behavior.",
+        "text": "AI model trainer at DataAnnotation.tech - Analyzing and evaluating agentic AI models with autonomous or interactive multi-turn reasoning, tool-use decisions, and task execution flows. Skilled in ensuring consistency and identifying failure modes in agent behavior.",
         "icon": "HiAnnotation",
         "color": "cyan"
       },
@@ -27,14 +31,6 @@
         "color": "green"
       }
     ]
-  },
-  "statistics": {
-    "codingQuestions": "0+",
-    "leetcodeRating": "0",
-    "projects": "0+",
-    "codingContests": "0+",
-    "industryCertifications": "0",
-    "openSourceContributions": "0+"
   },
   "languages": [
     { "name": "English", "level": "Professional Working" },

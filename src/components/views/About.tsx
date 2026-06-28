@@ -66,7 +66,7 @@ export default function About() {
             variants={fadeInUp}
             className="md:col-span-2 flex items-center justify-center w-full pt-12"
           >
-            <AboutFavoriteQuote />
+            <AboutFavoriteQuote {...about.favoriteQuote} />
           </motion.div>
         </motion.div>
       </div>
