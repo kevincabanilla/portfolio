@@ -14,10 +14,10 @@ import clsx from "clsx";
 
 const toastStyles = cva(
   [
-    "fixed z-300",
+    "fixed z-300 border rounded-xl",
     "flex items-center gap-3",
     "py-3 px-5 bg-navy/70 backdrop-blur-lg",
-    "border rounded-xl min-w-60 max-w-90",
+    "w-full max-w-[90%] md:max-w-120",
   ],
   {
     variants: {
