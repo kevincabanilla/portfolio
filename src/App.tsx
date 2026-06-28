@@ -1,5 +1,6 @@
 import "./App.css";
 import { lazy, Suspense, useState } from "react";
+import { SimpleAnalytics } from "@simpleanalytics/react";
 import PreloaderScreen from "./components/preloader/PreloaderScreen";
 import { ContentWrapper } from "./components/common/ui";
 
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <>
+      <SimpleAnalytics collectDnt />
       <PreloaderScreen isLoaded={isLoaded} />
       <Suspense>
         <ContentWrapper onLoaded={() => setIsLoaded(true)}>

@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import type { FieldErrors } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { trackEvent } from "@simpleanalytics/react";
 import { Data } from "@/utils";
 import { rotateInUp, staggerContainer, staggerItem } from "@/animations";
 import type { EmailFormStatus } from "@/models";
@@ -53,7 +54,10 @@ export default function Contact() {
         variants={staggerContainer}
       >
         {/* Contact Options - Left Column */}
-        <motion.div className="order-2 md:order-1 flex flex-col gap-3" variants={staggerContainer}>
+        <motion.div
+          className="order-2 md:order-1 flex flex-col gap-3"
+          variants={staggerContainer}
+        >
           {contactData.contactOptions.map((option) => (
             <ContactCard key={option.id} option={option} />
           ))}
@@ -164,11 +168,13 @@ const useContactForm = () => {
           setShowConfirmation(true);
           onComplete();
         }
+        trackEvent("contact_send", { status: result.status });
       } catch {
         setFormStatus({
           type: "error",
           message: "Failed to send message. Please try again later.",
         });
+        trackEvent("contact_send", { status: "error" });
       } finally {
         setIsLoading(false);
       }
