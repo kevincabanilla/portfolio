@@ -9,6 +9,7 @@ import {
   type TransitionVariant,
 } from "@/components/common/ui";
 import { About, Contact, Hero, Skills } from "@/components/views";
+import { BackgroundStars } from "../common/backgrounds";
 
 type SectionItem = {
   id: string;
@@ -65,6 +66,7 @@ export default function MainContainer() {
       }}
     >
       <ScrollProgressBar />
+      <BackgroundStars />
 
       <div className="relative min-h-screen">
         <Navigation navItems={SECTIONS} />
@@ -75,7 +77,7 @@ export default function MainContainer() {
             <div key={section.id}>
               <SectionTransition variant={section.transition} />
               <div
-                className={idx % 2 == 0 ? "bg-navy/15 backdrop-blur-sm" : ""}
+                className={idx % 2 == 0 ? "bg-navy/40" : ""}
               >
                 <section.Component />
               </div>

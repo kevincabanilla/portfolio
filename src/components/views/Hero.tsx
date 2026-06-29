@@ -13,7 +13,7 @@ export default function Hero(): JSX.Element {
       className="relative min-h-screen overflow-hidden flex items-center justify-center"
     >
       {webGLSupported && (
-        <div className="absolute inset-0 -z-1 pointer-events-none">
+        <div className="absolute inset-0 -z-1 pointer-events-none backdrop-blur-md">
           <HeroBackground />
         </div>
       )}
