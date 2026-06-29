@@ -15,7 +15,7 @@ export default defineConfig({
     port: 8000,
     open: false,
   },
-  base: "/portfolio",
+  base: "/",
   resolve: {
     alias: {
       // Always update the paths in tsconfig.app.json when updating this.
