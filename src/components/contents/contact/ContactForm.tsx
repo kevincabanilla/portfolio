@@ -122,6 +122,7 @@ export default function ContactForm({
       <AppButton
         rounded
         type="submit"
+        variant="outline"
         loadingMessage="Sending..."
         disabled={isLoading}
         isLoading={isLoading}
