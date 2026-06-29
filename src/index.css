@@ -69,12 +69,12 @@ html {
 @utility bg-grid {
   background-image:
     linear-gradient(
-      color-mix(in srgb, var(--color-cyan) 5%, transparent) 1px,
+      color-mix(in srgb, var(--color-secondary) 5%, transparent) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      color-mix(in srgb, var(--color-cyan) 5%, transparent) 1px,
+      color-mix(in srgb, var(--color-secondary) 5%, transparent) 1px,
       transparent 1px
     );
   background-size: 60px 60px;
