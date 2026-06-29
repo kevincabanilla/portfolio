@@ -77,15 +77,18 @@ export default function HeroContent(): JSX.Element {
         >
           Hire Me
         </AppButton>
-        <AppButtonLink
-          rounded
-          size="md"
-          variant="outline"
-          href={resumeUrl}
-          download
-        >
-          Download Resume
-        </AppButtonLink>
+        {resumeUrl && (
+          <AppButtonLink
+            rounded
+            download
+            size="md"
+            variant="outline"
+            target="_blank"
+            href={resumeUrl}
+          >
+            Download Resume
+          </AppButtonLink>
+        )}
       </motion.div>
 
       {/* Status widget */}
