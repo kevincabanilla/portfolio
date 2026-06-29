@@ -29,10 +29,11 @@ export const appButtonStyles = cva(
       },
 
       size: {
+        custom: "",
         xs: "px-2 py-1 text-xs",
         sm: "px-4 py-2 text-sm",
         md: "px-8 py-3",
-        lg: "px-10 py-4 text-lg",
+        lg: "px-8.5 py-3.5 text-lg",
       },
 
       rounded: {
