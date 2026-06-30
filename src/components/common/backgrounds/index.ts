@@ -1,1 +1,2 @@
-export { BackgroundStars } from "./BackgroundStars";
+export * from "./AuroraBlobs";
+export * from "./BackgroundStars";

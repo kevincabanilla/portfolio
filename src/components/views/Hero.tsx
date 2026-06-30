@@ -3,6 +3,7 @@ import HeroContent from "../contents/hero/HeroContent";
 import HeroScrollDown from "../contents/hero/HeroScrollDown";
 import { Helper } from "@/utils";
 import { HeroBackground } from "../3D/backgrounds";
+import { AuroraBlobs } from "../common/backgrounds";
 
 const webGLSupported = Helper.hasWebGL();
 
@@ -14,6 +15,7 @@ export default function Hero(): JSX.Element {
     >
       {webGLSupported && (
         <div className="absolute inset-0 -z-1 pointer-events-none backdrop-blur-md">
+          <AuroraBlobs />
           <HeroBackground />
         </div>
       )}
