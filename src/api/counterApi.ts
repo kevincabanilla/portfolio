@@ -1,6 +1,7 @@
 import useSWR from "swr";
 
 const {
+  PROD: isProduction,
   VITE_COUNTER_API_WORKSPACE: counterWorkspace,
   VITE_COUNTER_API_HANDLE: counterApiHandle,
 } = import.meta.env;
@@ -33,6 +34,16 @@ export const useVisitsCounter = () => {
   const shouldFetch = !!(counterWorkspace && counterApiHandle);
   return useSWR(
     shouldFetch ? `${BASE_URL}/${counterApiHandle}` : null,
+    fetcher,
+    SWR_CONFIG,
+  );
+};
+
+export const useNothingCounter = () => {
+  return useSWR(
+    !isProduction || !counterWorkspace
+      ? null
+      : `${BASE_URL}/portfolio-nothing-visits/up`,
     fetcher,
     SWR_CONFIG,
   );

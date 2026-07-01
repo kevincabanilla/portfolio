@@ -1,7 +1,11 @@
+import { useNothingCounter } from "@/api/counterApi";
 import { motion } from "motion/react";
 
 export default function Nothing() {
+  useNothingCounter();
+
   const text = "NOTHING";
+
   return (
     <motion.div
       className="h-screen w-screen flex items-center justify-center font-mono font-medium text-5xl md:text-9xl text-purple"
