@@ -76,9 +76,7 @@ export default function MainContainer() {
           {SECTIONS.map((section, idx) => (
             <div key={section.id}>
               <SectionTransition variant={section.transition} />
-              <div
-                className={idx % 2 == 0 ? "bg-navy/40" : ""}
-              >
+              <div className={idx % 2 == 0 ? "bg-navy/40" : ""}>
                 <section.Component />
               </div>
             </div>
