@@ -1,34 +1,13 @@
 import { motion } from "motion/react";
-import useSWR from "swr";
 import clsx from "clsx";
 import { Server, ServerOff, Eye } from "lucide-react";
-import { fetcher } from "@/utils";
 import { LiveIndicator } from "../common/indicators";
 import { useOnlineStatus } from "@/hooks";
-
-const SWR_CONFIG = {
-  revalidateOnFocus: false,
-  revalidateOnReconnect: false,
-  refreshInterval: 0,
-  dedupingInterval: Infinity,
-  revalidateIfStale: false,
-} as const;
+import { useVisitsCounter } from "@/api/counterApi";
 
 export default function SystemStatus() {
   const isOnline = useOnlineStatus();
-  const {
-    VITE_COUNTER_API_WORKSPACE: counterWorkspace,
-    VITE_COUNTER_API_HANDLE: counterApiHandle,
-  } = import.meta.env;
-
-  const shouldFetch = !!(counterWorkspace && counterApiHandle);
-  const { data } = useSWR(
-    shouldFetch
-      ? `https://api.counterapi.dev/v2/${counterWorkspace}/${counterApiHandle}`
-      : null,
-    fetcher,
-    SWR_CONFIG,
-  );
+  const { data } = useVisitsCounter();
 
   const visitors = data?.data?.up_count ?? 0;
   const ServerIcon = isOnline ? Server : ServerOff;
