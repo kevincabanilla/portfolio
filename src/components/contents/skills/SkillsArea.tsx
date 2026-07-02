@@ -34,26 +34,32 @@ export default function SkillsArea({ label, items }: SkillArea) {
             <motion.div key={skill.text} variants={waveCascadeItem}>
               <AppCard
                 className={clsx(
-                  "group rounded-md h-25 w-25",
-                  "grid grid-rows-2 ",
+                  "group rounded-md",
+                  "md:h-25 md:w-25",
+                  "flex items-center justify-center gap-3 md:grid md:grid-rows-2 md:gap-0",
                   "text-center text-xs",
                   "py-1.5 px-3 md:py-2.5 md:px-4",
                 )}
                 whileHover={{ scale: 1.1, y: -5 }}
               >
-                <div className="row-span-2 flex flex-col items-center justify-center p-4">
+                <div className="row-span-2 flex flex-col items-center justify-center md:p-4">
                   {!skill.svg ? (
                     Icon && (
                       <Icon
-                        size={32}
-                        className="text-gray/60 group-hover:text-secondary"
+                        className={clsx(
+                          "w-5 md:w-8",
+                          "h-5 md:h-8",
+                          "text-primary md:text-gray/60 group-hover:text-secondary",
+                        )}
                       />
                     )
                   ) : (
                     <img
                       loading="lazy"
                       className={clsx(
-                        "w-full h-full object-contain",
+                        "object-contain",
+                        "w-5 md:w-full",
+                        "h-5 md:h-full",
                         "md:grayscale md:group-hover:grayscale-0",
                         "md:contrast-[1.2] md:group-hover:contrast-100",
                         "md:brightness-[1.5] md:group-hover:brightness-100",
