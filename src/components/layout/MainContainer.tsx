@@ -9,7 +9,7 @@ import {
   type TransitionVariant,
 } from "@/components/common/ui";
 import { About, Contact, Hero, Skills } from "@/components/views";
-import { BackgroundStars } from "../common/backgrounds";
+import { BackgroundStars, ParallaxElements } from "../common/backgrounds";
 
 type SectionItem = {
   id: string;
@@ -67,6 +67,7 @@ export default function MainContainer() {
     >
       <ScrollProgressBar />
       <BackgroundStars />
+      <ParallaxElements />
 
       <div className="relative min-h-screen">
         <Navigation navItems={SECTIONS} />
