@@ -3,81 +3,81 @@
     {
       "label": "Languages",
       "items": [
-        { "text": "TypeScript", "icon": "SiTypescript" },
-        { "text": "JavaScript", "icon": "SiJavascript" },
-        { "text": "Python", "icon": "SiPython" },
-        { "text": "C#", "icon": "FaHashtag" },
-        { "text": "Java", "icon": "FaJava" },
-        { "text": "SQL", "icon": "TbDatabase" },
-        { "text": "GDScript", "icon": "SiGodotengine" }
+        { "text": "TypeScript", "icon": "SiTypescript", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg  " },
+        { "text": "JavaScript", "icon": "SiJavascript", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+        { "text": "Python", "icon": "SiPython", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+        { "text": "C#", "icon": "FaHashtag", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
+        { "text": "Java", "icon": "FaJava", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+        { "text": "SQL", "icon": "TbDatabase", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" },
+        { "text": "GDScript", "icon": "SiGodotengine", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg" }
       ]
     },
     {
       "label": "Frontend",
       "items": [
-        { "text": "React", "icon": "FaReact" },
-        { "text": "Angular", "icon": "FaAngular" },
-        { "text": "Vue.js", "icon": "FaVuejs" },
-        { "text": "Next.js", "icon": "RiNextjsLine" },
-        { "text": "Vite", "icon": "SiVite" },
-        { "text": "Tailwind CSS", "icon": "SiTailwindcss" },
-        { "text": "Three.js", "icon": "SiThreedotjs" },
-        { "text": "Motion", "icon": "TbBrandFramerMotion" },
-        { "text": "Material UI", "icon": "SiMui" },
-        { "text": "Bootstrap", "icon": "FaBootstrap" },
-        { "text": "HTML", "icon": "FaHtml5" },
-        { "text": "CSS", "icon": "FaCss3Alt" }
+        { "text": "React", "icon": "FaReact", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+        { "text": "Angular", "icon": "FaAngular", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" },
+        { "text": "Vue.js", "icon": "FaVuejs", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" },
+        { "text": "Next.js", "icon": "RiNextjsLine", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+        { "text": "Vite", "icon": "SiVite", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" },
+        { "text": "Tailwind CSS", "icon": "SiTailwindcss", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+        { "text": "Three.js", "icon": "SiThreedotjs", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg" },
+        { "text": "Motion", "icon": "TbBrandFramerMotion", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" },
+        { "text": "Material UI", "icon": "SiMui", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" },
+        { "text": "Bootstrap", "icon": "FaBootstrap", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
+        { "text": "HTML", "icon": "FaHtml5", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+        { "text": "CSS", "icon": "FaCss3Alt", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" }
       ]
     },
     {
       "label": "Backend & Database",
       "items": [
-        { "text": "ASP.NET Core", "icon": "SiDotnet" },
-        { "text": "EF Core", "icon": "TbDatabaseCog" },
-        { "text": "FastAPI", "icon": "SiFastapi" },
-        { "text": "RESTful APIs", "icon": "TbApi" },
-        { "text": "MSSQL", "icon": "BsFiletypeSql" },
-        { "text": "PostgreSQL", "icon": "SiPostgresql" },
-        { "text": "MySQL", "icon": "SiMysql" },
-        { "text": "SQLite", "icon": "SiSqlite" }
+        { "text": ".NET Core", "icon": "SiDotnet", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" },
+        { "text": "EF Core", "icon": "TbDatabaseCog", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/entityframeworkcore/entityframeworkcore-original.svg" },
+        { "text": "FastAPI", "icon": "SiFastapi", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" },
+        { "text": "REST", "icon": "TbApi", "svg": "" },
+        { "text": "MSSQL", "icon": "BsFiletypeSql", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" },
+        { "text": "PostgreSQL", "icon": "SiPostgresql", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+        { "text": "MySQL", "icon": "SiMysql", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        { "text": "SQLite", "icon": "SiSqlite", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" }
       ]
     },
     {
       "label": "Development Tools",
       "items": [
-        { "text": "VS Code", "icon": "VscVscode" },
-        { "text": "Git", "icon": "FaGitAlt" },
-        { "text": "NPM", "icon": "SiNpm" },
-        { "text": "React Dev Tools", "icon": "FaReact" },
-        { "text": "Postman", "icon": "SiPostman" },
-        { "text": "Insomnia", "icon": "SiInsomnia" },
-        { "text": "Figma", "icon": "FaFigma" }
-      ]
-    },
-    {
-      "label": "AI Agents",
-      "items": [
-        { "text": "GitHub Copilot", "icon": "SiGithubcopilot" },
-        { "text": "Claude Code", "icon": "BsClaude" },
-        { "text": "Open Code", "icon": "TbCodeCircle" },
-        { "text": "Gemini", "icon": "SiGooglegemini" },
-        { "text": "Codex", "icon": "AiFillOpenAI" }
+        { "text": "VS Code", "icon": "VscVscode", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
+        { "text": "Git", "icon": "FaGitAlt", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+        { "text": "GitHub", "icon": "FaGithub", "svg": "" },
+        { "text": "NPM", "icon": "SiNpm", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original.svg" },
+        { "text": "Postman", "icon": "SiPostman", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
+        { "text": "Insomnia", "icon": "SiInsomnia", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/insomnia/insomnia-original.svg" },
+        { "text": "Figma", "icon": "FaFigma", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" }
       ]
     },
     {
       "label": "Cloud & DevOps",
       "items": [
-        { "text": "Azure", "icon": "VscAzure" },
-        { "text": "Firebase", "icon": "SiFirebase" },
-        { "text": "Docker", "icon": "FaDocker" },
-        { "text": "GitHub Actions", "icon": "SiGithubactions" }
+        { "text": "Azure", "icon": "VscAzure", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" },
+        { "text": "Firebase", "icon": "SiFirebase", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" },
+        { "text": "Docker", "icon": "FaDocker", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+        { "text": "GitHub Actions", "icon": "SiGithubactions", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" }
       ]
     },
     {
       "label": "Game Development",
       "items": [
-        { "text": "Godot", "icon": "SiGodotengine" },
-        { "text": "Aseprite", "icon": "SiAseprite" }
+        { "text": "Godot", "icon": "SiGodotengine", "svg": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/godot/godot-original.svg" },
+        { "text": "Aseprite", "icon": "SiAseprite", "svg": "" }
+      ]
+    },
+    {
+      "label": "AI Agents",
+      "items": [
+        { "text": "GitHub Copilot", "icon": "SiGithubcopilot", "svg": "" },
+        { "text": "Claude Code", "icon": "BsClaude", "svg": "" },
+        { "text": "Open Code", "icon": "TbCodeCircle", "svg": "" },
+        { "text": "Gemini", "icon": "SiGooglegemini", "svg": "" },
+        { "text": "Codex", "icon": "AiFillOpenAI", "svg": "" }
       ]
     }
   ],
@@ -85,36 +85,36 @@
     {
       "label": "SE Fundamentals",
       "items": [
-        { "text": "Data Structures & Algorithms", "icon": "TbBinaryTree" },
-        { "text": "Object-Oriented Programming", "icon": "TbBoxModel2" },
-        { "text": "Architecture & Design Principles", "icon": "TbLayersIntersect" },
-        { "text": "Design Patterns", "icon": "TbLayoutGrid" },
-        { "text": "Software Engineering", "icon": "TbCodeDots" },
-        { "text": "Database Management Systems", "icon": "TbDatabase" },
-        { "text": "Agile Development", "icon": "LuWorkflow" },
-        { "text": "Operating Systems", "icon": "TbCpu" },
-        { "text": "Computer Networks", "icon": "TbNetwork" }
+        { "text": "Data Structures & Algorithms", "icon": "TbBinaryTree", "svg": "" },
+        { "text": "Object-Oriented Programming", "icon": "TbBoxModel2", "svg": "" },
+        { "text": "Architecture & Design Principles", "icon": "TbLayersIntersect", "svg": "" },
+        { "text": "Design Patterns", "icon": "TbLayoutGrid", "svg": "" },
+        { "text": "Software Engineering", "icon": "TbCodeDots", "svg": "" },
+        { "text": "Database Management Systems", "icon": "TbDatabase", "svg": "" },
+        { "text": "Agile Development", "icon": "LuWorkflow", "svg": "" },
+        { "text": "Operating Systems", "icon": "TbCpu", "svg": "" },
+        { "text": "Computer Networks", "icon": "TbNetwork", "svg": "" }
       ]
     },
     {
       "label": "Soft Skills",
       "items": [
-        { "text": "Problem Solving", "icon": "TbPuzzle" },
-        { "text": "Critical Thinking", "icon": "LuBrainCircuit" },
-        { "text": "Fast Learner", "icon": "TbRocket" },
-        { "text": "Adaptability", "icon": "TbArrowsShuffle" },
-        { "text": "Communication", "icon": "TbMessageCircle" },
-        { "text": "Collaboration and Teamwork", "icon": "TbUsers" }
+        { "text": "Problem Solving", "icon": "TbPuzzle", "svg": "" },
+        { "text": "Critical Thinking", "icon": "LuBrainCircuit", "svg": "" },
+        { "text": "Fast Learner", "icon": "TbRocket", "svg": "" },
+        { "text": "Adaptability", "icon": "TbArrowsShuffle", "svg": "" },
+        { "text": "Communication", "icon": "TbMessageCircle", "svg": "" },
+        { "text": "Collaboration and Teamwork", "icon": "TbUsers", "svg": "" }
       ]
     },
     {
       "label": "Areas of Interest",
       "items": [
-        { "text": "Full-Stack Development", "icon": "TbStack2" },
-        { "text": "Game Development", "icon": "TbDeviceGamepad2" },
-        { "text": "Open Source", "icon": "SiGithub" },
-        { "text": "AI/ML Engineering", "icon": "LuBrainCircuit" },
-        { "text": "AI Agents & MCP", "icon": "FaRobot" }
+        { "text": "Full-Stack Development", "icon": "TbStack2", "svg": "" },
+        { "text": "Game Development", "icon": "TbDeviceGamepad2", "svg": "" },
+        { "text": "Open Source", "icon": "SiGithub", "svg": "" },
+        { "text": "AI/ML Engineering", "icon": "LuBrainCircuit", "svg": "" },
+        { "text": "AI Agents & MCP", "icon": "FaRobot", "svg": "" }
       ]
     }
   ]

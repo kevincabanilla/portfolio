@@ -11,4 +11,5 @@ export interface SkillArea {
 export interface SkillItem {
   text: string;
   icon: string;
+  svg: string;
 }

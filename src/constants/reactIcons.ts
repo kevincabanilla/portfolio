@@ -14,6 +14,7 @@ import {
   FaRobot,
   FaHtml5,
   FaCss3Alt,
+  FaGithub,
 } from "react-icons/fa6";
 import {
   SiTypescript,
@@ -114,6 +115,7 @@ export const ICON_MAP: Record<string, IconType> = {
   // Tools
   VscVscode,
   FaGitAlt,
+  FaGithub,
   SiNpm,
   SiPostman,
   SiInsomnia,
