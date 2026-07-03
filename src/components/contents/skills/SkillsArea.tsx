@@ -11,7 +11,7 @@ export default function SkillsArea({ label, items }: SkillArea) {
   return (
     <>
       <motion.div
-        className="flex items-center gap-3 text-xl font-semibold mb-3"
+        className="flex items-center justify-center md:justify-start gap-3 text-xl font-semibold mb-3"
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
@@ -35,10 +35,10 @@ export default function SkillsArea({ label, items }: SkillArea) {
               <AppCard
                 className={clsx(
                   "group rounded-md",
-                  "md:h-25 md:w-25",
+                  "md:h-20 md:w-20",
                   "flex items-center justify-center gap-3 md:grid md:grid-rows-2 md:gap-0",
                   "text-center text-xs",
-                  "py-1.5 px-3 md:py-2.5 md:px-4",
+                  "py-1.5 px-3 md:p-2",
                 )}
                 whileHover={{ scale: 1.1, y: -5 }}
               >
