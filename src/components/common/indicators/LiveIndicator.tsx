@@ -26,13 +26,13 @@ type LiveIndicatorProps = ComponentProps<typeof motion.span> &
     active?: boolean;
   };
 
-export default function LiveIndicator({
+export const LiveIndicator = ({
   className,
   color,
   size,
   active,
   ...props
-}: LiveIndicatorProps) {
+}: LiveIndicatorProps) => {
   return (
     <motion.span
       {...props}
@@ -56,4 +56,4 @@ export default function LiveIndicator({
       }
     />
   );
-}
+};
