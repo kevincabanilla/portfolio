@@ -40,6 +40,7 @@ import {
   SiGithub,
   SiAseprite,
   SiNpm,
+  SiFramer,
 } from "react-icons/si";
 import {
   TbDatabase,
@@ -65,7 +66,7 @@ import {
 import { BsFiletypeSql, BsClaude } from "react-icons/bs";
 import { VscAzure, VscVscode } from "react-icons/vsc";
 import { AiFillOpenAI } from "react-icons/ai";
-import { TbCodeCircle, TbBrandFramerMotion } from "react-icons/tb";
+import { TbCodeCircle } from "react-icons/tb";
 import { LuBrainCircuit, LuWorkflow } from "react-icons/lu";
 import { RiNextjsLine } from "react-icons/ri";
 
@@ -90,7 +91,7 @@ export const ICON_MAP: Record<string, IconType> = {
   SiVite,
   SiTailwindcss,
   SiThreedotjs,
-  TbBrandFramerMotion,
+  SiFramer,
   SiMui,
   FaBootstrap,
 
