@@ -1,10 +1,7 @@
 import { motion } from "motion/react";
-import { fadeInUp, waveCascadeContainer, waveCascadeItem } from "@/animations";
+import { fadeInUp, waveCascadeContainer } from "@/animations";
 import type { SkillArea } from "@/models";
-import { ReactIcons } from "@/constants";
-import { AppCard } from "@/components/common/containers";
-import clsx from "clsx";
-import { AppToolTip } from "@/components/common/indicators";
+import { SkillsItem } from "./SkillsItem";
 
 const viewport = { margin: "0px 0px -100px 0px" };
 
@@ -30,57 +27,7 @@ export default function SkillsArea({ label, items }: SkillArea) {
         viewport={viewport}
       >
         {items.map((skill) => {
-          const Icon = ReactIcons.ICON_MAP[skill.icon];
-          return (
-            <motion.div key={skill.text} variants={waveCascadeItem}>
-              <AppToolTip content={skill.text}>
-                <AppCard
-                  className={clsx(
-                    "group rounded-md",
-                    "md:h-20 md:w-20",
-                    "flex items-center justify-center gap-3 md:grid md:grid-rows-2 md:gap-0",
-                    "text-center text-xs",
-                    "py-1.5 px-3 md:p-2",
-                  )}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                >
-                  <div className="row-span-2 flex flex-col items-center justify-center md:p-4">
-                    {!skill.svg ? (
-                      Icon && (
-                        <Icon
-                          className={clsx(
-                            "w-5 md:w-8",
-                            "h-5 md:h-8",
-                            "text-primary md:text-gray/60 group-hover:text-secondary",
-                          )}
-                        />
-                      )
-                    ) : (
-                      <img
-                        loading="lazy"
-                        className={clsx(
-                          "object-contain",
-                          "w-5 md:w-full",
-                          "h-5 md:h-full",
-                          "md:grayscale md:group-hover:grayscale-0",
-                          "md:contrast-[1.2] md:group-hover:contrast-100",
-                          "md:brightness-[1.5] md:group-hover:brightness-100",
-                          "md:opacity-60 md:group-hover:opacity-100",
-                          "transition duration-300 ease-[ease]",
-                        )}
-                        src={skill.svg}
-                        alt={skill.text}
-                      />
-                    )}
-                  </div>
-
-                  <div className="text-center truncate text-primary group-hover:text-secondary cursor-default">
-                    <span>{skill.text}</span>
-                  </div>
-                </AppCard>
-              </AppToolTip>
-            </motion.div>
-          );
+          return <SkillsItem key={skill.text} {...skill} />;
         })}
       </motion.div>
     </>
