@@ -20,17 +20,18 @@ export default function PageNotFound() {
           .
         </p>
         <p className="text-lg md:text-2xl text-secondary">
-          How about you
+          {/* How about you
           <AppButton variant="plain" size="custom">
             &nbsp;play&nbsp;
           </AppButton>
-          a game with me? Or just go
+          a game with me? Or just */}
+          Go to&nbsp;
           <NavLink to="/">
             <AppButton variant="plain" size="custom">
-              &nbsp;home
+              home
             </AppButton>
           </NavLink>
-          .
+          &nbsp;page.
         </p>
       </motion.div>
     </>
