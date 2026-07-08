@@ -67,7 +67,7 @@ import { BsFiletypeSql, BsClaude } from "react-icons/bs";
 import { VscAzure, VscVscode } from "react-icons/vsc";
 import { AiFillOpenAI } from "react-icons/ai";
 import { TbCodeCircle } from "react-icons/tb";
-import { LuBrainCircuit, LuWorkflow } from "react-icons/lu";
+import { LuBrain, LuBrainCircuit, LuWorkflow } from "react-icons/lu";
 import { RiNextjsLine } from "react-icons/ri";
 
 export type IconName = keyof typeof ICON_MAP;
@@ -149,6 +149,7 @@ export const ICON_MAP: Record<string, IconType> = {
   TbArrowsShuffle,
   TbMessageCircle,
   TbUsers,
+  LuBrain,
 
   // Interests
   TbStack2,

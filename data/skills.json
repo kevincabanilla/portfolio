@@ -100,7 +100,7 @@
       "label": "Soft Skills",
       "items": [
         { "text": "Problem Solving", "icon": "TbPuzzle", "svg": "" },
-        { "text": "Critical Thinking", "icon": "LuBrainCircuit", "svg": "" },
+        { "text": "Critical Thinking", "icon": "LuBrain", "svg": "" },
         { "text": "Fast Learner", "icon": "TbRocket", "svg": "" },
         { "text": "Adaptability", "icon": "TbArrowsShuffle", "svg": "" },
         { "text": "Communication", "icon": "TbMessageCircle", "svg": "" },
