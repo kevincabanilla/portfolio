@@ -1,75 +1,167 @@
-# React + TypeScript + Vite
+# 🌐 Full Stack Web Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React Version](http://img.shields.io/badge/react-19-blue?logo=react)
+![Vite Version](https://img.shields.io/badge/vite-8-purple?logo=vite)
+![Tailwind CSS](https://img.shields.io/badge/tailwindcss-4-06b6d4?logo=tailwindcss)
 
-Currently, two official plugins are available:
+**Live:** [kevincabanilla.vercel.app](https://kevincabanilla.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About
 
-## React Compiler
+A modern, responsive, and interactive developer portfolio built to showcase projects, skills, experience, and creative web experiences.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## ✨ Features
 
-Note: This will impact Vite dev & build performances.
+- ⚡ Lightning-fast performance with Vite
+- 🎨 Modern responsive UI
+- 🌙 Dark theme
+- 🎭 Smooth page and component animations
+- 🧩 Interactive 3D elements powered by Three.js
+- 📱 Mobile-first design
+- ♿ Accessible and semantic markup
+- 🚀 Optimized production build
+- 🔥 Type-safe development with TypeScript
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Category          | Technologies                                   |
+| ----------------- | ---------------------------------------------- |
+| **Framework**     | React 19 + Vite 8                              |
+| **Language**      | TypeScript                                     |
+| **Styling**       | Tailwind CSS 4, CLSX, Class-Variance-Authority |
+| **3D Graphics**   | Three.js, React Three Fiber, React Three Drei  |
+| **Animations**    | Motion (Framer Motion)                         |
+| **Fonts**         | Inter Variable, JetBrains Mono (self-hosted)   |
+| **Smooth Scroll** | Lenis (ReactLenis)                             |
+| **Icons**         | Lucide React, React Icons                      |
+| **Form**          | React-Hook-Form, Zod, EmailJS                  |
+| **Routing**       | React-Router                                   |
+| **Data Fetching** | SWR                                            |
+| **Testing**       | Vitest, React Testing Library                  |
+| **Code Quality**  | ESLint (typescript-eslint), Prettier           |
+| **Deployment**    | Vercel                                         |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
+
+```text
+data/                                  # JSON content files (edit these to customize)
+public/                                # Icons and images + other assets
+src/
+├── animations/                        # Motion animation variants
+├── api/                               # APIs
+├── components/
+│   ├── 3d/
+│   │   ├── backgrounds/               # Three.js backgrounds
+│   │   ├── objects/                   # Background objects
+│   ├── common/
+│   │   ├── backgrounds/               # Backgrounds and effects
+│   │   ├── buttons/                   # Custom buttons
+│   │   ├── containers/                # Cards, Ripple container
+│   │   ├── indicators/                # Badge, tooltips
+│   │   ├── inputs/                    # Form inputs
+│   │   ├── ui/                        # Other resuable UIs
+│   ├── contents/
+│   |   └── ...                        # View contents
+│   ├── layout/
+│   │   ├── Header/                    # Navigation headers
+│   │   ├── Footer/
+│   │   └── MainContainer.tsx          # Main component
+│       └── ...
+│   ├── preloader/                     # Loading screen on load
+│   └── views/
+│       └── ...                        # Section components
+├── constants/                         # Constant variables
+├── context/                           # Custom context
+├── hooks/                             # Custom react hooks
+├── models/                            # All data interfaces
+├── router/                            # Routes definitions
+├── utils/                             # Utilities and helper functions
+├── App.tsx                            # Root component
+├── main.tsx                           # React entry point
+└── index.css                          # Tailwind @theme + custom stylings
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js 24+
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/kevincabanilla/portfolio.git
+
+cd portfolio
+
+npm i
 ```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+**The application will be available at:** [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 📦 Build for Production
+
+```bash
+# Build the app
+npm run build
+
+# Preview the production build locally:
+npm run preview
+```
+
+---
+
+## 🧹 Available Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Run linter
+```
+
+---
+
+## 🚀 Vercel Deployment
+
+```bash
+# preview
+vercel
+
+# production
+vercel --prod
+```
+
+---
+
+## 🎯 Goals
+
+This portfolio is designed to:
+
+- Showcase personal projects
+- Highlight technical skills
+- Demonstrate modern frontend development practices
+- Experiment with interactive UI and 3D experiences
+
+---
+
+## 👋 Connect
+
+If you enjoyed this project or would like to collaborate, feel free to reach out or connect through your preferred platform.
+
+⭐ If you found this project helpful, consider giving it a star!
