@@ -53,5 +53,5 @@ export const randomizeSign = (value: number): number => {
 // "#06b6d4" -> "6, 182, 212" for use inside rgba().
 export const hexToRgb = (hex: string): string => {
   const n = Number.parseInt(hex.slice(1), 16);
-  return `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`;
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255].join(", ");
 };
