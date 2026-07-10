@@ -10,7 +10,7 @@ export default function HeroExternalLinks({
 }) {
   const content = socialProfiles.map((profile) => {
     const IconComponent = ICON_MAP[profile.icon];
-    if (!IconComponent) return null;
+
     return (
       <motion.a
         key={profile.id}

@@ -30,7 +30,7 @@ export default function HeroCurrentTechs({ currentTechs }: CurrentTechsProp) {
               "bg-cyan-500/10 border border-cyan-500/20",
             )}
           >
-            {IconComponent && <IconComponent size={11} />}
+            <IconComponent size={11} />
             <span>{tech}</span>
           </div>
         );

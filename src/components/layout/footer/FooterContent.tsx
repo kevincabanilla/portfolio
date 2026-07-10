@@ -13,7 +13,7 @@ export default function FooterContent({
   socialProfiles: SocialProfile[];
   site: SiteConfig;
 }) {
-  const techStacks = site.techStacks || [];
+  const techStacks = site.techStacks;
 
   return (
     <>
