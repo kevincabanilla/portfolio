@@ -3,11 +3,11 @@ import clsx from "clsx";
 import { useRipple } from "@/hooks";
 import { RippleLayer } from "../ui";
 
-type RippleContainerProps = {
+interface RippleContainerProps {
   children: React.ReactNode;
   className?: string;
   rippleClassName?: string;
-};
+}
 
 export default function RippleContainer({
   children,

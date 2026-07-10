@@ -11,13 +11,13 @@ import {
 import { About, Contact, Hero, Skills } from "@/components/views";
 import { BackgroundStars, ParallaxElements } from "../common/backgrounds";
 
-type SectionItem = {
+interface SectionItem {
   id: string;
   label: string;
   icon: string;
   Component: () => JSX.Element;
   transition: TransitionVariant;
-};
+}
 
 const SECTIONS: SectionItem[] = [
   {

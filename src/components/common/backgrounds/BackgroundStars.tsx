@@ -3,14 +3,14 @@ import { Helper } from "@/utils";
 import { useMediaQuery } from "@/hooks";
 import { Color } from "@/constants";
 
-type Dot = {
+interface Dot {
   x: number;
   y: number;
   vx: number;
   vy: number;
   radius: number;
   color: string;
-};
+}
 
 const MIN_VELOCITY = 0.01;
 const MAX_VELOCITY = 0.8;

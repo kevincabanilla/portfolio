@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export type Ripple = {
+export interface Ripple {
   id: number;
   x: number;
   y: number;
   size: number;
-};
+}
 
 export const useRipple = () => {
   const [ripples, setRipples] = useState<Ripple[]>([]);

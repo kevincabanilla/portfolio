@@ -3,21 +3,21 @@ import { Color } from "@/constants";
 import { Helper } from "@/utils";
 import { BREAKPOINTS } from "@/hooks";
 
-type Dot = {
+interface Dot {
   x: number;
   y: number;
   vx: number;
   vy: number;
   radius: number;
   colour: string;
-};
+}
 
-type DotsConfig = {
+interface DotsConfig {
   dotCount: number;
   lineDistance: number;
   mouseRadius: number;
   array: Dot[];
-};
+}
 
 type Grid = Map<string, number[]>;
 
@@ -275,7 +275,7 @@ const generateDots = (screenWidth: number, screenHeight: number) => {
       vy: Math.random() - 0.5,
       radius: Math.random() * 1.5,
       colour: COLORS[Math.floor(Math.random() * COLORS.length)],
-    } as Dot);
+    });
   }
 
   return dots;

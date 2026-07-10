@@ -2,10 +2,10 @@ import { AnimatePresence, motion } from "motion/react";
 import clsx from "clsx";
 import type { Ripple } from "@/hooks";
 
-type RippleLayerProps = {
+interface RippleLayerProps {
   ripples: Ripple[];
   className?: string;
-};
+}
 
 export default function RippleLayer({ ripples, className }: RippleLayerProps) {
   return (
