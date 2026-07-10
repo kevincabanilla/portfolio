@@ -85,7 +85,7 @@ export default function Toast({
   children,
   onClose,
 }: ToastProps) {
-  const Icon = iconMap[type || "info"];
+  const Icon = iconMap[type ?? "info"];
   const offSet = getOffset(horizontal, vertical);
 
   useEffect(() => {
