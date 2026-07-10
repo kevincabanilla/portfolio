@@ -11,7 +11,7 @@ export default function ContentWrapper({
   onLoaded: () => void;
 }) {
   useEffect(() => {
-    onLoaded?.();
+    onLoaded();
   }, [onLoaded, children]);
 
   return children;

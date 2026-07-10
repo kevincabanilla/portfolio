@@ -188,7 +188,7 @@ const useContactForm = () => {
       message: (
         <ul>
           {Object.entries(errors).map(([fieldName, error]) => (
-            <li key={fieldName}>{error?.message}</li>
+            <li key={fieldName}>{error.message}</li>
           ))}
         </ul>
       ),

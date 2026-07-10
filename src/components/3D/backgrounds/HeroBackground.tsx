@@ -78,11 +78,11 @@ export default function HeroBackground() {
 
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
-      setPointerFromXY(pointer?.current, e?.clientX, e?.clientY);
+      setPointerFromXY(pointer.current, e.clientX, e.clientY);
     };
     const onTouchMove = (e: TouchEvent) => {
       const t = e.touches[0];
-      setPointerFromXY(pointer?.current, t?.clientX, t?.clientY);
+      setPointerFromXY(pointer.current, t.clientX, t.clientY);
     };
 
     globalThis.addEventListener("mousemove", onMouseMove);

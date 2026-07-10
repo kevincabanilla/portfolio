@@ -9,7 +9,7 @@ export default function SystemStatus() {
   const isOnline = useOnlineStatus();
   const { data } = useVisitsCounter();
 
-  const visitors = data?.data?.up_count ?? 0;
+  const visitors = data?.data.up_count ?? 0;
   const ServerIcon = isOnline ? Server : ServerOff;
 
   return (
