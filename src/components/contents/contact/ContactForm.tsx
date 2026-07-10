@@ -38,7 +38,7 @@ export default function ContactForm({
   onError,
 }: {
   isLoading: boolean;
-  onSubmit: (data: EmailFormData, onComplete: () => void) => void;
+  onSubmit: (data: EmailFormData, onComplete: () => void) => Promise<void>;
   onError: (errors: FieldErrors<EmailFormData>) => void;
 }) {
   const {
@@ -56,8 +56,8 @@ export default function ContactForm({
     },
   });
 
-  const onValidSubmit: SubmitHandler<EmailFormData> = (data) => {
-    onSubmit(data, reset);
+  const onValidSubmit: SubmitHandler<EmailFormData> = async (data) => {
+    await onSubmit(data, reset);
   };
 
   const onInvalidSubmit: SubmitErrorHandler<EmailFormData> = (data) => {
@@ -67,7 +67,9 @@ export default function ContactForm({
   return (
     <form
       className="h-full flex flex-col gap-4 py-5 px-4.5 md:py-8 md:px-7"
-      onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}
+      onSubmit={(e) => {
+        void handleSubmit(onValidSubmit, onInvalidSubmit)(e);
+      }}
     >
       <div>
         <AppTextField
