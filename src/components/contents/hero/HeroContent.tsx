@@ -20,7 +20,9 @@ export default function HeroContent(): JSX.Element {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
     }, 3000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [roles]);
 
   return (
@@ -73,7 +75,9 @@ export default function HeroContent(): JSX.Element {
         <AppButton
           rounded
           size="md"
-          onClick={() => scrollTo(NavItemEnum.Contact)}
+          onClick={() => {
+            scrollTo(NavItemEnum.Contact);
+          }}
         >
           Hire Me
         </AppButton>

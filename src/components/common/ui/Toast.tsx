@@ -91,7 +91,9 @@ export default function Toast({
   useEffect(() => {
     if (!timeout || !onClose) return;
     const timer = setTimeout(onClose, timeout);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [visible, timeout, children, type, onClose]);
 
   return createPortal(

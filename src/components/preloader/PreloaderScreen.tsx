@@ -34,7 +34,9 @@ export default function PreloaderScreen({ isLoaded }: { isLoaded: boolean }) {
 
     animationFrame = requestAnimationFrame(step);
 
-    return () => cancelAnimationFrame(animationFrame);
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
   const displayProgress = Math.min(Math.max(Math.round(progress), 1), 100);

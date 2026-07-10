@@ -8,7 +8,9 @@ const subscribe = (callback: () => void): (() => void) => {
   if (globalThis.window == null) return () => undefined;
   const mql = globalThis.matchMedia(query);
   mql.addEventListener("change", callback);
-  return () => mql.removeEventListener("change", callback);
+  return () => {
+    mql.removeEventListener("change", callback);
+  };
 };
 
 const getSnapshot = (): boolean => {

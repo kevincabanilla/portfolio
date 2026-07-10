@@ -9,7 +9,9 @@ export default function HeroScrollDown(): JSX.Element {
 
   return (
     <motion.button
-      onClick={() => scrollTo(NavItemEnum.About)}
+      onClick={() => {
+        scrollTo(NavItemEnum.About);
+      }}
       className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted hover:text-secondary transition-colors cursor-pointer"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

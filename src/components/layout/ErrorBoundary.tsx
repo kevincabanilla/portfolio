@@ -50,7 +50,9 @@ export default function ErrorBoundary() {
       <div>
         <button
           className="cursor-pointer py-2.5 px-4 rounded-md font-bold uppercase text-sm md:text-base text-blue-300 hover:text-blue-400 bg-white/6 hover:bg-blue-300/15"
-          onClick={() => window.location.reload()}
+          onClick={() => {
+            window.location.reload();
+          }}
         >
           Reload
         </button>

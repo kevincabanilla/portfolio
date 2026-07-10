@@ -110,8 +110,12 @@ export default function HeroBackground() {
       }}
     >
       <PerformanceMonitor
-        onDecline={() => setDegraded(true)}
-        onIncline={() => setDegraded(false)}
+        onDecline={() => {
+          setDegraded(true);
+        }}
+        onIncline={() => {
+          setDegraded(false);
+        }}
       />
 
       {/* Lighting matching glassmorphism theme */}

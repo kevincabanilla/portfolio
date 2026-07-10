@@ -51,7 +51,9 @@ export default function Footer() {
     };
 
     globalThis.addEventListener("keydown", handleKey);
-    return () => globalThis.removeEventListener("keydown", handleKey);
+    return () => {
+      globalThis.removeEventListener("keydown", handleKey);
+    };
   }, [showEasterEgg]);
 
   return (
@@ -76,7 +78,9 @@ export default function Footer() {
           visible={showEasterEgg}
           type="success"
           vertical="end"
-          onClose={() => setShowEasterEgg(false)}
+          onClose={() => {
+            setShowEasterEgg(false);
+          }}
         >
           <span className="font-mono text-xs text-primary text-center">
             Congratulations - You found the secret! Thank you for exploring.

@@ -21,7 +21,9 @@ export const useScrolledDown = (threshold = 10): boolean => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // set initial state
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [threshold]);
 
   return scrolledDown;

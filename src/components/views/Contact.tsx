@@ -204,6 +204,8 @@ const useContactForm = () => {
     handleFormSubmit,
     handleFormError,
     dismissToast,
-    resetConfirmation: () => setShowConfirmation(false),
+    resetConfirmation: () => {
+      setShowConfirmation(false);
+    },
   };
 };

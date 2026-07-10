@@ -23,10 +23,14 @@ const subscribe = (query: string) => (callback: () => void) => {
   const mql = getMql(query);
   if (!mql) return () => undefined;
 
-  const handler = () => callback();
+  const handler = () => {
+    callback();
+  };
 
   mql.addEventListener("change", handler);
-  return () => mql.removeEventListener("change", handler);
+  return () => {
+    mql.removeEventListener("change", handler);
+  };
 };
 
 const getSnapshot = (query: string) => () => {

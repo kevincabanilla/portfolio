@@ -55,7 +55,9 @@ export default function TerminalBadge({
 
       if (index < text.length) {
         timeoutId = setTimeout(
-          () => type(index + 1),
+          () => {
+            type(index + 1);
+          },
           30 + Math.random() * 70, // Human-like typing speed
         );
       }
@@ -63,7 +65,9 @@ export default function TerminalBadge({
 
     type(0);
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [isInView, text]);
 
   const isTyping = isInView && visibleChars < text.length;

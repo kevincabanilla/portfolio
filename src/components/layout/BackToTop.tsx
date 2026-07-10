@@ -33,7 +33,9 @@ export default function BackToTop() {
             y: -2,
           }}
           transition={{ duration: 0.25 }}
-          onClick={() => scrollTo(NavItemEnum.Hero)}
+          onClick={() => {
+            scrollTo(NavItemEnum.Hero);
+          }}
         >
           <ChevronUp size={20} />
         </motion.button>

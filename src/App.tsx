@@ -16,7 +16,11 @@ function App() {
       {ANALYTICS_ENABLED && <SimpleAnalytics collectDnt />}
       <PreloaderScreen isLoaded={isLoaded} />
       <Suspense>
-        <ContentWrapper onLoaded={() => setIsLoaded(true)}>
+        <ContentWrapper
+          onLoaded={() => {
+            setIsLoaded(true);
+          }}
+        >
           <RouterProvider router={router} />
         </ContentWrapper>
       </Suspense>

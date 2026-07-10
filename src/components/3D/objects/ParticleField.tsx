@@ -33,7 +33,10 @@ export default function ParticleField({ count = 300 }: { count?: number }) {
       if (!node) return;
       node.geometry.dispose();
       const { material } = node;
-      if (Array.isArray(material)) material.forEach((m) => m.dispose());
+      if (Array.isArray(material))
+        material.forEach((m) => {
+          m.dispose();
+        });
       else material.dispose();
     };
   }, []);

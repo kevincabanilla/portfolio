@@ -49,7 +49,9 @@ export const SkillsItem = ({ text, icon, svg }: SkillItem) => {
                 )}
                 src={svg}
                 alt={text}
-                onError={() => setIsImageValid(false)}
+                onError={() => {
+                  setIsImageValid(false);
+                }}
               />
             )}
           </div>

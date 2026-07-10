@@ -121,10 +121,18 @@ export const AppToolTip = ({
     <div className="relative inline-flex">
       {cloneElement(children, {
         "aria-describedby": open ? id : undefined,
-        onMouseEnter: () => setOpen(true),
-        onMouseLeave: () => setOpen(false),
-        onFocus: () => setOpen(true),
-        onBlur: () => setOpen(false),
+        onMouseEnter: () => {
+          setOpen(true);
+        },
+        onMouseLeave: () => {
+          setOpen(false);
+        },
+        onFocus: () => {
+          setOpen(true);
+        },
+        onBlur: () => {
+          setOpen(false);
+        },
       })}
 
       <AnimatePresence>

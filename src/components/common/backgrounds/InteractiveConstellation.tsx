@@ -191,7 +191,9 @@ export const InteractiveConstellation = () => {
     if (reducedMotion) {
       redraw();
       window.addEventListener("resize", redraw);
-      return () => window.removeEventListener("resize", redraw);
+      return () => {
+        window.removeEventListener("resize", redraw);
+      };
     }
 
     // --- Full interactive loop. ---
@@ -206,13 +208,17 @@ export const InteractiveConstellation = () => {
       pointer.y = y;
     };
 
-    const onMouseMove = (e: MouseEvent) => setPointer(e.clientX, e.clientY);
+    const onMouseMove = (e: MouseEvent) => {
+      setPointer(e.clientX, e.clientY);
+    };
     const onTouchMove = (e: TouchEvent) => {
       const { clientX, clientY } = e.touches[0];
       setPointer(clientX, clientY);
     };
 
-    const parkPointer = () => setPointer(OFFSCREEN, OFFSCREEN);
+    const parkPointer = () => {
+      setPointer(OFFSCREEN, OFFSCREEN);
+    };
 
     // Pause the loop when the tab is hidden to save battery.
     const onVisibilityChange = () => {
@@ -225,7 +231,7 @@ export const InteractiveConstellation = () => {
 
     resizeCanvas();
     animationFrameId = window.requestAnimationFrame(animate);
-    
+
     window.addEventListener("resize", resizeCanvas);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseout", parkPointer);

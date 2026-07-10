@@ -11,7 +11,7 @@ export default function Navigation({
   navItems: NavItem[];
 }): JSX.Element {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeSection, setActiveSection] = useState(`${NavItemEnum.Hero}`);
+  const [activeSection, setActiveSection] = useState(NavItemEnum.Hero as string);
   const [sideNavOpen, setSideNavOpen] = useState(false);
   const isMobile = useMediaQuery();
   const scrolledDown = useScrolledDown(50);
@@ -23,7 +23,9 @@ export default function Navigation({
       setIsLoaded(true);
     }, 1000);
 
-    return () => clearTimeout(timeOut);
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, []);
 
   // IntersectionObserver-based scroll-spy (replaces per-scroll DOM queries)
@@ -54,7 +56,9 @@ export default function Navigation({
       if (el) observer.observe(el);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [navItems]);
 
   const scrollToSection = useCallback(
@@ -75,7 +79,9 @@ export default function Navigation({
           sideNavOpen={sideNavOpen}
           scrolledDown={scrolledDown}
           onNavigate={scrollToSection}
-          onToggleMenu={() => setSideNavOpen(!sideNavOpen)}
+          onToggleMenu={() => {
+            setSideNavOpen(!sideNavOpen);
+          }}
         />
       )}
 
@@ -85,7 +91,9 @@ export default function Navigation({
         activeSection={activeSection}
         open={sideNavOpen}
         onNavigate={scrollToSection}
-        onClose={() => setSideNavOpen(false)}
+        onClose={() => {
+          setSideNavOpen(false);
+        }}
       />
 
       {isLoaded && (
