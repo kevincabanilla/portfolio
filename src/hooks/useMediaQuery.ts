@@ -21,7 +21,7 @@ const getMql = (query: string) =>
 
 const subscribe = (query: string) => (callback: () => void) => {
   const mql = getMql(query);
-  if (!mql) return () => {};
+  if (!mql) return () => undefined;
 
   const handler = () => callback();
 
