@@ -11,7 +11,11 @@ export default function Nothing() {
       className="h-screen w-screen flex items-center justify-center font-mono font-medium text-5xl md:text-9xl text-purple"
       aria-label={text}
     >
-      {[...text].map((char, i) => {
+      {[
+        ...new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(
+          text,
+        ),
+      ].map(({ segment: char }, i) => {
         if (char === " ") {
           return (
             <span key={`${char}-${i}`} className="inline-block">

@@ -14,7 +14,11 @@ export default function AboutGreeting({ text }: { text: string }) {
       className="inline-block text-white font-bold mb-4 leading-tight text-xl md:text-[28px]"
       aria-label={text}
     >
-      {[...text].map((char, i) => {
+      {[
+        ...new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(
+          text,
+        ),
+      ].map(({ segment: char }, i) => {
         if (char === " ") {
           return (
             <span key={`${char}-${i}`} className="inline-block">
