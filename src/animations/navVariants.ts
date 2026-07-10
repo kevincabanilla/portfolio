@@ -25,7 +25,7 @@ export const navVariants: MotionVariant = {
 
 export const mobileNavVariants: MotionVariant = {
   hidden: {
-    y: +80,
+    y: 80,
     opacity: 0,
     transition,
   },
