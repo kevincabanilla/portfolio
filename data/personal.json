@@ -59,6 +59,6 @@
   "currentTechs": ["React", "Python"],
   "resumeUrl": "https://www.linkedin.com/in/kevin-cabanilla/",
   "site": {
-    "techStacks": ["React 19", "Vite 8", "Tailwind CSS 4", "Three.js", "Motion"]
+    "techStacks": ["React 19", "Vite 8", "Tailwind CSS 4", "Motion", "Three.js"]
   }
 }
