@@ -14,10 +14,3 @@ export const LUCIDE_ICON: Record<string, LucideIcon> = {
   Code2,
   Mail,
 };
-
-export const getIcon = (icon: LucideIconType) => {
-  if (Object.keys(LUCIDE_ICON).some((k) => k == icon)) {
-    return LUCIDE_ICON[icon];
-  }
-  return null;
-};

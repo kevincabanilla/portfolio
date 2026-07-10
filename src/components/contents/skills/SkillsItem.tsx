@@ -25,15 +25,13 @@ export const SkillsItem = ({ text, icon, svg }: SkillItem) => {
         >
           <div className="row-span-2 flex flex-col items-center justify-center md:p-4">
             {!svg || !isImageValid ? (
-              Icon && (
-                <Icon
-                  className={clsx(
-                    "w-5 md:w-8",
-                    "h-5 md:h-8",
-                    "text-primary md:text-gray/60 group-hover:text-secondary",
-                  )}
-                />
-              )
+              <Icon
+                className={clsx(
+                  "w-5 md:w-8",
+                  "h-5 md:h-8",
+                  "text-primary md:text-gray/60 group-hover:text-secondary",
+                )}
+              />
             ) : (
               <img
                 loading="lazy"

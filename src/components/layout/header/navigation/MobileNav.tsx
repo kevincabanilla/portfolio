@@ -38,7 +38,7 @@ export default function MobileNav({
     >
       <div className="flex items-center justify-items-stretch w-full h-full">
         {navItems.map((section) => {
-          const Icon = LucideIcons.getIcon(section.icon);
+          const Icon = LucideIcons.LUCIDE_ICON[section.icon];
           const isActive = activeSection === section.id;
 
           return (
@@ -52,7 +52,7 @@ export default function MobileNav({
                 hashId={section.id}
                 onNavigate={onNavigate}
               >
-                {Icon && <Icon size={24} />}
+                <Icon size={24} />
               </NavLink>
             </RippleContainer>
           );
