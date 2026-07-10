@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import type { CounterUp } from "@/models";
 
 const {
   PROD: isProduction,
@@ -16,7 +17,7 @@ const SWR_CONFIG = {
   revalidateIfStale: false,
 } as const;
 
-const fetcher = async (url: string) => {
+const fetcher = async <T>(url: string): Promise<T> => {
   const res = await fetch(url, {
     headers: {
       // Authorization: `Bearer ${counterApiToken}`,
@@ -27,14 +28,14 @@ const fetcher = async (url: string) => {
     throw new Error("Failed to fetch");
   }
 
-  return res.json();
+  return (await res.json()) as T;
 };
 
 export const useVisitsCounter = () => {
   const shouldFetch = !!(counterWorkspace && counterApiHandle);
   return useSWR(
     shouldFetch ? `${BASE_URL}/${counterApiHandle}` : null,
-    fetcher,
+    fetcher<CounterUp>,
     SWR_CONFIG,
   );
 };
@@ -44,7 +45,7 @@ export const useNothingCounter = () => {
     !isProduction || !counterWorkspace
       ? null
       : `${BASE_URL}/portfolio-nothing-visits/up`,
-    fetcher,
+    fetcher<CounterUp>,
     SWR_CONFIG,
   );
 };

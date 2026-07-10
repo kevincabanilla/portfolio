@@ -4,3 +4,4 @@ export * from "./navigation/side-nav.prop.interface";
 export * from "./data/personal-info.interface";
 export * from "./data/skills-info.interface";
 export * from "./data/contact-info.interface";
+export * from "./counter-api.interface";
