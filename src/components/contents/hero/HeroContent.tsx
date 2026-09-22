@@ -88,6 +88,7 @@ export default function HeroContent(): JSX.Element {
             size="md"
             variant="outline"
             target="_blank"
+            rel="noopener noreferrer"
             href={resumeUrl}
           >
             Download Resume
